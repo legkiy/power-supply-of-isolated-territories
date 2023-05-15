@@ -1,0 +1,36 @@
+@use '/src/styles/variables' as variables;
+
+.header {
+  padding: 4px 0;
+  background-color: variables.$contrastColor;
+  display: flex;
+  color: variables.$contrastTextColor;
+
+  .back-botttom {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    text-align: center;
+    vertical-align: middle;
+    align-self: center;
+  }
+
+  &-img {
+    width: 80px;
+    align-self: center;
+    display: block;
+  }
+
+  a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+  }
+
+  h2 {
+    margin: auto;
+    text-align: left;
+    font-weight: 400;
+    font-size: large;
+  }
+}

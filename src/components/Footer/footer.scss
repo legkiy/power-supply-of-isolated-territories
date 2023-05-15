@@ -1,0 +1,11 @@
+@use '/src/styles/variables' as variables;
+
+.footer {
+  background-color: variables.$contrastColor;
+  color: variables.$contrastTextColor;
+  // position: absolute;
+  // bottom: 0;
+  text-align: justify;
+  padding: 0 10px;
+  font-size: small;
+}
