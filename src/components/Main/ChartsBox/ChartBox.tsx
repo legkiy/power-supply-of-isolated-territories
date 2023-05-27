@@ -6,21 +6,37 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartData,
+  ChartOptions,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import SFOPopulation from './data/populations/SFO_population.json';
+import SFO from './data/SFO_population.json';
+import DFO from './data/DFO_settlements.json';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const ChartBox = () => {
-  const options = {
+  ChartJS.defaults.font.size = 11;
+  ChartJS.defaults.color = 'black';
+
+  const options: ChartOptions<'bar'> = {
+    indexAxis: 'y' as const,
     responsive: true,
-    title: {
-      display: true,
-      text: 'Chart.js Bar Chart',
+    plugins: {
+      legend: {
+        display: false,
+      },
     },
     scales: {
       x: {
+        title: {
+          display: true,
+          text: 'тыс. чел.',
+          align: 'end',
+          font: {
+            size: 14,
+          },
+        },
         stacked: true,
       },
       y: {
@@ -28,36 +44,69 @@ const ChartBox = () => {
       },
     },
   };
-  const labels = SFOPopulation.map((el) => el.name);
+  const labels = SFO.map((el) => el.name);
 
-  const population = SFOPopulation.map((el) => el.settlements.map((item) => item.population));
+  const population = SFO.map((el) => el.settlements.map((item) => item.population));
+  const settlement = SFO.map((el) => el.settlements.map((item) => item.settlements));
+
+  const settlement200 = settlement.map((el) => el[0]);
+  const settlement500 = settlement.map((el) => el[1]);
+  const settlement1000 = settlement.map((el) => el[2]);
+  const settlementMore1000 = settlement.map((el) => el[3]);
+
   const numbers200 = population.map((el) => el[0]);
-  console.log(numbers200);
   const numbers500 = population.map((el) => el[1]);
   const numbers1000 = population.map((el) => el[2]);
   const numbersMore1000 = population.map((el) => el[3]);
 
-  const data = {
+  const data: ChartData<'bar'> = {
     labels,
     datasets: [
       {
-        label: '200',
-        data: numbers200,
+        label: 'количество населенных пунктов',
+        data: settlement200,
         backgroundColor: 'red',
+        stack: '1',
       },
       {
-        label: '500',
-        data: numbers500,
+        label: 'количество населенных пунктов',
+        data: settlement500,
         backgroundColor: 'blue',
+        stack: '1',
       },
       {
-        label: '1000',
-        data: numbers1000,
+        label: 'количество населенных пунктов',
+        data: settlement1000,
         backgroundColor: 'green',
+        stack: '1',
       },
       {
-        label: 'more1000',
-        data: numbersMore1000,
+        label: 'количество населенных пунктов',
+        data: settlementMore1000,
+        stack: '1',
+      },
+      {
+        label: 'до 200 чел.',
+        data: numbers200.map((el) => el / 1000),
+        backgroundColor: 'red',
+        stack: '0',
+      },
+      {
+        label: 'до 500 чел.',
+        data: numbers500.map((el) => el / 1000),
+        backgroundColor: 'blue',
+        stack: '0',
+      },
+      {
+        label: 'до 1000 чел.',
+        data: numbers1000.map((el) => el / 1000),
+        backgroundColor: 'green',
+        stack: '0',
+      },
+      {
+        label: 'более 1000 чел.',
+        data: numbersMore1000.map((el) => el / 1000),
+        stack: '0',
       },
     ],
   };

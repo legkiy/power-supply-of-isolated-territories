@@ -1,0 +1,279 @@
+[
+  {
+    "name": "Республика Саха (Якутия), арктика",
+    "settlements": [
+      {
+        "lable": "200",
+        "settlements": 17,
+        "population": 1796
+      },
+      {
+        "lable": "500",
+        "settlements": 35,
+        "population": 12210
+      },
+      {
+        "lable": "1000",
+        "settlements": 15,
+        "population": 9827
+      },
+      {
+        "lable": "more1000",
+        "settlements": 17,
+        "population": 40653
+      }
+    ]
+  },
+  {
+    "name": "Республика Саха (Якутия), южные районы",
+    "settlements": [
+      {
+        "lable": "200",
+        "settlements": 20,
+        "population": 2368
+      },
+      {
+        "lable": "500",
+        "settlements": 23,
+        "population": 7957
+      },
+      {
+        "lable": "1000",
+        "settlements": 11,
+        "population": 7701
+      },
+      {
+        "lable": "more1000",
+        "settlements": 5,
+        "population": 9237
+      }
+    ]
+  },
+  {
+    "name": "Забайкальский край",
+    "settlements": [
+      {
+        "lable": "200",
+        "settlements": 16,
+        "population": 1088
+      },
+      {
+        "lable": "500",
+        "settlements": 5,
+        "population": 1383
+      },
+      {
+        "lable": "1000",
+        "settlements": 2,
+        "population": 1765
+      },
+      {
+        "lable": "more1000",
+        "settlements": 0,
+        "population": 0
+      }
+    ]
+  },
+  {
+    "name": "Камчатский край",
+    "settlements": [
+      {
+        "lable": "200",
+        "settlements": 12,
+        "population": 952
+      },
+      {
+        "lable": "500",
+        "settlements": 13,
+        "population": 4298
+      },
+      {
+        "lable": "1000",
+        "settlements": 9,
+        "population": 6104
+      },
+      {
+        "lable": "more1000",
+        "settlements": 9,
+        "population": 20744
+      }
+    ]
+  },
+  {
+    "name": "Приморский край",
+    "settlements": [
+      {
+        "lable": "200",
+        "settlements": 16,
+        "population": 1823
+      },
+      {
+        "lable": "500",
+        "settlements": 3,
+        "population": 1223
+      },
+      {
+        "lable": "1000",
+        "settlements": 2,
+        "population": 1610
+      },
+      {
+        "lable": "more1000",
+        "settlements": 1,
+        "population": 2933
+      }
+    ]
+  },
+  {
+    "name": "Хабаровский край",
+    "settlements": [
+      {
+        "lable": "200",
+        "settlements": 48,
+        "population": 3630
+      },
+      {
+        "lable": "500",
+        "settlements": 31,
+        "population": 10091
+      },
+      {
+        "lable": "1000",
+        "settlements": 15,
+        "population": 10302
+      },
+      {
+        "lable": "more1000",
+        "settlements": 10,
+        "population": 19517
+      }
+    ]
+  },
+
+  {
+    "name": "Магаданская область",
+    "settlements": [
+      {
+        "lable": "200",
+        "settlements": 7,
+        "population": 494
+      },
+      {
+        "lable": "500",
+        "settlements": 2,
+        "population": 565
+      },
+      {
+        "lable": "1000",
+        "settlements": 0,
+        "population": 0
+      },
+      {
+        "lable": "more1000",
+        "settlements": 1,
+        "population": 1300
+      }
+    ]
+  },
+  {
+    "name": "Чукотский автономный округ",
+    "settlements": [
+      {
+        "lable": "200",
+        "settlements": 9,
+        "population": 1158
+      },
+      {
+        "lable": "500",
+        "settlements": 15,
+        "population": 4822
+      },
+      {
+        "lable": "1000",
+        "settlements": 7,
+        "population": 4559
+      },
+      {
+        "lable": "more1000",
+        "settlements": 4,
+
+        "population": 6090
+      }
+    ]
+  },
+  {
+    "name": "Сахалинская область, Курилы",
+    "settlements": [
+      {
+        "lable": "200",
+        "settlements": 5,
+        "population": 308
+      },
+      {
+        "lable": "500",
+        "settlements": 2,
+        "population": 906
+      },
+      {
+        "lable": "1000",
+        "settlements": 2,
+        "population": 1576
+      },
+      {
+        "lable": "more1000",
+        "settlements": 1,
+        "population": 17747
+      }
+    ]
+  },
+  {
+    "name": "Сахалинская область, о. Сахалин",
+    "settlements": [
+      {
+        "lable": "200",
+        "settlements": 6,
+        "population": 409
+      },
+      {
+        "lable": "500",
+        "settlements": 1,
+        "population": 429
+      },
+      {
+        "lable": "1000",
+        "settlements": 2,
+        "population": 1126
+      },
+      {
+        "lable": "more1000",
+        "settlements": 0,
+        "population": 0
+      }
+    ]
+  },
+  {
+    "name": "Амурская область",
+    "settlements": [
+      {
+        "lable": "200",
+        "settlements": 4,
+        "population": 256
+      },
+      {
+        "lable": "500",
+        "settlements": 1,
+        "population": 316
+      },
+      {
+        "lable": "1000",
+        "settlements": 0,
+        "population": 0
+      },
+      {
+        "lable": "more1000",
+        "settlements": 0,
+        "population": 0
+      }
+    ]
+  }
+]
