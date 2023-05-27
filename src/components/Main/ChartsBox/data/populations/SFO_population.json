@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Республика Алтай",
+    "settlements": [
+      {
+        "lable":"200",
+        "numbers": 4,
+        "population": 253
+      },
+      {
+        "lable":"500",
+        "numbers": 3,
+        "population": 643
+      },
+      {
+        "lable":"1000",
+        "numbers": 2,
+        "population": 1302
+      },
+      {
+        "lable":"more1000",
+        "numbers": 1,
+        "population": 1363
+      }
+    ]
+  },
+  {
+    "name": "Республика Тыва",
+    "settlements": [
+      {
+        "lable":"200",
+        "numbers": 7,
+        "population": 662
+      },
+      {
+        "lable":"500",
+        "numbers": 3,
+        "population": 759
+      },
+      {
+        "lable":"1000",
+        "numbers": 0,
+        "population": 0
+      },
+      {
+        "lable":"more1000",
+        "numbers": 10866,
+        "population": 4
+      }
+    ]
+  },
+  {
+    "name": "Красноярский край, арктические районы",
+    "settlements": [
+      {
+        "lable":"200",
+        "numbers": 23,
+        "population": 2023
+      },
+      {
+        "lable":"500",
+        "numbers": 14,
+        "population": 4194
+      },
+      {
+        "lable":"1000",
+        "numbers": 4,
+        "population": 2296
+      },
+      {
+        "lable":"more1000",
+        "numbers": 4,
+        "population": 9640
+      }
+    ]
+  },
+  {
+    "name": "Красноярский край, южные районы",
+    "settlements": [
+      {
+        "lable":"200",
+        "numbers": 33,
+        "population": 2855
+      },
+      {
+        "lable":"500",
+        "numbers": 13,
+        "population": 3982
+      },
+      {
+        "lable":"1000",
+        "numbers": 3,
+        "population": 1833
+      },
+      {
+        "lable":"more1000",
+        "numbers": 4,
+        "population": 11043
+      }
+    ]
+  },
+  {
+    "name": "Иркутская область",
+    "settlements": [
+      {
+        "lable":"200",
+        "numbers": 48,
+        "population": 2421
+      },
+      {
+        "lable":"500",
+        "numbers": 11,
+        "population": 3629
+      },
+      {
+        "lable":"1000",
+        "numbers": 3,
+        "population": 1655
+      },
+      {
+        "lable":"more1000",
+        "numbers": 1,
+        "population": 1856
+      }
+    ]
+  },
+  {
+    "name": "Кемеровская область",
+    "settlements": [
+      {
+        "lable":"200",
+        "numbers": 41,
+        "population": 913
+      },
+      {
+        "lable":"500",
+        "numbers": 1,
+        "population": 274
+      },
+      {
+        "lable":"1000",
+        "numbers": 0,
+        "population": 0
+      },
+      {
+        "lable":"more1000",
+        "numbers": 0,
+        "population": 0
+      }
+    ]
+  },
+  {
+    "name": "Томская область",
+    "settlements": [
+      {
+        "lable":"200",
+        "numbers": 14,
+        "population": 1252
+      },
+      {
+        "lable":"500",
+        "numbers": 9,
+        "population": 2468
+      },
+      {
+        "lable":"1000",
+        "numbers": 2,
+        "population": 1385
+      },
+      {
+        "lable":"more1000",
+        "numbers": 3,
+        "population": 4583
+      }
+    ]
+  }
+]
