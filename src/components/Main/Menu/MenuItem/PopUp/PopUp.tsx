@@ -7,8 +7,6 @@ interface IProps {
 }
 
 const PopUp = ({ isVisible, insideItems }: IProps) => {
-  console.log(isVisible);
-
   return (
     <div className={classnames('pop-up', { visible: isVisible })}>
       <ul className="inner-list">
