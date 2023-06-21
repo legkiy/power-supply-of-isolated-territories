@@ -1,7 +1,7 @@
 .main {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
-  flex: 1 1;
+  flex: 1 1 0;
   flex-basis: 0px;
   height: 100%;
 
@@ -10,8 +10,20 @@
     height: 100%;
     min-height: 100%;
 
+    .ring-decoding {
+      width: 15%;
+    }
     .left-side {
+      display: flex;
+      flex-wrap: wrap;
+      height: min-content;
       width: 60%;
+      justify-content: center;
+
+      .chart-wrapper {
+        display: flex;
+        height: min-content;
+      }
     }
 
     .right-side {

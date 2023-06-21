@@ -10,16 +10,25 @@ import {
   ChartOptions,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import SFO from './data/SFO_population.json';
-import DFO from './data/DFO_settlements.json';
+import { IPopulations } from './data/interfaces';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const ChartBox = () => {
+interface IProps {
+  chartDataSet: IPopulations[];
+}
+
+const ChartBox = ({ chartDataSet }: IProps) => {
   ChartJS.defaults.font.size = 11;
   ChartJS.defaults.color = 'black';
 
-  const options: ChartOptions<'bar'> = {
+  const options = {
+    datasets: {
+      bar: {
+        barThickness: 10,
+        barPercentage: 0.3,
+      },
+    },
     indexAxis: 'y' as const,
     responsive: true,
     plugins: {
@@ -44,10 +53,10 @@ const ChartBox = () => {
       },
     },
   };
-  const labels = SFO.map((el) => el.name);
+  const labels = chartDataSet.map((el) => el.name);
 
-  const population = SFO.map((el) => el.settlements.map((item) => item.population));
-  const settlement = SFO.map((el) => el.settlements.map((item) => item.settlements));
+  const population = chartDataSet.map((el) => el.settlements.map((item) => item.population));
+  const settlement = chartDataSet.map((el) => el.settlements.map((item) => item.settlements));
 
   const settlement200 = settlement.map((el) => el[0]);
   const settlement500 = settlement.map((el) => el[1]);
@@ -111,7 +120,11 @@ const ChartBox = () => {
     ],
   };
 
-  return <Bar options={options} data={data} />;
+  return (
+    <div className="chart-wrapper">
+      <Bar options={options as ChartOptions<'bar'>} data={data} />
+    </div>
+  );
 };
 
 export default ChartBox;
