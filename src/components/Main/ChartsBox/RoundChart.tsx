@@ -41,10 +41,12 @@ const RoundChart = ({ chartDataSet }: IProps) => {
       {
         label: 'население',
         data: chartDataSet.settlements.map((el) => el.population),
+        backgroundColor: ['#365C74', '#5B3A7A', '#83A848', '#B5884E'],
       },
       {
         label: 'нас. пунктов',
         data: chartDataSet.settlements.map((el) => el.settlements),
+        backgroundColor: ['#365C74', '#5B3A7A', '#83A848', '#B5884E'],
       },
     ],
   };

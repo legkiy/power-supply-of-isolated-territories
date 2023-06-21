@@ -3,7 +3,10 @@ import classnames from 'classnames';
 
 interface IProps {
   isVisible: boolean;
-  insideItems: string[];
+  insideItems: {
+    text: string;
+    onClick?: (() => void) | undefined;
+  }[];
 }
 
 const PopUp = ({ isVisible, insideItems }: IProps) => {
@@ -11,7 +14,7 @@ const PopUp = ({ isVisible, insideItems }: IProps) => {
     <div className={classnames('pop-up', { visible: isVisible })}>
       <ul className="inner-list">
         {insideItems.map((item, index) => (
-          <li>{item}</li>
+          <li onClick={item.onClick}>{item.text}</li>
         ))}
       </ul>
     </div>

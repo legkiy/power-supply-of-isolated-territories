@@ -14,15 +14,14 @@
       width: 15%;
     }
     .left-side {
-      display: flex;
-      flex-wrap: wrap;
       height: min-content;
       width: 60%;
-      justify-content: center;
 
       .chart-wrapper {
         display: flex;
+        flex-wrap: wrap;
         height: min-content;
+        justify-content: center;
       }
     }
 

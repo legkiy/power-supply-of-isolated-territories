@@ -2,9 +2,34 @@ import './menu.scss';
 import 'tippy.js/dist/tippy.css';
 import MenuItem from './MenuItem/MenuItem';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setChartData } from '../../../store/chartData/chartDataSlice';
+
+interface menuItem {
+  text: string;
+  insideItems: {
+    text: string;
+    onClick?: () => void;
+  }[];
+}
 
 const Menu = () => {
-  const menuItem = ['test_1', 'test_2', 'test_3', 'test_4'];
+  const dispatch = useDispatch();
+  const menuItem: menuItem[] = [
+    {
+      text: 'Выбрать регион',
+      insideItems: [
+        {
+          text: 'СФО',
+          onClick: () => dispatch(setChartData('SFO')),
+        },
+        {
+          text: 'ДФО',
+          onClick: () => dispatch(setChartData('DFO')),
+        },
+      ],
+    },
+  ];
   const [isSticky, setIsSticky] = useState(false);
   // useEffect(() => {
   //   function handleScroll() {
@@ -33,7 +58,11 @@ const Menu = () => {
       <ul className="menu-list">
         <li className="menu-item">Меню</li>
         {menuItem.map((item, index) => (
-          <MenuItem key={index} text={item} insideItems={['1', '2']} />
+          <MenuItem
+            key={index}
+            text={item.text}
+            insideItems={item.insideItems}
+          />
         ))}
       </ul>
     </aside>
