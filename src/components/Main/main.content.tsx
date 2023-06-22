@@ -1,4 +1,3 @@
-import ChartBox from './ChartsBox/ChartBox';
 import Menu from './Menu/Menu';
 import YaMap from './YaMap/YaMap';
 import { IPopulations } from './ChartsBox/data/interfaces';
@@ -9,6 +8,14 @@ import { IRootState } from '../../store';
 const MainContent = () => {
   const { chartData } = useSelector((state: IRootState) => state.chartData);
 
+  const chartsLegends = [
+    { text: 'с населением до 200 чел.', backgroundColor: '#365C74' },
+    { text: 'с населением до 500 чел.', backgroundColor: '#5B3A7A' },
+    { text: 'с населением до 1000 чел.', backgroundColor: '#83A848' },
+    { text: 'с населением более 1000 чел.', backgroundColor: '#B5884E' },
+  ];
+  console.log(chartsLegends.map((el) => el.backgroundColor));
+
   return (
     <main className="main">
       <div className="main-content">
@@ -16,15 +23,24 @@ const MainContent = () => {
         <div className="left-side">
           <p>Внешнее кольцо - кол-во населения</p>
           <p>Внутреннее кольцо - кол-во нас. пунктов</p>
-          <div className="chart-wrapper">
-            {/* <DoughnutChart chartDataSet={SFO as IPopulations[]} />
-          <DoughnutChart chartDataSet={DFO as IPopulations[]} /> */}
-            {(chartData as IPopulations[]).map((el) => (
-              <RoundChart chartDataSet={el} />
+          <div className="charts-legends">
+            {chartsLegends.map((el) => (
+              <>
+                <p>
+                  <span
+                    className="legend-color"
+                    style={{ backgroundColor: el.backgroundColor }}
+                  ></span>
+                  {el.text}
+                </p>
+              </>
             ))}
           </div>
-          {/* <ChartBox chartDataSet={SFO as IPopulations[]} />
-          <ChartBox chartDataSet={DFO as IPopulations[]} /> */}
+          <div className="chart-wrapper">
+            {(chartData as IPopulations[]).map((el) => (
+              <RoundChart chartDataSet={el} colors={chartsLegends.map((el) => el.backgroundColor)}/>
+            ))}
+          </div>
         </div>
         <div className="right-side">
           <YaMap />

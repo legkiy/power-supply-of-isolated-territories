@@ -17,6 +17,21 @@
       height: min-content;
       width: 60%;
 
+      .charts-legends {
+        display: flex;
+        margin: auto;
+
+        .legend-color {
+          display: inline-block;
+          height: 15px;
+          width: 15px;
+          border-radius: 5px;
+          vertical-align: middle;
+          margin-right: 5px;
+          padding-bottom: 2px;
+        }
+      }
+
       .chart-wrapper {
         display: flex;
         flex-wrap: wrap;

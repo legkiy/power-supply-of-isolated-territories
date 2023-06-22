@@ -15,9 +15,10 @@ ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
 interface IProps {
   chartDataSet: IPopulations;
+  colors: string[];
 }
 
-const RoundChart = ({ chartDataSet }: IProps) => {
+const RoundChart = ({ chartDataSet, colors }: IProps) => {
   ChartJS.defaults.font.size = 11;
   ChartJS.defaults.color = 'black';
 
@@ -41,12 +42,12 @@ const RoundChart = ({ chartDataSet }: IProps) => {
       {
         label: 'население',
         data: chartDataSet.settlements.map((el) => el.population),
-        backgroundColor: ['#365C74', '#5B3A7A', '#83A848', '#B5884E'],
+        backgroundColor: colors,
       },
       {
         label: 'нас. пунктов',
         data: chartDataSet.settlements.map((el) => el.settlements),
-        backgroundColor: ['#365C74', '#5B3A7A', '#83A848', '#B5884E'],
+        backgroundColor: colors,
       },
     ],
   };
