@@ -5,11 +5,11 @@ import {
   Tooltip,
   Title,
   Legend,
-  ChartData,
   ChartOptions,
 } from 'chart.js';
 import { IPopulations } from './data/interfaces';
 import './charts.scss';
+import { ChartData } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
@@ -23,6 +23,14 @@ const RoundChart = ({ chartDataSet, colors }: IProps) => {
   ChartJS.defaults.color = 'black';
 
   const options: ChartOptions<'doughnut'> = {
+    datasets: {
+      doughnut: {
+        borderWidth: 3,
+        borderRadius: 3,
+        backgroundColor: colors,
+      },
+    },
+    cutout: 15,
     plugins: {
       legend: {
         display: true,
@@ -42,12 +50,10 @@ const RoundChart = ({ chartDataSet, colors }: IProps) => {
       {
         label: 'население',
         data: chartDataSet.settlements.map((el) => el.population),
-        backgroundColor: colors,
       },
       {
         label: 'нас. пунктов',
         data: chartDataSet.settlements.map((el) => el.settlements),
-        backgroundColor: colors,
       },
     ],
   };

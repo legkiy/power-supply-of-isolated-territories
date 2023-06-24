@@ -9,10 +9,10 @@ const MainContent = () => {
   const { chartData } = useSelector((state: IRootState) => state.chartData);
 
   const chartsLegends = [
-    { text: 'с населением до 200 чел.', backgroundColor: '#365C74' },
-    { text: 'с населением до 500 чел.', backgroundColor: '#5B3A7A' },
-    { text: 'с населением до 1000 чел.', backgroundColor: '#83A848' },
-    { text: 'с населением более 1000 чел.', backgroundColor: '#B5884E' },
+    { text: 'до 200 чел.', backgroundColor: '#365C74' },
+    { text: '200 - 500 чел.', backgroundColor: '#5B3A7A' },
+    { text: '500 - 1000 чел.', backgroundColor: '#83A848' },
+    { text: 'более 1000 чел.', backgroundColor: '#B5884E' },
   ];
   console.log(chartsLegends.map((el) => el.backgroundColor));
 
@@ -38,7 +38,10 @@ const MainContent = () => {
           </div>
           <div className="chart-wrapper">
             {(chartData as IPopulations[]).map((el) => (
-              <RoundChart chartDataSet={el} colors={chartsLegends.map((el) => el.backgroundColor)}/>
+              <RoundChart
+                chartDataSet={el}
+                colors={chartsLegends.map((el) => el.backgroundColor)}
+              />
             ))}
           </div>
         </div>

@@ -20,10 +20,12 @@
       .charts-legends {
         display: flex;
         margin: auto;
+        justify-content: center;
+        gap: 10px;
 
         .legend-color {
           display: inline-block;
-          height: 15px;
+          height: 14px;
           width: 15px;
           border-radius: 5px;
           vertical-align: middle;
