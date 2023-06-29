@@ -26,21 +26,24 @@ const RoundChart = ({ chartDataSet, colors }: IProps) => {
   const options: ChartOptions<'doughnut'> = {
     datasets: {
       doughnut: {
-        borderWidth: 6,
-        borderRadius: 3,
+        borderWidth: 2,
+        borderRadius: 4,
         backgroundColor: colors,
+        borderAlign: 'inner',
       },
     },
     plugins: {
       legend: {
-        display: true,
+        display: false,
       },
+
       tooltip: {
         position: 'average',
       },
       title: {
         display: true,
         text: chartDataSet.name,
+        padding: { top: 10 },
       },
     },
   };
@@ -73,12 +76,18 @@ const RoundChart = ({ chartDataSet, colors }: IProps) => {
         .reduce((prev, next) => prev + next),
     [chartDataSet]
   );
-  
+
   return (
     <div className="chart-box">
       <Doughnut data={data} options={options} />
-      <span className="count-of-settel">{countOfSettlements}</span>
-      <span className="count-of-popul">{countOfPopulation}</span>
+      <span className="count-of-settel">
+        {countOfSettlements}
+        <br />
+        нас.
+        <br />
+        пунктов
+      </span>
+      <span className="count-of-popul">{countOfPopulation} чел.</span>
     </div>
   );
 };

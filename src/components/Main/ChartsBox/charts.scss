@@ -9,11 +9,15 @@
   margin: 5px;
   position: relative;
 
+  span {
+    font-size: small;
+  }
+
   .count-of-settel {
     position: absolute;
-    top: 49%;
-    left: 40%;
-    width: 2em;
+    top: 34%;
+    left: 34%;
+    width: 4em;
     text-align: center;
   }
 }
