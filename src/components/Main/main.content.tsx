@@ -21,7 +21,7 @@ const MainContent = () => {
       <div className="main-content">
         <Menu />
         <div className="left-side">
-          <p>Внешнее кольцо - кол-во населения</p>
+          <p>Внешнее кольцо - численность населения</p>
           <p>Внутреннее кольцо - кол-во нас. пунктов</p>
           <div className="charts-legends">
             {chartsLegends.map((el) => (

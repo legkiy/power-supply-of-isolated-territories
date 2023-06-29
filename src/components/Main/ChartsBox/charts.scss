@@ -7,4 +7,13 @@
   padding: 5px;
   padding-top: 0;
   margin: 5px;
+  position: relative;
+
+  .count-of-settel {
+    position: absolute;
+    top: 49%;
+    left: 40%;
+    width: 2em;
+    text-align: center;
+  }
 }

@@ -10,6 +10,7 @@ import {
 import { IPopulations } from './data/interfaces';
 import './charts.scss';
 import { ChartData } from 'chart.js';
+import { useMemo } from 'react';
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
@@ -25,12 +26,11 @@ const RoundChart = ({ chartDataSet, colors }: IProps) => {
   const options: ChartOptions<'doughnut'> = {
     datasets: {
       doughnut: {
-        borderWidth: 3,
+        borderWidth: 6,
         borderRadius: 3,
         backgroundColor: colors,
       },
     },
-    cutout: 15,
     plugins: {
       legend: {
         display: true,
@@ -58,9 +58,27 @@ const RoundChart = ({ chartDataSet, colors }: IProps) => {
     ],
   };
 
+  const countOfPopulation = useMemo(
+    () =>
+      chartDataSet.settlements
+        .map((el) => el.population)
+        .reduce((prev, next) => prev + next),
+    [chartDataSet]
+  );
+
+  const countOfSettlements = useMemo(
+    () =>
+      chartDataSet.settlements
+        .map((el) => el.settlements)
+        .reduce((prev, next) => prev + next),
+    [chartDataSet]
+  );
+  
   return (
     <div className="chart-box">
       <Doughnut data={data} options={options} />
+      <span className="count-of-settel">{countOfSettlements}</span>
+      <span className="count-of-popul">{countOfPopulation}</span>
     </div>
   );
 };
