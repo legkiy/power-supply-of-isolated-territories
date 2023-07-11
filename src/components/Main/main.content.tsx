@@ -1,9 +1,9 @@
 import Menu from './Menu/Menu';
 import YaMap from './YaMap/YaMap';
 import { IPopulations } from './ChartsBox/data/interfaces';
-import RoundChart from './ChartsBox/RoundChart';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../../store';
+import ChartBox from './ChartsBox';
 
 const MainContent = () => {
   const { chartData } = useSelector((state: IRootState) => state.chartData);
@@ -14,8 +14,6 @@ const MainContent = () => {
     { text: '500 - 1000 чел.', backgroundColor: '#83A848' },
     { text: 'более 1000 чел.', backgroundColor: '#B5884E' },
   ];
-  console.log(chartsLegends.map((el) => el.backgroundColor));
-
   return (
     <main className="main">
       <div className="main-content">
@@ -37,8 +35,8 @@ const MainContent = () => {
             ))}
           </div>
           <div className="chart-wrapper">
-            {(chartData as IPopulations[]).map((el) => (
-              <RoundChart
+            {(chartData as IPopulations[]).map((el, index) => (
+              <ChartBox key={index}
                 chartDataSet={el}
                 colors={chartsLegends.map((el) => el.backgroundColor)}
               />

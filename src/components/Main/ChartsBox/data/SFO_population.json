@@ -3,24 +3,54 @@
     "name": "Республика Алтай",
     "settlements": [
       {
-        "lable": "200",
+        "label": "200",
         "settlements": 4,
         "population": 253
       },
       {
-        "lable": "500",
+        "label": "500",
         "settlements": 3,
         "population": 643
       },
       {
-        "lable": "1000",
+        "label": "1000",
         "settlements": 2,
         "population": 1302
       },
       {
-        "lable": "more1000",
+        "label": "more1000",
         "settlements": 1,
         "population": 1363
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 0
+      },
+      {
+        "label": "дрова",
+        "data": 0
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 0
+      },
+      {
+        "label": "ГКТ",
+        "data": 0
+      },
+      {
+        "label": "дизель",
+        "data": 0.8
+      },
+      {
+        "label": "бензин",
+        "data": 0
       }
     ]
   },
@@ -28,74 +58,164 @@
     "name": "Республика Тыва",
     "settlements": [
       {
-        "lable": "200",
+        "label": "200",
         "settlements": 7,
         "population": 662
       },
       {
-        "lable": "500",
+        "label": "500",
         "settlements": 3,
         "population": 759
       },
       {
-        "lable": "1000",
+        "label": "1000",
         "settlements": 0,
         "population": 0
       },
       {
-        "lable": "more1000",
+        "label": "more1000",
         "settlements": 4,
         "population": 10866
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 0
+      },
+      {
+        "label": "дрова",
+        "data": 0
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 0
+      },
+      {
+        "label": "ГКТ",
+        "data": 0
+      },
+      {
+        "label": "дизель",
+        "data": 5.9
+      },
+      {
+        "label": "бензин",
+        "data": 0
       }
     ]
   },
   {
-    "name": "Красноярский край, арктические районы",
+    "name": "Красноярский край, арктика",
     "settlements": [
       {
-        "lable": "200",
+        "label": "200",
         "settlements": 23,
         "population": 2023
       },
       {
-        "lable": "500",
+        "label": "500",
         "settlements": 14,
         "population": 4194
       },
       {
-        "lable": "1000",
+        "label": "1000",
         "settlements": 4,
         "population": 2296
       },
       {
-        "lable": "more1000",
+        "label": "more1000",
         "settlements": 4,
         "population": 9640
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 121.6
+      },
+      {
+        "label": "дрова",
+        "data": 1.2
+      },
+      {
+        "label": "газ",
+        "data": 37.7
+      },
+      {
+        "label": "нефть",
+        "data": 21.1
+      },
+      {
+        "label": "ГКТ",
+        "data": 0
+      },
+      {
+        "label": "дизель",
+        "data": 26.7
+      },
+      {
+        "label": "бензин",
+        "data": 0
       }
     ]
   },
   {
-    "name": "Красноярский край, южные районы",
+    "name": "Красноярский край, юг",
     "settlements": [
       {
-        "lable": "200",
+        "label": "200",
         "settlements": 33,
         "population": 2855
       },
       {
-        "lable": "500",
+        "label": "500",
         "settlements": 13,
         "population": 3982
       },
       {
-        "lable": "1000",
+        "label": "1000",
         "settlements": 3,
         "population": 1833
       },
       {
-        "lable": "more1000",
+        "label": "more1000",
         "settlements": 4,
         "population": 11043
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 10.8
+      },
+      {
+        "label": "дрова",
+        "data": 1.0
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 65.4
+      },
+      {
+        "label": "ГКТ",
+        "data": 0
+      },
+      {
+        "label": "дизель",
+        "data": 19.4
+      },
+      {
+        "label": "бензин",
+        "data": 0
       }
     ]
   },
@@ -103,24 +223,54 @@
     "name": "Иркутская область",
     "settlements": [
       {
-        "lable": "200",
+        "label": "200",
         "settlements": 47,
         "population": 2421
       },
       {
-        "lable": "500",
+        "label": "500",
         "settlements": 11,
         "population": 3629
       },
       {
-        "lable": "1000",
+        "label": "1000",
         "settlements": 3,
         "population": 1655
       },
       {
-        "lable": "more1000",
+        "label": "more1000",
         "settlements": 1,
         "population": 1856
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 0
+      },
+      {
+        "label": "дрова",
+        "data": 1.5
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 1.5
+      },
+      {
+        "label": "ГКТ",
+        "data": 0
+      },
+      {
+        "label": "дизель",
+        "data": 12.4
+      },
+      {
+        "label": "бензин",
+        "data": 0
       }
     ]
   },
@@ -128,24 +278,54 @@
     "name": "Кемеровская область",
     "settlements": [
       {
-        "lable": "200",
+        "label": "200",
         "settlements": 41,
         "population": 913
       },
       {
-        "lable": "500",
+        "label": "500",
         "settlements": 1,
         "population": 274
       },
       {
-        "lable": "1000",
+        "label": "1000",
         "settlements": 0,
         "population": 0
       },
       {
-        "lable": "more1000",
+        "label": "more1000",
         "settlements": 0,
         "population": 0
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 0
+      },
+      {
+        "label": "дрова",
+        "data": 0
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 0
+      },
+      {
+        "label": "ГКТ",
+        "data": 0
+      },
+      {
+        "label": "дизель",
+        "data": 0.4
+      },
+      {
+        "label": "бензин",
+        "data": 0.03
       }
     ]
   },
@@ -153,24 +333,54 @@
     "name": "Томская область",
     "settlements": [
       {
-        "lable": "200",
+        "label": "200",
         "settlements": 14,
         "population": 1252
       },
       {
-        "lable": "500",
+        "label": "500",
         "settlements": 9,
         "population": 2468
       },
       {
-        "lable": "1000",
+        "label": "1000",
         "settlements": 2,
         "population": 1385
       },
       {
-        "lable": "more1000",
+        "label": "more1000",
         "settlements": 3,
         "population": 4583
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 0
+      },
+      {
+        "label": "дрова",
+        "data": 0
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 0
+      },
+      {
+        "label": "ГКТ",
+        "data": 0
+      },
+      {
+        "label": "дизель",
+        "data": 5.9
+      },
+      {
+        "label": "бензин",
+        "data": 0
       }
     ]
   }

@@ -78,7 +78,8 @@ const RoundChart = ({ chartDataSet, colors }: IProps) => {
   );
 
   return (
-    <div className="chart-box">
+    // <div className="chart-box">
+    <div className="round-chart">
       <Doughnut data={data} options={options} />
       <span className="count-of-settel">
         {countOfSettlements}
@@ -88,7 +89,8 @@ const RoundChart = ({ chartDataSet, colors }: IProps) => {
         пунктов
       </span>
       <span className="count-of-popul">{countOfPopulation} чел.</span>
-    </div>
+      </div>
+    // {/* </div> */}
   );
 };
 
