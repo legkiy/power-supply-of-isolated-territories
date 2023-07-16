@@ -18,33 +18,45 @@ const MainContent = () => {
     <main className="main">
       <div className="main-content">
         <Menu />
-        <div className="left-side">
-          <p>Внешнее кольцо - численность населения</p>
-          <p>Внутреннее кольцо - кол-во нас. пунктов</p>
-          <div className="charts-legends">
-            {chartsLegends.map((el) => (
-              <>
-                <p>
-                  <span
-                    className="legend-color"
-                    style={{ backgroundColor: el.backgroundColor }}
-                  ></span>
-                  {el.text}
-                </p>
-              </>
-            ))}
+        <div>
+          <div className="title-wrapper">
+            <h1 className="title">
+              Мониторинг выбросов диоксида углерода от энергетических объектов
+              на изолированных труднодоступных территориях в восточных регионах
+              РФ{' '}
+            </h1>
           </div>
-          <div className="chart-wrapper">
-            {(chartData as IPopulations[]).map((el, index) => (
-              <ChartBox key={index}
-                chartDataSet={el}
-                colors={chartsLegends.map((el) => el.backgroundColor)}
-              />
-            ))}
+          <div className="main-wrapper">
+            <div className="left-side">
+              <p>Внешнее кольцо - численность населения</p>
+              <p>Внутреннее кольцо - кол-во нас. пунктов</p>
+              <div className="charts-legends">
+                {chartsLegends.map((el) => (
+                  <>
+                    <p>
+                      <span
+                        className="legend-color"
+                        style={{ backgroundColor: el.backgroundColor }}
+                      ></span>
+                      {el.text}
+                    </p>
+                  </>
+                ))}
+              </div>
+              <div className="chart-wrapper">
+                {(chartData as IPopulations[]).map((el, index) => (
+                  <ChartBox
+                    key={index}
+                    chartDataSet={el}
+                    colors={chartsLegends.map((el) => el.backgroundColor)}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="right-side">
+              <YaMap />
+            </div>
           </div>
-        </div>
-        <div className="right-side">
-          <YaMap />
         </div>
       </div>
     </main>

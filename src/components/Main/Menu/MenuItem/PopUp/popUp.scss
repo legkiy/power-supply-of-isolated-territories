@@ -1,6 +1,6 @@
 .pop-up {
   position: absolute;
-  top: 0;
+  top: -1px;
   left: 100%;
   display: flex;
   width: 0;
@@ -10,6 +10,8 @@
   transition: width 0.5s, padding 0.5s;
   padding: 0 0;
   height: 100%;
+  border: 1px solid #304654;
+  border-left: none;
 
   &.visible {
     padding: 0 10px;

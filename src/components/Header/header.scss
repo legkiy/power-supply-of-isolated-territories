@@ -2,21 +2,21 @@
 
 .header {
   padding: 4px 0;
-  background-color: variables.$contrastColor;
+  background-color: #365c74;
   display: flex;
   color: variables.$contrastTextColor;
 
   .back-botttom {
     display: flex;
     align-items: center;
-    margin: 20px;
+    margin: 14px;
     text-align: center;
     vertical-align: middle;
     align-self: center;
   }
 
   &-img {
-    width: 80px;
+    width: 60px;
     align-self: center;
     display: block;
   }
@@ -31,6 +31,6 @@
     margin: auto;
     text-align: left;
     font-weight: 400;
-    font-size: large;
+    font-size: medium;
   }
 }

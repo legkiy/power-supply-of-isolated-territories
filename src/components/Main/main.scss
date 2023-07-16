@@ -10,6 +10,28 @@
     height: 100%;
     min-height: 100%;
 
+    .title-wrapper {
+      background-color: #365c74;
+      color: white;
+      margin-bottom: 10px;
+      .title {
+        font-size: large;
+        padding: 5px 0;
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        align-self: center;
+      }
+    }
+
+    .main-wrapper {
+      display: flex;
+
+      .right-side {
+        width: 40%;
+        height: 500px;
+      }
+    }
     .ring-decoding {
       width: 15%;
     }
@@ -37,14 +59,9 @@
       .chart-wrapper {
         display: flex;
         flex-wrap: wrap;
-//         height: min-content;
+        //         height: min-content;
         justify-content: center;
       }
-    }
-
-    .right-side {
-      width: 40%;
-      height: 50%;
     }
   }
 }
