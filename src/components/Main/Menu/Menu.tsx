@@ -1,7 +1,7 @@
 import './menu.scss';
 import 'tippy.js/dist/tippy.css';
 import MenuItem from './MenuItem/MenuItem';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setChartData } from '../../../store/chartData/chartDataSlice';
 
@@ -69,4 +69,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default memo(Menu);

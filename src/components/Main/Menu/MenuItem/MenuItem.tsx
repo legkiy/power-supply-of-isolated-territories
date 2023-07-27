@@ -1,6 +1,6 @@
 import PopUp from './PopUp/PopUp';
 import './menuItem.scss';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 interface IProps {
   text: string;
   insideItems: any[];
@@ -18,11 +18,15 @@ const MenuItem = ({ text, insideItems }: IProps) => {
   };
 
   return (
-    <li className="menu-item" onMouseOver={() => handleMouseOver()} onMouseOut={handleMouseOut}>
+    <li
+      className="menu-item"
+      onMouseOver={() => handleMouseOver()}
+      onMouseOut={handleMouseOut}
+    >
       {text}
-      <PopUp isVisible={isVisible} insideItems={insideItems} />
+      <PopUp isVisible={isVisible} insideItems={insideItems} width="150px" />
     </li>
   );
 };
 
-export default MenuItem;
+export default memo(MenuItem);

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import './footer.scss';
 
 const Footer = () => {
@@ -20,4 +21,4 @@ const Footer = () => {
     </div>
   );
 };
-export default Footer;
+export default memo(Footer);
