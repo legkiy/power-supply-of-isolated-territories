@@ -1,6 +1,5 @@
 .chart-box {
-  width: 19%;
-  min-width: 150px;
+  width: 16%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.178);
   background-color: white;
   border-radius: 5px;
@@ -8,8 +7,28 @@
   padding-top: 0;
   margin: 5px;
 
+  .region-title {
+    display: flex;
+    min-height: 3em;
+    align-items: center;
+    width: auto;
+    justify-content: center;
+
+    p {
+      font-size: 14px;
+    }
+  }
+
   .bar-chart {
     height: 160px;
+    position: relative;
+
+    .bar-sizing {
+      position: absolute;
+      bottom: 14px;
+      left: 54%;
+      font-size: 12px;
+    }
   }
   .round-chart {
     position: relative;
@@ -20,8 +39,8 @@
 
     .count-of-settel {
       position: absolute;
-      top: 34%;
-      left: 34%;
+      top: 37%;
+      left: 29%;
       width: 4em;
       text-align: center;
     }

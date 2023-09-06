@@ -1,16 +1,19 @@
 import './menu.scss';
 import 'tippy.js/dist/tippy.css';
 import MenuItem from './MenuItem/MenuItem';
-import { memo, useEffect, useState } from 'react';
+import { CSSProperties, ReactNode, memo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setChartData } from '../../../store/chartData/chartDataSlice';
+import Modal from '../Modal/Modal';
 
-interface menuItem {
+export interface menuItem {
   text: string;
   insideItems: {
     text: string;
     onClick?: () => void;
+    children?: ReactNode;
   }[];
+  popupWidht?: CSSProperties['width'];
 }
 
 const Menu = () => {
@@ -28,8 +31,10 @@ const Menu = () => {
           onClick: () => dispatch(setChartData('DFO')),
         },
       ],
+      popupWidht: '134px',
     },
   ];
+  const [openModal, setOpenModal] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   // useEffect(() => {
   //   function handleScroll() {
@@ -54,7 +59,7 @@ const Menu = () => {
   // console.log(isSticky);
 
   return (
-    <aside className={`menu ${isSticky && 'sticky'}`}>
+    <aside className={`menu`}>
       <ul className="menu-list">
         <li className="menu-item">Меню</li>
         {menuItem.map((item, index) => (
@@ -62,9 +67,30 @@ const Menu = () => {
             key={index}
             text={item.text}
             insideItems={item.insideItems}
+            popupWidht={item.popupWidht}
           />
         ))}
       </ul>
+      {/* <div onClick={() => setOpenModal(true)}>
+        contact
+        {<Modal openModal={openModal} setOpenModal={setOpenModal} />}
+      </div> */}
+      <MenuItem
+        text="Контакты"
+        insideItems={[
+          {
+            text: 'Иванова И.Ю.',
+            children: (
+              <a className="mail" href="mailto:nord@isem.irk.ru">
+                nord@isem.irk.ru
+              </a>
+            ),
+          },
+          { text: 'Максаков Н.В.' },
+        ]}
+        className="contakts"
+        popupWidht={'300px'}
+      />
     </aside>
   );
 };

@@ -4,13 +4,14 @@ import { IPopulations } from './ChartsBox/data/interfaces';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../../store';
 import ChartBox from './ChartsBox';
+import { memo } from 'react';
 
 const MainContent = () => {
   const { chartData } = useSelector((state: IRootState) => state.chartData);
 
   const chartsLegends = [
     { text: 'до 200 чел.', backgroundColor: '#365C74' },
-    { text: '200 - 500 чел.', backgroundColor: '#5B3A7A' },
+    { text: '200 - 500 чел.', backgroundColor: '#a855ce' },
     { text: '500 - 1000 чел.', backgroundColor: '#83A848' },
     { text: 'более 1000 чел.', backgroundColor: '#B5884E' },
   ];
@@ -63,4 +64,4 @@ const MainContent = () => {
   );
 };
 
-export default MainContent;
+export default memo(MainContent);

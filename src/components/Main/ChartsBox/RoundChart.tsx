@@ -6,13 +6,14 @@ import {
   Title,
   Legend,
   ChartOptions,
+  PointElement,
 } from 'chart.js';
 import { IPopulations } from './data/interfaces';
 import './charts.scss';
 import { ChartData } from 'chart.js';
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 
-ChartJS.register(ArcElement, Tooltip, Legend, Title);
+ChartJS.register(ArcElement, Tooltip, Legend, Title, PointElement);
 
 interface IProps {
   chartDataSet: IPopulations;
@@ -36,12 +37,13 @@ const RoundChart = ({ chartDataSet, colors }: IProps) => {
       legend: {
         display: false,
       },
-
       tooltip: {
         position: 'average',
+        usePointStyle: true,
+        bodyColor: '#ffffff',
       },
       title: {
-        display: true,
+        display: false,
         text: chartDataSet.name,
         padding: { top: 10 },
       },
@@ -78,20 +80,14 @@ const RoundChart = ({ chartDataSet, colors }: IProps) => {
   );
 
   return (
-    // <div className="chart-box">
     <div className="round-chart">
       <Doughnut data={data} options={options} />
-      <span className="count-of-settel">
-        {countOfSettlements}
-        <br />
-        нас.
-        <br />
-        пунктов
+      <span className="count-of-settel">{countOfSettlements}</span>
+      <span className="count-of-popul">
+        {(countOfPopulation / 1000).toFixed(0)} тыс. чел.
       </span>
-      <span className="count-of-popul">{countOfPopulation} чел.</span>
-      </div>
-    // {/* </div> */}
+    </div>
   );
 };
 
-export default RoundChart;
+export default memo(RoundChart);

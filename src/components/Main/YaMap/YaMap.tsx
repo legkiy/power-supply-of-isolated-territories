@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import './yamap.scss';
 
 const YaMap = () => {
@@ -25,4 +25,4 @@ const YaMap = () => {
   );
 };
 
-export default YaMap;
+export default memo(YaMap);

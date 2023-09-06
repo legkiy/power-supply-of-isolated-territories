@@ -8,9 +8,11 @@ import {
   Title,
   Tooltip,
   Legend,
+  PointElement,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { IPopulations } from './data/interfaces';
+import { memo } from 'react';
 
 ChartJS.register(
   CategoryScale,
@@ -18,7 +20,8 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  PointElement
 );
 
 interface IProps {
@@ -26,7 +29,6 @@ interface IProps {
 }
 
 function BarChart({ dataSet }: IProps) {
-  console.log(dataSet.map((el) => el.data));
   const data: ChartData<'bar'> = {
     labels: dataSet.map((el) => el.label),
     datasets: [
@@ -38,8 +40,8 @@ function BarChart({ dataSet }: IProps) {
           '#3e791e',
           '#1e98ff',
           '#79541e',
-          '#ffd21e',
-          '#b51eff',
+          '#c74c00',
+          '#86860d',
           '#691eff',
         ],
       },
@@ -55,6 +57,7 @@ function BarChart({ dataSet }: IProps) {
         borderRadius: 2,
         borderWidth: 0,
         barPercentage: 0.8,
+        pointStyle: 'circle',
       },
     },
     plugins: {
@@ -65,9 +68,12 @@ function BarChart({ dataSet }: IProps) {
         callbacks: {
           title: () => '',
           label(context) {
-            return ':' + context.dataset.data[context.dataIndex];
+            return (
+              context.label + ': ' + context.dataset.data[context.dataIndex]
+            );
           },
         },
+        usePointStyle: true,
       },
     },
   };
@@ -75,8 +81,9 @@ function BarChart({ dataSet }: IProps) {
   return (
     <div className="bar-chart">
       <Bar data={data} options={options} />
+      <div className="bar-sizing">т.у.т</div>
     </div>
   );
 }
 
-export default BarChart;
+export default memo(BarChart);

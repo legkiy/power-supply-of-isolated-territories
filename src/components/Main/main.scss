@@ -1,5 +1,6 @@
+@import '/src/styles/mixins.scss';
+
 .main {
-  width: 95%;
   margin: 0 auto;
   flex: 1 1 0;
   flex-basis: 0px;
@@ -9,16 +10,27 @@
     display: flex;
     height: 100%;
     min-height: 100%;
+    width: 1400px;
+
+    @include display(1400px) {
+      width: 1200px;
+    }
+    @include display(1250px) {
+      width: 90%;
+      margin: auto;
+    }
 
     .title-wrapper {
       background-color: #365c74;
       color: white;
       margin-bottom: 10px;
+      display: flex;
+
       .title {
         font-size: large;
-        padding: 5px 0;
+        padding: 5px 20px;
         margin: 0 auto;
-        width: 80%;
+        width: 100%;
         text-align: center;
         align-self: center;
       }
@@ -31,36 +43,33 @@
         width: 40%;
         height: 500px;
       }
-    }
-    .ring-decoding {
-      width: 15%;
-    }
-    .left-side {
-      height: min-content;
-      width: 60%;
 
-      .charts-legends {
-        display: flex;
-        margin: auto;
-        justify-content: center;
-        gap: 10px;
+      .left-side {
+        height: min-content;
+        width: 900px;
 
-        .legend-color {
-          display: inline-block;
-          height: 14px;
-          width: 15px;
-          border-radius: 5px;
-          vertical-align: middle;
-          margin-right: 5px;
-          padding-bottom: 2px;
+        .charts-legends {
+          display: flex;
+          margin: auto;
+          justify-content: center;
+          gap: 10px;
+
+          .legend-color {
+            display: inline-block;
+            height: 14px;
+            width: 15px;
+            border-radius: 5px;
+            vertical-align: middle;
+            margin-right: 5px;
+            padding-bottom: 2px;
+          }
         }
-      }
 
-      .chart-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        //         height: min-content;
-        justify-content: center;
+        .chart-wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
       }
     }
   }

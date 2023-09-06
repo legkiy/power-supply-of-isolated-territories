@@ -1,12 +1,16 @@
+import classNames from 'classnames';
+import { menuItem } from '../Menu';
 import PopUp from './PopUp/PopUp';
 import './menuItem.scss';
-import { memo, useState } from 'react';
+import { CSSProperties, memo, useState } from 'react';
 interface IProps {
+  className?: string;
   text: string;
-  insideItems: any[];
+  insideItems: menuItem['insideItems'];
+  popupWidht?: CSSProperties['width'];
 }
 
-const MenuItem = ({ text, insideItems }: IProps) => {
+const MenuItem = ({ className, text, insideItems, popupWidht }: IProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleMouseOver = () => {
@@ -19,12 +23,20 @@ const MenuItem = ({ text, insideItems }: IProps) => {
 
   return (
     <li
-      className="menu-item"
+      className={classNames('menu-item', className)}
       onMouseOver={() => handleMouseOver()}
       onMouseOut={handleMouseOut}
     >
       {text}
-      <PopUp isVisible={isVisible} insideItems={insideItems} width="150px" />
+      {text === 'Контакты' ? (
+        ''
+      ) : (
+        <PopUp
+          isVisible={isVisible}
+          insideItems={insideItems}
+          width={popupWidht}
+        />
+      )}
     </li>
   );
 };

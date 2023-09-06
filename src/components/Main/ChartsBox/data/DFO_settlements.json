@@ -444,78 +444,23 @@
     "settlements": [
       {
         "label": "200",
-        "settlements": 5,
-        "population": 308
+        "settlements": 11,
+        "population": 717
       },
       {
         "label": "500",
-        "settlements": 2,
-        "population": 906
+        "settlements": 3,
+        "population": 1335
       },
       {
         "label": "1000",
-        "settlements": 2,
-        "population": 1576
+        "settlements": 4,
+        "population": 2702
       },
       {
         "label": "more1000",
         "settlements": 1,
         "population": 17747
-      }
-    ],
-    "fuel": [
-      {
-        "label": "уголь",
-        "data": 0
-      },
-      {
-        "label": "дрова",
-        "data": 0
-      },
-      {
-        "label": "газ",
-        "data": 0
-      },
-      {
-        "label": "нефть",
-        "data": 0
-      },
-      {
-        "label": "ГКТ",
-        "data": 0
-      },
-      {
-        "label": "дизель",
-        "data": 1
-      },
-      {
-        "label": "бензин",
-        "data": 0.04
-      }
-    ]
-  },
-  {
-    "name": "Сахалинская область, о. Сахалин",
-    "settlements": [
-      {
-        "label": "200",
-        "settlements": 6,
-        "population": 409
-      },
-      {
-        "label": "500",
-        "settlements": 1,
-        "population": 429
-      },
-      {
-        "label": "1000",
-        "settlements": 2,
-        "population": 1126
-      },
-      {
-        "label": "more1000",
-        "settlements": 0,
-        "population": 0
       }
     ],
     "fuel": [
@@ -541,11 +486,11 @@
       },
       {
         "label": "дизель",
-        "data": 2.2
+        "data": 3.2
       },
       {
         "label": "бензин",
-        "data": 0
+        "data": 0.04
       }
     ]
   },

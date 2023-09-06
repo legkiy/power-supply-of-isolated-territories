@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { CSSProperties, memo } from 'react';
 import './popUp.scss';
 import classnames from 'classnames';
 
@@ -8,18 +8,20 @@ interface IProps {
     text: string;
     onClick?: (() => void) | undefined;
   }[];
-  width?: string;
+  width?: CSSProperties['width'];
 }
 
 const PopUp = ({ isVisible, insideItems, width }: IProps) => {
   return (
     <div
-      className={classnames('pop-up', { visible: isVisible })}
+      className={classnames('pop-up')}
       style={{ width: isVisible ? width : 0 }}
     >
       <ul className="inner-list">
         {insideItems.map((item, index) => (
-          <li onClick={item.onClick}>{item.text}</li>
+          <>
+            <li onClick={item.onClick}>{item.text}</li>
+          </>
         ))}
       </ul>
     </div>

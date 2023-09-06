@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { IPopulations } from '../../components/Main/ChartsBox/data/interfaces';
-import SFOData from '../../components/Main/ChartsBox/data/SFO_population.json';
-import DFOData from '../../components/Main/ChartsBox/data/DFO_settlements.json';
+import { DFOData, SFOData } from '../../components/Main/ChartsBox/data/data';
+// import DFOData from '../../components/Main/ChartsBox/data/DFO_settlements.json';
 
 export interface IChartDataState {
   chartData: IPopulations[];
