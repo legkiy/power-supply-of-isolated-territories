@@ -1,5 +1,53 @@
 import { IPopulations } from './interfaces';
 
+export const templateData: IPopulations = {
+  name: 'Легенда',
+  settlements: [
+    {
+      label: '200',
+      settlements: 17,
+      population: 1796,
+    },
+    {
+      label: '500',
+      settlements: 35,
+      population: 12210,
+    },
+    {
+      label: '1000',
+      settlements: 15,
+      population: 9827,
+    },
+    {
+      label: 'more1000',
+      settlements: 17,
+      population: 40653,
+    },
+  ],
+  fuel: [
+    {
+      label: 'уголь',
+      data: 124.1,
+    },
+    {
+      label: 'дрова',
+      data: 0,
+    },
+    {
+      label: 'газ',
+      data: 0,
+    },
+    {
+      label: 'нефть',
+      data: 90.6,
+    },
+    {
+      label: 'нефтепр.',
+      data: 85.6,
+    },
+  ],
+};
+
 export const DFOData: IPopulations[] = [
   {
     name: 'Республика Саха (Якутия), арктика',
@@ -39,16 +87,12 @@ export const DFOData: IPopulations[] = [
         data: 0,
       },
       {
+        label: 'нефть',
+        data: 90.6,
+      },
+      {
         label: 'нефтепр.',
-        data: 158.1,
-      },
-      {
-        label: 'ГКТ',
-        data: 18.1,
-      },
-      {
-        label: 'бензин',
-        data: 0,
+        data: 85.6,
       },
     ],
   },
@@ -90,16 +134,12 @@ export const DFOData: IPopulations[] = [
         data: 2.6,
       },
       {
+        label: 'нефть',
+        data: 4.3,
+      },
+      {
         label: 'нефтепр.',
-        data: 22.8,
-      },
-      {
-        label: 'ГКТ',
-        data: 2.8,
-      },
-      {
-        label: 'бензин',
-        data: 0,
+        data: 19.3,
       },
     ],
   },
@@ -141,16 +181,12 @@ export const DFOData: IPopulations[] = [
         data: 0,
       },
       {
+        label: 'нефть',
+        data: 0,
+      },
+      {
         label: 'нефтепр.',
         data: 1.8,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
       },
     ],
   },
@@ -192,16 +228,12 @@ export const DFOData: IPopulations[] = [
         data: 2.3,
       },
       {
+        label: 'нефть',
+        data: 0,
+      },
+      {
         label: 'нефтепр.',
         data: 25.9,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
       },
     ],
   },
@@ -243,16 +275,12 @@ export const DFOData: IPopulations[] = [
         data: 0,
       },
       {
+        label: 'нефть',
+        data: 0,
+      },
+      {
         label: 'нефтепр.',
         data: 7.8,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
       },
     ],
   },
@@ -294,16 +322,12 @@ export const DFOData: IPopulations[] = [
         data: 7.8,
       },
       {
+        label: 'нефть',
+        data: 0,
+      },
+      {
         label: 'нефтепр.',
         data: 82.6,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
       },
     ],
   },
@@ -345,16 +369,12 @@ export const DFOData: IPopulations[] = [
         data: 0,
       },
       {
+        label: 'нефть',
+        data: 0,
+      },
+      {
         label: 'нефтепр.',
         data: 5.3,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
       },
     ],
   },
@@ -396,21 +416,17 @@ export const DFOData: IPopulations[] = [
         data: 0,
       },
       {
+        label: 'нефть',
+        data: 0,
+      },
+      {
         label: 'нефтепр.',
         data: 33.9,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
       },
     ],
   },
   {
-    name: 'Сахалинская область, Курильские острова',
+    name: 'Сахалинская область',
     settlements: [
       {
         label: '200',
@@ -447,16 +463,12 @@ export const DFOData: IPopulations[] = [
         data: 0.9,
       },
       {
-        label: 'нефтепр.',
-        data: 3.2,
-      },
-      {
-        label: 'ГКТ',
+        label: 'нефть',
         data: 0,
       },
       {
-        label: 'бензин',
-        data: 0.04,
+        label: 'нефтепр.',
+        data: 3.24,
       },
     ],
   },
@@ -498,16 +510,12 @@ export const DFOData: IPopulations[] = [
         data: 0,
       },
       {
+        label: 'нефть',
+        data: 0,
+      },
+      {
         label: 'нефтепр.',
         data: 44.1,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
       },
     ],
   },
@@ -552,16 +560,12 @@ export const SFOData: IPopulations[] = [
         data: 0,
       },
       {
+        label: 'нефть',
+        data: 0,
+      },
+      {
         label: 'нефтепр.',
         data: 0.8,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
       },
     ],
   },
@@ -603,16 +607,12 @@ export const SFOData: IPopulations[] = [
         data: 0,
       },
       {
+        label: 'нефть',
+        data: 0,
+      },
+      {
         label: 'нефтепр.',
         data: 5.9,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
       },
     ],
   },
@@ -654,16 +654,12 @@ export const SFOData: IPopulations[] = [
         data: 37.7,
       },
       {
+        label: 'нефть',
+        data: 21.1,
+      },
+      {
         label: 'нефтепр.',
-        data: 47.8,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
+        data: 26.7,
       },
     ],
   },
@@ -705,16 +701,12 @@ export const SFOData: IPopulations[] = [
         data: 0,
       },
       {
+        label: 'нефть',
+        data: 65.4,
+      },
+      {
         label: 'нефтепр.',
-        data: 84.8,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
+        data: 19.4,
       },
     ],
   },
@@ -756,16 +748,12 @@ export const SFOData: IPopulations[] = [
         data: 0,
       },
       {
+        label: 'нефть',
+        data: 1.5,
+      },
+      {
         label: 'нефтепр.',
-        data: 13.9,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
+        data: 12.4,
       },
     ],
   },
@@ -807,16 +795,12 @@ export const SFOData: IPopulations[] = [
         data: 0,
       },
       {
-        label: 'нефтепр.',
-        data: 0.4,
-      },
-      {
-        label: 'ГКТ',
+        label: 'нефть',
         data: 0,
       },
       {
-        label: 'бензин',
-        data: 0.03,
+        label: 'нефтепр.',
+        data: 0.7,
       },
     ],
   },
@@ -858,16 +842,12 @@ export const SFOData: IPopulations[] = [
         data: 0,
       },
       {
+        label: 'нефть',
+        data: 0,
+      },
+      {
         label: 'нефтепр.',
         data: 5.9,
-      },
-      {
-        label: 'ГКТ',
-        data: 0,
-      },
-      {
-        label: 'бензин',
-        data: 0,
       },
     ],
   },

@@ -35,6 +35,7 @@ function BarChart({ dataSet }: IProps) {
       {
         label: '1',
         data: dataSet.map((el) => el.data),
+        xAxisID: 'xAxis',
         backgroundColor: [
           '#5c5c5c',
           '#3e791e',
@@ -58,6 +59,11 @@ function BarChart({ dataSet }: IProps) {
         borderWidth: 0,
         barPercentage: 0.8,
         pointStyle: 'circle',
+      },
+    },
+    scales: {
+      xAxis: {
+        max: 150,
       },
     },
     plugins: {
