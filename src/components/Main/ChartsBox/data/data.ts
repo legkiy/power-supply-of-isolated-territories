@@ -5,45 +5,45 @@ export const templateData: IPopulations = {
   settlements: [
     {
       label: '200',
-      settlements: 17,
-      population: 1796,
+      settlements: 13,
+      population: 3000,
     },
     {
       label: '500',
-      settlements: 35,
-      population: 12210,
+      settlements: 14,
+      population: 4000,
     },
     {
       label: '1000',
-      settlements: 15,
-      population: 9827,
+      settlements: 14,
+      population: 5000,
     },
     {
       label: 'more1000',
-      settlements: 17,
-      population: 40653,
+      settlements: 16,
+      population: 6000,
     },
   ],
   fuel: [
     {
       label: 'уголь',
-      data: 124.1,
+      data: 100,
     },
     {
       label: 'дрова',
-      data: 0,
+      data: 90,
     },
     {
       label: 'газ',
-      data: 0,
+      data: 80,
     },
     {
       label: 'нефть',
-      data: 90.6,
+      data: 70,
     },
     {
       label: 'нефтепр.',
-      data: 85.6,
+      data: 60,
     },
   ],
 };

@@ -9,18 +9,18 @@ import {
   PointElement,
 } from 'chart.js';
 import { IPopulations } from './data/interfaces';
-import './charts.scss';
 import { ChartData } from 'chart.js';
-import { memo, useMemo } from 'react';
+import { ReactNode, memo, useMemo } from 'react';
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title, PointElement);
 
 interface IProps {
   chartDataSet: IPopulations;
   colors: string[];
+  templateChildren?: ReactNode;
 }
 
-const RoundChart = ({ chartDataSet, colors }: IProps) => {
+const RoundChart = ({ chartDataSet, colors, templateChildren }: IProps) => {
   ChartJS.defaults.font.size = 11;
   ChartJS.defaults.color = 'black';
 
@@ -86,6 +86,7 @@ const RoundChart = ({ chartDataSet, colors }: IProps) => {
       <span className="count-of-popul">
         {(countOfPopulation / 1000).toFixed(0)} тыс. чел.
       </span>
+      {templateChildren}
     </div>
   );
 };

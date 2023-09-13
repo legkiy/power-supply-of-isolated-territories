@@ -3,18 +3,21 @@ import YaMap from './YaMap/YaMap';
 import { IPopulations } from './ChartsBox/data/interfaces';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../../store';
-import ChartBox from './ChartsBox';
+import ChartsBox from './ChartsBox';
 import { memo } from 'react';
+import { templateData } from './ChartsBox/data/data';
+import ChartTemplate from './ChartsBox/ChartTemplate';
+
+export const chartsLegends = [
+  { text: 'до 200 чел.', backgroundColor: '#365C74' },
+  { text: '200 - 500 чел.', backgroundColor: '#a855ce' },
+  { text: '500 - 1000 чел.', backgroundColor: '#83A848' },
+  { text: 'более 1000 чел.', backgroundColor: '#B5884E' },
+];
 
 const MainContent = () => {
   const { chartData } = useSelector((state: IRootState) => state.chartData);
 
-  const chartsLegends = [
-    { text: 'до 200 чел.', backgroundColor: '#365C74' },
-    { text: '200 - 500 чел.', backgroundColor: '#a855ce' },
-    { text: '500 - 1000 чел.', backgroundColor: '#83A848' },
-    { text: 'более 1000 чел.', backgroundColor: '#B5884E' },
-  ];
   return (
     <main className="main">
       <div className="main-content">
@@ -45,8 +48,9 @@ const MainContent = () => {
                 ))}
               </div>
               <div className="chart-wrapper">
+                <ChartTemplate />
                 {(chartData as IPopulations[]).map((el, index) => (
-                  <ChartBox
+                  <ChartsBox
                     key={index}
                     chartDataSet={el}
                     colors={chartsLegends.map((el) => el.backgroundColor)}

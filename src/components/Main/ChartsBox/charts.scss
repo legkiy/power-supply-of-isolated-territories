@@ -1,3 +1,4 @@
+@import '/src/styles/mixins.scss';
 .chart-box {
   width: 16%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.178);
@@ -43,6 +44,16 @@
       left: 29%;
       width: 4em;
       text-align: center;
+    }
+  }
+  .round-chart,
+  .bar-chart {
+    width: 131px;
+    @include display(1400px) {
+      width: 118px;
+    }
+    @include display(1250px) {
+      width: 112px;
     }
   }
 }

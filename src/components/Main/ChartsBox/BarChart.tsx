@@ -12,7 +12,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { IPopulations } from './data/interfaces';
-import { memo } from 'react';
+import { ReactNode, memo } from 'react';
 
 ChartJS.register(
   CategoryScale,
@@ -26,9 +26,10 @@ ChartJS.register(
 
 interface IProps {
   dataSet: IPopulations['fuel'];
+  templateChildren?: ReactNode;
 }
 
-function BarChart({ dataSet }: IProps) {
+function BarChart({ dataSet, templateChildren }: IProps) {
   const data: ChartData<'bar'> = {
     labels: dataSet.map((el) => el.label),
     datasets: [
@@ -88,6 +89,7 @@ function BarChart({ dataSet }: IProps) {
     <div className="bar-chart">
       <Bar data={data} options={options} />
       <div className="bar-sizing">т.у.т</div>
+      {templateChildren}
     </div>
   );
 }
