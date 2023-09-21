@@ -10,7 +10,8 @@ import {
 } from 'chart.js';
 import { IPopulations } from './data/interfaces';
 import { ChartData } from 'chart.js';
-import { ReactNode, memo, useMemo } from 'react';
+import { ReactNode, memo, useMemo, useState } from 'react';
+import classNames from 'classnames';
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title, PointElement);
 
@@ -18,9 +19,15 @@ interface IProps {
   chartDataSet: IPopulations;
   colors: string[];
   templateChildren?: ReactNode;
+  itsTemplate?: boolean;
 }
 
-const RoundChart = ({ chartDataSet, colors, templateChildren }: IProps) => {
+const RoundChart = ({
+  chartDataSet,
+  colors,
+  templateChildren,
+  itsTemplate,
+}: IProps) => {
   ChartJS.defaults.font.size = 11;
   ChartJS.defaults.color = 'black';
 
@@ -78,15 +85,67 @@ const RoundChart = ({ chartDataSet, colors, templateChildren }: IProps) => {
         .reduce((prev, next) => prev + next),
     [chartDataSet]
   );
+  const [templSettelHover, setTemplSettelHover] = useState(false);
+  const [templSettelInsideHover, setTemplSettelInsideHover] = useState(false);
 
   return (
     <div className="round-chart">
       <Doughnut data={data} options={options} />
-      <span className="count-of-settel">{countOfSettlements}</span>
-      <span className="count-of-popul">
-        {(countOfPopulation / 1000).toFixed(0)} тыс. чел.
-      </span>
-      {templateChildren}
+      {itsTemplate ? (
+        <>
+          <span className="count-of-settel template">
+            {countOfSettlements}
+            {'                   '}
+            <div className="settel-template"> сумма нас. пунктов</div>
+          </span>
+          <span className="count-of-popul template">
+            {(countOfPopulation / 1000).toFixed(0)} тыс. чел.
+            <span className="template-popul">{'      '}</span>
+            <div className="popul-template"> сумма численности населения</div>
+          </span>
+          <div
+            className={classNames('template-settel', {
+              'template-settel_hover': templSettelHover,
+            })}
+          >
+            <div
+              className="template-settel__text"
+              onMouseEnter={() => setTemplSettelHover(true)}
+              onMouseLeave={() => setTemplSettelHover(false)}
+            >
+              <span className="template-settel__space">{'         '}</span>
+              <div className="template-settel__text__desc">
+                численность населения
+              </div>
+            </div>
+          </div>
+          <div
+            className={classNames('template-settel__inside', {
+              'template-settel__inside__hover': templSettelInsideHover,
+            })}
+          >
+            <div
+              className="template-settel__inside__text"
+              onMouseEnter={() => setTemplSettelInsideHover(true)}
+              onMouseLeave={() => setTemplSettelInsideHover(false)}
+            >
+              <span className="template-settel__inside__space">
+                {'         '}
+              </span>
+              <div className="template-settel__inside__text__desc">
+                кол-во нас. пунктов
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <span className="count-of-settel">{countOfSettlements}</span>
+          <span className="count-of-popul">
+            {(countOfPopulation / 1000).toFixed(0)} тыс. чел.
+          </span>
+        </>
+      )}
     </div>
   );
 };

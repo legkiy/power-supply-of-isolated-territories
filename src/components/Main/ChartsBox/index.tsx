@@ -11,6 +11,7 @@ interface IProps {
   className?: string;
   roundTemplateChildren?: ReactNode;
   barTemplateChildren?: ReactNode;
+  itsTemplate?: boolean;
 }
 
 const ChartBox = ({
@@ -19,6 +20,7 @@ const ChartBox = ({
   className,
   barTemplateChildren,
   roundTemplateChildren,
+  itsTemplate,
 }: IProps) => {
   return (
     <div className={classNames('chart-box', className)}>
@@ -29,6 +31,7 @@ const ChartBox = ({
         chartDataSet={chartDataSet}
         colors={colors}
         templateChildren={roundTemplateChildren}
+        itsTemplate={itsTemplate}
       />
       <BarChart
         dataSet={chartDataSet.fuel}

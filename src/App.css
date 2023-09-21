@@ -5,4 +5,5 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+  background: linear-gradient(170deg, white, rgb(188, 205, 212)) fixed;
 }

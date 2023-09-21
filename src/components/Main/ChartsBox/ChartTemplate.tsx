@@ -11,11 +11,17 @@ const ChartTemplate: FC = () => {
         chartDataSet={templateData}
         colors={chartsLegends.map((el) => el.backgroundColor)}
         className="chart-template"
-        roundTemplateChildren={
-          <svg className="round-legend">
-            <rect></rect>
-          </svg>
-        }
+        itsTemplate
+        // roundTemplateChildren={
+        //   <>
+        //     <svg className="round-legend">
+        //       <g>
+        //         <path className="settelments-count-line" d="M 54 70 l 200 0" />
+        //         <rect className="legend-settelments-count" x="50" y="50" />
+        //       </g>
+        //     </svg>
+        //   </>
+        // }
       />
     </>
   );
