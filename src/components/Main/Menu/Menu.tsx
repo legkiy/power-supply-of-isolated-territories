@@ -8,16 +8,21 @@ import Modal from '../Modal/Modal';
 
 export interface menuItem {
   text: string;
-  insideItems: {
+  onClick?: () => void;
+  insideItems?: {
     text: string;
     onClick?: () => void;
     children?: ReactNode;
   }[];
   popupWidht?: CSSProperties['width'];
+  children?: ReactNode;
 }
 
 const Menu = () => {
   const dispatch = useDispatch();
+  const [openModal, setOpenModal] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
   const menuItem: menuItem[] = [
     {
       text: 'Выбрать регион',
@@ -33,9 +38,17 @@ const Menu = () => {
       ],
       popupWidht: '134px',
     },
+    {
+      text: 'Contacts',
+      children: (
+        <Modal openModal={openModal} setOpenModal={setOpenModal}>
+          dsads
+        </Modal>
+      ),
+      onClick: () => setOpenModal(true),
+    },
   ];
-  const [openModal, setOpenModal] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
+
   // useEffect(() => {
   //   function handleScroll() {
   //     const element = document.querySelector('.menu-list');
@@ -66,8 +79,10 @@ const Menu = () => {
           <MenuItem
             key={index}
             text={item.text}
-            insideItems={item.insideItems}
+            insideItems={item?.insideItems}
             popupWidht={item.popupWidht}
+            children={item.children}
+            onClick={item?.onClick}
           />
         ))}
       </ul>
@@ -75,22 +90,7 @@ const Menu = () => {
         contact
         {<Modal openModal={openModal} setOpenModal={setOpenModal} />}
       </div> */}
-      <MenuItem
-        text="Контакты"
-        insideItems={[
-          {
-            text: 'Иванова И.Ю.',
-            children: (
-              <a className="mail" href="mailto:nord@isem.irk.ru">
-                nord@isem.irk.ru
-              </a>
-            ),
-          },
-          { text: 'Максаков Н.В.' },
-        ]}
-        className="contakts"
-        popupWidht={'300px'}
-      />
+      <MenuItem text="Контакты" className="contakts" popupWidht={'300px'} />
     </aside>
   );
 };

@@ -1,25 +1,34 @@
-import { Dispatch, SetStateAction, memo, useEffect, useRef } from 'react';
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  memo,
+  useEffect,
+  useRef,
+} from 'react';
 import { createPortal } from 'react-dom';
 import './modal.scss';
 
 interface IProps {
   openModal: boolean;
   setOpenModal: Dispatch<SetStateAction<boolean>>;
+  children?: ReactNode;
 }
 
-const Modal = ({ openModal, setOpenModal }: IProps) => {
+const Modal = ({ openModal, setOpenModal, children }: IProps) => {
+  console.log(openModal);
+
   const modaleRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (!openModal) return;
-    document.addEventListener('click', (e) =>
-      e.target !== modaleRef.current ? setOpenModal(false) : null
-    );
-
-    return () => {
-      document.removeEventListener('click', (e) =>
-        e.target !== modaleRef.current ? setOpenModal(false) : null
-      );
-    };
+    // if (openModal) return;
+    // document.addEventListener('click', (e) =>
+    //   e.target !== modaleRef.current ? setOpenModal(false) : null
+    // );
+    // return () => {
+    //   document.removeEventListener('click', (e) =>
+    //     e.target !== modaleRef.current ? setOpenModal(false) : null
+    //   );
+    // };
   }, [openModal, setOpenModal]);
 
   return (
@@ -27,7 +36,9 @@ const Modal = ({ openModal, setOpenModal }: IProps) => {
     <>
       {openModal &&
         createPortal(
-          <div className="modal" ref={modaleRef}></div>,
+          <div className="modal" ref={modaleRef}>
+            {children}
+          </div>,
           document.body
         )}
     </>
