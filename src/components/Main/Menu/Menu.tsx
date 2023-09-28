@@ -5,6 +5,7 @@ import { CSSProperties, ReactNode, memo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setChartData } from '../../../store/chartData/chartDataSlice';
 import { Modal } from '../../index';
+import Item from './Item';
 
 export interface menuItem {
   text: string;
@@ -65,8 +66,8 @@ const Menu = () => {
   return (
     <aside className={`menu`}>
       <ul className="menu-list">
-        <li className="menu-item">Меню</li>
-        {menuItem.map((item, index) => (
+        <li className="menu-item__name not-inside no-interactive">Меню</li>
+        {/* {menuItem.map((item, index) => (
           <MenuItem
             key={index}
             text={item.text}
@@ -75,8 +76,14 @@ const Menu = () => {
             children={item.children}
             onClick={item?.onClick}
           />
+        ))} */}
+        {menuItem.map(({ text, insideItems }, index) => (
+          <Item key={index} name={text} insideItems={insideItems as any} />
         ))}
-        <li className="menu-item" onClick={() => setOpenModal(true)}>
+        <li
+          className="menu-item__name not-inside"
+          onClick={() => setOpenModal(true)}
+        >
           Контакты
         </li>
       </ul>

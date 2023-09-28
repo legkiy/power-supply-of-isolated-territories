@@ -9,7 +9,6 @@ $modalWidth: 700px;
   justify-content: center;
   backdrop-filter: blur(1px);
   background-color: rgba(20, 20, 20, 0.056);
-  cursor: pointer;
   animation: open 100ms linear;
 }
 
@@ -35,13 +34,12 @@ $modalWidth: 700px;
     margin-top: 10px;
     margin-left: auto;
     padding: 5px;
-    border: 1px solid rgb(255, 90, 90);
+    border: 1px solid rgba(255, 90, 90, 0.85);
     background-color: white;
     border-radius: 8px;
     cursor: pointer;
     transition: all 200ms;
     &:hover {
-      // background-color: rgb(243, 243, 243);
       box-shadow: 0 0px 5px rgb(255, 90, 90);
     }
   }
