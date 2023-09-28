@@ -1,0 +1,63 @@
+$modalWidth: 700px;
+.modal-back {
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(1px);
+  background-color: rgba(20, 20, 20, 0.056);
+  cursor: pointer;
+  animation: open 100ms linear;
+}
+
+.modal {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.178);
+  z-index: 11;
+  position: fixed;
+  width: fit-content;
+  top: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  animation: open 100ms linear;
+  transform: scale(1);
+  opacity: 1;
+
+  &__close-btn {
+    display: flex;
+    margin-top: 10px;
+    margin-left: auto;
+    padding: 5px;
+    border: 1px solid rgb(255, 90, 90);
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 200ms;
+    &:hover {
+      // background-color: rgb(243, 243, 243);
+      box-shadow: 0 0px 5px rgb(255, 90, 90);
+    }
+  }
+}
+
+@keyframes open {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.8);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

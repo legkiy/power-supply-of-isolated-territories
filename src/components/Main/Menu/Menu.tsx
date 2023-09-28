@@ -4,7 +4,7 @@ import MenuItem from './MenuItem/MenuItem';
 import { CSSProperties, ReactNode, memo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setChartData } from '../../../store/chartData/chartDataSlice';
-import Modal from '../Modal/Modal';
+import { Modal } from '../../index';
 
 export interface menuItem {
   text: string;
@@ -37,15 +37,6 @@ const Menu = () => {
         },
       ],
       popupWidht: '134px',
-    },
-    {
-      text: 'Contacts',
-      children: (
-        <Modal openModal={openModal} setOpenModal={setOpenModal}>
-          dsads
-        </Modal>
-      ),
-      onClick: () => setOpenModal(true),
     },
   ];
 
@@ -85,12 +76,28 @@ const Menu = () => {
             onClick={item?.onClick}
           />
         ))}
+        <li className="menu-item" onClick={() => setOpenModal(true)}>
+          Контакты
+        </li>
       </ul>
-      {/* <div onClick={() => setOpenModal(true)}>
-        contact
-        {<Modal openModal={openModal} setOpenModal={setOpenModal} />}
-      </div> */}
-      <MenuItem text="Контакты" className="contakts" popupWidht={'300px'} />
+      {openModal && (
+        <Modal
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+          onClose={() => setOpenModal(false)}
+          className="contakt-modal"
+        >
+          <h2>Контакты</h2>
+          <p>
+            Содержание страницы: <i>Иванова Ирина Юрьевна</i>{' '}
+            <a href="mailto:nord@isem.irk.ru">nord@isem.irk.ru</a>
+          </p>
+          <p>
+            Тех. реализация: <i>Максаков Никита Владимирович</i>{' '}
+            <a href="mailto:nikita.max@isem.irk.ru">nikita.max@isem.irk.ru</a>
+          </p>
+        </Modal>
+      )}
     </aside>
   );
 };
