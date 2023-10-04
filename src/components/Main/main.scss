@@ -22,18 +22,21 @@
     }
 
     .title-wrapper {
-      background-color: #365c74;
       color: white;
-      margin-bottom: 10px;
-      display: flex;
+      color: black; // display: flex;
+      padding: 15px;
 
       .title {
+        color: rgb(214, 161, 28);
         font-size: large;
-        padding: 5px 20px;
-        margin: 0 auto;
         width: 100%;
         text-align: center;
         align-self: center;
+        margin-bottom: 10px;
+
+        &-description {
+          text-align: justify;
+        }
       }
     }
 
