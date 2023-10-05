@@ -1,6 +1,5 @@
 import './menu.scss';
 import 'tippy.js/dist/tippy.css';
-import MenuItem from './MenuItem/MenuItem';
 import { CSSProperties, ReactNode, memo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setChartData } from '../../../store/chartData/chartDataSlice';

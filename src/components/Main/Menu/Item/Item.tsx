@@ -1,7 +1,6 @@
 import { FC, LiHTMLAttributes, memo, useState } from 'react';
 import classNames from 'classnames';
 import { IoIosArrowDown } from 'react-icons/io';
-import { MdKeyboardArrowDown } from 'react-icons/md';
 import './Item.scss';
 
 interface IItem {
