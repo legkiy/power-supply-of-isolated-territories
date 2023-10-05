@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { IRootState } from '../../store';
 import ChartsBox from './ChartsBox';
 import { memo } from 'react';
-import { templateData } from './ChartsBox/data/data';
 import ChartTemplate from './ChartsBox/ChartTemplate';
 
 export const chartsLegends = [

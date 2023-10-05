@@ -89,7 +89,6 @@ const Menu = () => {
       </ul>
       {openModal && (
         <Modal
-          openModal={openModal}
           setOpenModal={setOpenModal}
           onClose={() => setOpenModal(false)}
           className="contakt-modal"

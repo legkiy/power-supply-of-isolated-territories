@@ -4,7 +4,6 @@ import './modal.scss';
 import classNames from 'classnames';
 
 interface IProps {
-  openModal: boolean;
   setOpenModal: Dispatch<SetStateAction<boolean>>;
   children: ReactNode;
   onClose: () => void;
@@ -12,7 +11,6 @@ interface IProps {
 }
 
 const Modal: FC<IProps> = ({
-  openModal,
   setOpenModal,
   children,
   onClose,
