@@ -100,8 +100,8 @@ const RoundChart = ({
           </span>
           <span className="count-of-popul template">
             {(countOfPopulation / 1000).toFixed(0)} тыс. чел.
-            <span className="template-popul">{'      '}</span>
-            <div className="popul-template"> сумма численности населения</div>
+            <span className="template-popul">{'            '}</span>
+            <div className="popul-template"> суммарное населения</div>
           </span>
           <div
             className={classNames('template-settel', {
@@ -115,7 +115,7 @@ const RoundChart = ({
             >
               <span className="template-settel__space">{'         '}</span>
               <div className="template-settel__text__desc">
-                численность населения
+                население по градациям
               </div>
             </div>
           </div>
@@ -130,10 +130,10 @@ const RoundChart = ({
               onMouseLeave={() => setTemplSettelInsideHover(false)}
             >
               <span className="template-settel__inside__space">
-                {'         '}
+                {'           '}
               </span>
               <div className="template-settel__inside__text__desc">
-                кол-во нас. пунктов
+                кол-во нас. пунктов по градациям
               </div>
             </div>
           </div>

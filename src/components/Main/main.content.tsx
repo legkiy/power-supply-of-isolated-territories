@@ -43,7 +43,7 @@ const MainContent = () => {
           </div>
           <div className="main-wrapper">
             <div className="left-side">
-              <p>Внешнее кольцо - численность населения</p>
+              {/* <p>Внешнее кольцо - численность населения</p>
               <p>Внутреннее кольцо - кол-во нас. пунктов</p>
               <div className="charts-legends">
                 {chartsLegends.map((el) => (
@@ -57,7 +57,7 @@ const MainContent = () => {
                     </p>
                   </>
                 ))}
-              </div>
+              </div> */}
               <div className="chart-wrapper">
                 <ChartTemplate />
                 {(chartData as IPopulations[]).map((el, index) => (

@@ -1,6 +1,6 @@
 import './menu.scss';
 import 'tippy.js/dist/tippy.css';
-import { CSSProperties, ReactNode, memo, useState } from 'react';
+import { CSSProperties, ReactNode, memo, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setChartData } from '../../../store/chartData/chartDataSlice';
 import { Modal } from '../../index';
@@ -13,6 +13,7 @@ export interface menuItem {
     text: string;
     onClick?: () => void;
     children?: ReactNode;
+    index?: number;
   }[];
   popupWidht?: CSSProperties['width'];
   children?: ReactNode;
@@ -21,7 +22,32 @@ export interface menuItem {
 const Menu = () => {
   const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
+  const [selectRegion, setSelectRegion] = useState<number>(0);
+
+  const handleOnSelectRegion = (region: 'SFO' | 'DFO', regionId: number) => {
+    //установка параметров в query
+    const queryParams = new URLSearchParams(window.location.search);
+    queryParams.set('region', region);
+    queryParams.set('regionId', String(regionId));
+    const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
+    window.history.pushState(null, '', newUrl);
+    //установка параметров в стейт
+    dispatch(setChartData(region));
+    setSelectRegion(regionId);
+  };
+
+  useEffect(() => {
+    const queryRegionParams = new URLSearchParams(window.location.search);
+    const regionQuery: 'SFO' | 'DFO' | null = queryRegionParams.get(
+      'region'
+    ) as 'SFO' | 'DFO' | null;
+    const regionIdQuery = queryRegionParams.get('regionId');
+
+    if (!!regionQuery && !!regionIdQuery) {
+      setSelectRegion(+regionIdQuery);
+      dispatch(setChartData(regionQuery));
+    }
+  }, []);
 
   const menuItem: menuItem[] = [
     {
@@ -29,55 +55,30 @@ const Menu = () => {
       insideItems: [
         {
           text: 'СФО',
-          onClick: () => dispatch(setChartData('SFO')),
+          onClick: () => handleOnSelectRegion('SFO', 0),
+          index: 0,
         },
         {
           text: 'ДФО',
-          onClick: () => dispatch(setChartData('DFO')),
+          onClick: () => handleOnSelectRegion('DFO', 1),
+          index: 1,
         },
       ],
       popupWidht: '134px',
     },
   ];
 
-  // useEffect(() => {
-  //   function handleScroll() {
-  //     const element = document.querySelector('.menu-list');
-  //     const elementPosition = element?.getBoundingClientRect().top || 0;
-  //     console.log(elementPosition);
-
-  //     const windowPosition = window.innerHeight;
-  //     console.log(windowPosition);
-
-  //     if (elementPosition < 0) {
-  //       setIsSticky(true);
-  //     }
-  //   }
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, ['.menu-list']);
-  // console.log(isSticky);
-
   return (
     <aside className={`menu`}>
       <ul className="menu-list">
         <li className="menu-item__name not-inside no-interactive">Меню</li>
-        {/* {menuItem.map((item, index) => (
-          <MenuItem
-            key={index}
-            text={item.text}
-            insideItems={item?.insideItems}
-            popupWidht={item.popupWidht}
-            children={item.children}
-            onClick={item?.onClick}
-          />
-        ))} */}
         {menuItem.map(({ text, insideItems }, index) => (
-          <Item key={index} name={text} insideItems={insideItems as any} />
+          <Item
+            key={index}
+            name={text}
+            insideItems={insideItems as any}
+            selectRegion={selectRegion}
+          />
         ))}
         <li
           className="menu-item__name not-inside"

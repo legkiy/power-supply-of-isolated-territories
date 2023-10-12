@@ -10,17 +10,17 @@ interface IProps {
   colors: string[];
   className?: string;
   roundTemplateChildren?: ReactNode;
-  barTemplateChildren?: ReactNode;
   itsTemplate?: boolean;
+  legendColors?: ReactNode;
 }
 
 const ChartBox = ({
   chartDataSet,
   colors,
   className,
-  barTemplateChildren,
   roundTemplateChildren,
   itsTemplate,
+  legendColors,
 }: IProps) => {
   return (
     <div className={classNames('chart-box', className)}>
@@ -35,7 +35,8 @@ const ChartBox = ({
       />
       <BarChart
         dataSet={chartDataSet.fuel}
-        templateChildren={barTemplateChildren}
+        legendColors={legendColors}
+        itsTemplate={itsTemplate}
       />
     </div>
   );

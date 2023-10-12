@@ -9,13 +9,17 @@ interface IItem {
     text: string;
     onClick: () => void;
     props?: LiHTMLAttributes<HTMLLIElement>;
+    index?: number;
   }[];
+  selectRegion: number;
 }
-const Item: FC<IItem> = ({ name, insideItems }) => {
+const Item: FC<IItem> = ({ name, insideItems, selectRegion }) => {
   const [expand, setExpand] = useState<boolean>(false);
-  const [selectItem, setSelectItem] = useState<number>(0);
+
+  // const [selectItem, setSelectItem] = useState<number>(selectRegion);
+  // console.log(selectRegion);
+
   const handleOnClick = (item: number, onClick: () => void) => {
-    setSelectItem(item);
     onClick();
   };
   return (
@@ -40,17 +44,21 @@ const Item: FC<IItem> = ({ name, insideItems }) => {
           'menu-item__expand': expand,
         })}
       >
-        {insideItems.map((el, index) => (
-          <li
-            key={index}
-            onClick={() => handleOnClick(index, el.onClick)}
-            className={classNames('menu-item__inside', {
-              'menu-item__inside__select': selectItem === index,
-            })}
-          >
-            {el.text}
-          </li>
-        ))}
+        {insideItems.map((el, index) => {
+          console.log(index);
+
+          return (
+            <li
+              key={index}
+              onClick={() => handleOnClick(index, el.onClick)}
+              className={classNames('menu-item__inside', {
+                'menu-item__inside__select': selectRegion === index,
+              })}
+            >
+              {el.text}
+            </li>
+          );
+        })}
       </ul>
     </li>
   );

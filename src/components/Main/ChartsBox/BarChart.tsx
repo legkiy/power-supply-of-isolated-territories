@@ -12,7 +12,8 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { IPopulations } from './data/interfaces';
-import { ReactNode, memo } from 'react';
+import { ReactNode, memo, useState } from 'react';
+import classNames from 'classnames';
 
 ChartJS.register(
   CategoryScale,
@@ -26,10 +27,11 @@ ChartJS.register(
 
 interface IProps {
   dataSet: IPopulations['fuel'];
-  templateChildren?: ReactNode;
+  legendColors?: ReactNode;
+  itsTemplate?: boolean;
 }
 
-function BarChart({ dataSet, templateChildren }: IProps) {
+function BarChart({ dataSet, itsTemplate, legendColors }: IProps) {
   const data: ChartData<'bar'> = {
     labels: dataSet.map((el) => el.label),
     datasets: [
@@ -62,11 +64,6 @@ function BarChart({ dataSet, templateChildren }: IProps) {
         pointStyle: 'circle',
       },
     },
-    scales: {
-      xAxis: {
-        max: 150,
-      },
-    },
     plugins: {
       legend: {
         display: false,
@@ -84,12 +81,28 @@ function BarChart({ dataSet, templateChildren }: IProps) {
       },
     },
   };
-
+  const [templBarHover, setTemplBarHover] = useState(false);
   return (
     <div className="bar-chart">
       <Bar data={data} options={options} />
       <div className="bar-sizing">т.у.т</div>
-      {templateChildren}
+      {itsTemplate && (
+        <div
+          className={classNames('bar-template', {
+            'bar-template__hover': templBarHover,
+          })}
+        >
+          <span className="bar-template__text">{'     '}</span>
+          <div
+            className="bar-template__desc"
+            onMouseEnter={() => setTemplBarHover(true)}
+            onMouseLeave={() => setTemplBarHover(false)}
+          >
+            расход топлива на энерго- и теплоснабжение
+          </div>
+        </div>
+      )}
+      {legendColors}
     </div>
   );
 }

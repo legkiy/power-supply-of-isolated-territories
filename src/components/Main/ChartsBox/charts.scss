@@ -6,7 +6,6 @@
   border-radius: 5px;
   padding: 5px;
   padding-top: 0;
-  margin: 10px;
 
   .region-title {
     display: flex;
@@ -58,7 +57,7 @@
           left: 100%;
           top: 0;
           white-space: normal;
-          width: 100px;
+          width: 90px;
           @include display(1400px) {
           }
         }
@@ -76,6 +75,7 @@
 
         .popul-template {
           position: absolute;
+          top: 0px;
           left: 100px;
           bottom: -0.8em;
           white-space: normal;
@@ -94,8 +94,6 @@
       white-space: pre;
       text-decoration: underline;
     }
-
-    
   }
 
   .round-chart,
@@ -106,6 +104,36 @@
     }
     @include display(1250px) {
       width: 112px;
+    }
+
+    .bar-template {
+      pointer-events: none;
+      position: absolute;
+      top: 5px;
+      left: 0px;
+      border: 1px solid black;
+      border-radius: 10px;
+      width: 132px;
+      height: 150px;
+      &__hover {
+        box-shadow: inset 0px 0px 0px 100px rgba(98, 124, 168, 0.487);
+      }
+
+      &__text {
+        white-space: pre;
+        text-decoration: underline;
+        position: absolute;
+        right: -17%;
+        top: 25px;
+      }
+      &__desc {
+        pointer-events: all;
+        position: absolute;
+        top: 20px;
+        right: -117%;
+        font-size: small;
+        width: 130px;
+      }
     }
   }
 }

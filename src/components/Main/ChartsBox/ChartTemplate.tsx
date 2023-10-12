@@ -22,6 +22,21 @@ const ChartTemplate: FC = () => {
         //     </svg>
         //   </>
         // }
+        legendColors={
+          <div className="chart-template-legend">
+            {chartsLegends.map((el) => (
+              <>
+                <p>
+                  <span
+                    className="chart-template-legend-color"
+                    style={{ backgroundColor: el.backgroundColor }}
+                  ></span>
+                  {el.text}
+                </p>
+              </>
+            ))}
+          </div>
+        }
       />
     </>
   );

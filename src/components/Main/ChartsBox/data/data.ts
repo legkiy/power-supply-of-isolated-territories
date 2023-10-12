@@ -1,7 +1,7 @@
 import { IPopulations } from './interfaces';
 
 export const templateData: IPopulations = {
-  name: 'Легенда',
+  name: 'Условные обозначения',
   settlements: [
     {
       label: '200',
