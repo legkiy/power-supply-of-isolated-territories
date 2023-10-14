@@ -426,27 +426,74 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Сахалинская область',
+    name: 'Сахалинская область, Курильские о-ва',
     settlements: [
       {
         label: '200',
-        settlements: 11,
-        population: 717,
+        settlements: 5,
+        population: 308,
       },
       {
         label: '500',
-        settlements: 3,
-        population: 1335,
+        settlements: 2,
+        population: 906,
       },
       {
         label: '1000',
-        settlements: 4,
-        population: 2702,
+        settlements: 2,
+        population: 1576,
       },
       {
         label: 'more1000',
         settlements: 1,
         population: 17747,
+      },
+    ],
+    fuel: [
+      {
+        label: 'уголь',
+        data: 10.3,
+      },
+      {
+        label: 'дрова',
+        data: 0,
+      },
+      {
+        label: 'газ',
+        data: 0,
+      },
+      {
+        label: 'нефть',
+        data: 0,
+      },
+      {
+        label: 'нефтепр.',
+        data: 2.2,
+      },
+    ],
+  },
+  {
+    name: 'Сахалинская область, о. Сахалин',
+    settlements: [
+      {
+        label: '200',
+        settlements: 6,
+        population: 409,
+      },
+      {
+        label: '500',
+        settlements: 1,
+        population: 429,
+      },
+      {
+        label: '1000',
+        settlements: 2,
+        population: 1126,
+      },
+      {
+        label: 'more1000',
+        settlements: 0,
+        population: 0,
       },
     ],
     fuel: [
@@ -472,6 +519,53 @@ export const DFOData: IPopulations[] = [
       },
     ],
   },
+  // {
+  //   name: 'Сахалинская область',
+  //   settlements: [
+  //     {
+  //       label: '200',
+  //       settlements: 11,
+  //       population: 717,
+  //     },
+  //     {
+  //       label: '500',
+  //       settlements: 3,
+  //       population: 1335,
+  //     },
+  //     {
+  //       label: '1000',
+  //       settlements: 4,
+  //       population: 2702,
+  //     },
+  //     {
+  //       label: 'more1000',
+  //       settlements: 1,
+  //       population: 17747,
+  //     },
+  //   ],
+  //   fuel: [
+  //     {
+  //       label: 'уголь',
+  //       data: 11.8,
+  //     },
+  //     {
+  //       label: 'дрова',
+  //       data: 0.1,
+  //     },
+  //     {
+  //       label: 'газ',
+  //       data: 0.9,
+  //     },
+  //     {
+  //       label: 'нефть',
+  //       data: 0,
+  //     },
+  //     {
+  //       label: 'нефтепр.',
+  //       data: 46.3,
+  //     },
+  //   ],
+  // },
   {
     name: 'Амурская область',
     settlements: [
