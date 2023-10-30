@@ -16,9 +16,6 @@ interface IItem {
 const Item: FC<IItem> = ({ name, insideItems, selectRegion }) => {
   const [expand, setExpand] = useState<boolean>(false);
 
-  // const [selectItem, setSelectItem] = useState<number>(selectRegion);
-  // console.log(selectRegion);
-
   const handleOnClick = (item: number, onClick: () => void) => {
     onClick();
   };
@@ -44,21 +41,17 @@ const Item: FC<IItem> = ({ name, insideItems, selectRegion }) => {
           'menu-item__expand': expand,
         })}
       >
-        {insideItems.map((el, index) => {
-          console.log(index);
-
-          return (
-            <li
-              key={index}
-              onClick={() => handleOnClick(index, el.onClick)}
-              className={classNames('menu-item__inside', {
-                'menu-item__inside__select': selectRegion === index,
-              })}
-            >
-              {el.text}
-            </li>
-          );
-        })}
+        {insideItems.map((el, index) => (
+          <li
+            key={index}
+            onClick={() => handleOnClick(index, el.onClick)}
+            className={classNames('menu-item__inside', {
+              'menu-item__inside__select': selectRegion === index,
+            })}
+          >
+            {el.text}
+          </li>
+        ))}
       </ul>
     </li>
   );

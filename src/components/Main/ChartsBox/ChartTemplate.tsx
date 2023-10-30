@@ -23,7 +23,7 @@ const ChartTemplate: FC = () => {
         //   </>
         // }
         legendColors={
-          <div className="chart-template-legend">
+          <div className="chart-template-legend__colors">
             {chartsLegends.map((el) => (
               <>
                 <p>

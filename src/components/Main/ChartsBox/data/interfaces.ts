@@ -23,7 +23,9 @@ export interface IPopulations {
     }
   ];
   fuel: {
-    label: 'уголь' | 'дрова' | 'газ' | 'нефть' | 'нефтепр.';
+    label: fuelType;
     data: number;
   }[];
 }
+
+export type fuelType = 'уголь' | 'дрова' | 'газ' | 'нефть' | 'нефтепр.';

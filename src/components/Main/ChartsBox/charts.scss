@@ -13,6 +13,9 @@
     align-items: center;
     width: auto;
     justify-content: center;
+    &__template {
+      display: block;
+    }
 
     p {
       font-size: 14px;
@@ -124,12 +127,12 @@
         text-decoration: underline;
         position: absolute;
         right: -17%;
-        top: 25px;
+        top: 50px;
       }
       &__desc {
         pointer-events: all;
         position: absolute;
-        top: 20px;
+        top: 45px;
         right: -117%;
         font-size: small;
         width: 130px;

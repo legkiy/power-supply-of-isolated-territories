@@ -16,6 +16,17 @@
   text-align: start;
   font-size: small;
 
+  &__colors {
+    display: flex;
+    gap: 3px 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 5px;
+
+    & p {
+      font-size: 12px !important;
+    }
+  }
   &-color {
     display: inline-block;
     height: 10px;
@@ -76,8 +87,9 @@
   &__text {
     pointer-events: all;
     position: absolute;
-    left: 85%;
+    left: 90%;
     display: flex;
+    top: 10px;
     &__desc {
       font-size: small;
       width: 100px;
@@ -115,8 +127,8 @@
     &__text {
       pointer-events: all;
       position: absolute;
-      bottom: -8px;
-      left: 80%;
+      bottom: -12px;
+      left: 73%;
       display: flex;
       &__desc {
         font-size: small;

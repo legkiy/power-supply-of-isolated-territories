@@ -24,8 +24,13 @@ const ChartBox = ({
 }: IProps) => {
   return (
     <div className={classNames('chart-box', className)}>
-      <div className="region-title">
+      <div
+        className={classNames('region-title', {
+          'region-title__template': itsTemplate,
+        })}
+      >
         <p>{chartDataSet.name}</p>
+        {legendColors}
       </div>
       <RoundChart
         chartDataSet={chartDataSet}
@@ -35,7 +40,7 @@ const ChartBox = ({
       />
       <BarChart
         dataSet={chartDataSet.fuel}
-        legendColors={legendColors}
+        // legendColors={legendColors}
         itsTemplate={itsTemplate}
       />
     </div>

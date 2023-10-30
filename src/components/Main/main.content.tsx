@@ -6,6 +6,7 @@ import { IRootState } from '../../store';
 import ChartsBox from './ChartsBox';
 import { memo } from 'react';
 import ChartTemplate from './ChartsBox/ChartTemplate';
+import EmissionsChart from './EmissionsChart';
 
 export const chartsLegends = [
   { text: 'до 200 чел.', backgroundColor: '#365C74' },
@@ -71,6 +72,7 @@ const MainContent = () => {
             </div>
             <div className="right-side">
               <YaMap />
+              <EmissionsChart />
             </div>
           </div>
         </div>

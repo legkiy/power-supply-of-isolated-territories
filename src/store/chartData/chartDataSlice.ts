@@ -1,10 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { IPopulations } from '../../components/Main/ChartsBox/data/interfaces';
 import { DFOData, SFOData } from '../../components/Main/ChartsBox/data/data';
+import { EmissionsDataType } from '../../components/Main/EmissionsChart/data/interface';
 // import DFOData from '../../components/Main/ChartsBox/data/DFO_settlements.json';
-
+import {
+  EmissionsDataDFO,
+  EmissionsDataSFO,
+} from '../../components/Main/EmissionsChart/data/emissionsData';
 export interface IChartDataState {
   chartData: IPopulations[];
+  emissionsData: EmissionsDataType[];
 }
 
 const DFO = DFOData;
@@ -12,6 +17,7 @@ const SFO = SFOData;
 
 const chartDataState: IChartDataState = {
   chartData: SFOData as IPopulations[],
+  emissionsData: EmissionsDataDFO,
 };
 
 interface SetChartDataAction {
@@ -26,9 +32,17 @@ export const chartDataSlice = createSlice({
     setChartData: (state, action: SetChartDataAction) => {
       switch (action.payload) {
         case 'SFO':
-          return { ...state, chartData: SFO as IPopulations[] };
+          return {
+            ...state,
+            chartData: SFO as IPopulations[],
+            emissionsData: EmissionsDataSFO,
+          };
         case 'DFO':
-          return { ...state, chartData: DFO as IPopulations[] };
+          return {
+            ...state,
+            chartData: DFO as IPopulations[],
+            emissionsData: EmissionsDataDFO,
+          };
         default:
           throw new Error(
             `Unknown value for action.payload '${action.payload}'`
