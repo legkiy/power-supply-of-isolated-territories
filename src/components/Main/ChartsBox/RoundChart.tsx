@@ -41,6 +41,9 @@ const RoundChart = ({
       },
     },
     plugins: {
+      datalabels: {
+        display: false,
+      },
       legend: {
         display: false,
       },

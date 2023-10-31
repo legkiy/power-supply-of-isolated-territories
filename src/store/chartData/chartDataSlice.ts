@@ -17,7 +17,7 @@ const SFO = SFOData;
 
 const chartDataState: IChartDataState = {
   chartData: SFOData as IPopulations[],
-  emissionsData: EmissionsDataDFO,
+  emissionsData: EmissionsDataSFO,
 };
 
 interface SetChartDataAction {

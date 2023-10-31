@@ -22,7 +22,7 @@ const MainContent = () => {
     <main className="main">
       <div className="main-content">
         <Menu />
-        <div>
+        <div style={{ width: '100%' }}>
           <div className="title-wrapper">
             <h1 className="title">
               Мониторинг выбросов диоксида углерода от энергетических объектов
@@ -72,7 +72,7 @@ const MainContent = () => {
             </div>
             <div className="right-side">
               <YaMap />
-              <EmissionsChart />
+              <EmissionsChart selectType="уголь" />
             </div>
           </div>
         </div>
