@@ -1,12 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { IPopulations } from '../../components/Main/ChartsBox/data/interfaces';
 import { DFOData, SFOData } from '../../components/Main/ChartsBox/data/data';
-import { EmissionsDataType } from '../../components/Main/EmissionsChart/data/interface';
+import {
+  EmissionsDataType,
+  FuelTypesType,
+} from '../../components/Main/EmissionsChart/data/interface';
 // import DFOData from '../../components/Main/ChartsBox/data/DFO_settlements.json';
 import {
   EmissionsDataDFO,
   EmissionsDataSFO,
 } from '../../components/Main/EmissionsChart/data/emissionsData';
+
 export interface IChartDataState {
   chartData: IPopulations[];
   emissionsData: EmissionsDataType[];
@@ -49,6 +53,12 @@ export const chartDataSlice = createSlice({
           );
       }
     },
+    // setEmissionsFuelType: (
+    //   state,
+    //   action: { type: any; payload: FuelTypesType }
+    // ) => {
+    //   return { ...state, emissionsData: action.payload };
+    // },
   },
 });
 export const { setChartData } = chartDataSlice.actions;

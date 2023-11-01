@@ -1,10 +1,14 @@
 import { FC, LiHTMLAttributes, memo, useState } from 'react';
 import classNames from 'classnames';
 import { IoIosArrowDown } from 'react-icons/io';
+import { setEmissionsFuelType } from '../../../../store/emissionsType/emissionsTypeSlice';
 import './Item.scss';
+import { useDispatch } from 'react-redux';
+import { FuelTypesType } from '../../EmissionsChart/data/interface';
 
 interface IItem {
   name: string;
+  type: 'region' | 'emissionsType';
   insideItems: {
     text: string;
     onClick: () => void;
@@ -13,10 +17,18 @@ interface IItem {
   }[];
   selectRegion: number;
 }
-const Item: FC<IItem> = ({ name, insideItems, selectRegion }) => {
+const Item: FC<IItem> = ({ name, type, insideItems, selectRegion }) => {
+  const dispatch = useDispatch();
   const [expand, setExpand] = useState<boolean>(false);
 
-  const handleOnClick = (item: number, onClick: () => void) => {
+  const handleOnClick = (
+    item: number,
+    onClick: () => void,
+    el?: IItem['insideItems'][0]
+  ) => {
+    // if (type === 'emissionsType') {
+    //   dispatch(setEmissionsFuelType(el?.text as FuelTypesType));
+    // }
     onClick();
   };
   return (
@@ -44,9 +56,10 @@ const Item: FC<IItem> = ({ name, insideItems, selectRegion }) => {
         {insideItems.map((el, index) => (
           <li
             key={index}
-            onClick={() => handleOnClick(index, el.onClick)}
+            onClick={() => handleOnClick(index, el.onClick, el)}
             className={classNames('menu-item__inside', {
-              'menu-item__inside__select': selectRegion === index,
+              'menu-item__inside__select':
+                type === 'region' && selectRegion === index,
             })}
           >
             {el.text}

@@ -13,15 +13,20 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { FC } from 'react';
 import './EmissionsChart.scss';
 
-interface IEmissionsChart {
-  selectType: string;
-}
-const EmissionsChart: FC<IEmissionsChart> = ({ selectType = 'уголь' }) => {
+interface IEmissionsChart {}
+const EmissionsChart: FC<IEmissionsChart> = ({}) => {
   ChartJS.register(ArcElement, Tooltip, Legend);
-  const { emissionsData } = useSelector((state: IRootState) => state.chartData);
+  const {
+    chartData: { emissionsData },
+    emissionsType,
+  } = useSelector((state: IRootState) => state);
   const emissionsFuel = emissionsData.map(
-    (emiss) => emiss.fuel.find((fuel) => fuel.type === selectType)!.value
+    (emiss) =>
+      emiss.fuel.find((fuel) => fuel.type === emissionsType.emissionsType)!
+        .value
   );
+
+  console.log(emissionsType);
 
   const data: ChartData<'bar'> = {
     labels: emissionsData.map((el) => el.name),
@@ -61,13 +66,14 @@ const EmissionsChart: FC<IEmissionsChart> = ({ selectType = 'уголь' }) => {
       },
       y: {
         grid: {
-          display: false,
+          // display: false,
         },
       },
     },
     datasets: {
       bar: {
         barThickness: 20,
+        backgroundColor: ['#1e98ff'],
       },
       doughnut: {
         borderWidth: 2,
@@ -88,7 +94,7 @@ const EmissionsChart: FC<IEmissionsChart> = ({ selectType = 'уголь' }) => {
   return (
     <div className="emissions">
       {/* <Doughnut data={data} options={options} /> */}
-      <h4 className='emissions-title'>
+      <h4 className="emissions-title">
         Выбросы диоксида углерода при генерации тепловой и электрической энергии
         на удаленных труднодоступных территориях субъектов РФ, тыс. т СО2
       </h4>

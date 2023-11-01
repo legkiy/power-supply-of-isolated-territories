@@ -3,12 +3,15 @@ import 'tippy.js/dist/tippy.css';
 import { CSSProperties, ReactNode, memo, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setChartData } from '../../../store/chartData/chartDataSlice';
+import { setEmissionsFuelType } from '../../../store/emissionsType/emissionsTypeSlice';
 import { Modal } from '../../index';
 import Item from './Item';
+import { FuelTypesType } from '../EmissionsChart/data/interface';
 
 export interface menuItem {
   text: string;
   onClick?: () => void;
+  type: 'region' | 'emissionsType';
   insideItems?: {
     text: string;
     onClick?: () => void;
@@ -52,6 +55,7 @@ const Menu = () => {
   const menuItem: menuItem[] = [
     {
       text: 'Выбрать регион',
+      type: 'region',
       insideItems: [
         {
           text: 'СФО',
@@ -66,16 +70,65 @@ const Menu = () => {
       ],
       popupWidht: '134px',
     },
+    {
+      text: 'Выбросы от:',
+      type: 'emissionsType',
+      insideItems: [
+        {
+          text: 'уголь',
+          index: 0,
+          onClick: () => {
+            dispatch(setEmissionsFuelType('уголь'));
+          },
+        },
+        {
+          text: 'нефть',
+          index: 1,
+          onClick: () => {
+            dispatch(setEmissionsFuelType('нефть'));
+          },
+        },
+        {
+          text: 'газо-конденс.',
+          index: 2,
+          onClick: () => {
+            dispatch(setEmissionsFuelType('газо-конденсатное'));
+          },
+        },
+        {
+          text: 'нефтепрод.',
+          index: 3,
+          onClick: () => {
+            dispatch(setEmissionsFuelType('нефтепродукты'));
+          },
+        },
+        {
+          text: 'газ',
+          index: 4,
+          onClick: () => {
+            dispatch(setEmissionsFuelType('газ'));
+          },
+        },
+        {
+          text: 'ВСЕГО',
+          index: 5,
+          onClick: () => {
+            dispatch(setEmissionsFuelType('ВСЕГО'));
+          },
+        },
+      ],
+    },
   ];
 
   return (
     <aside className={`menu`}>
       <ul className="menu-list">
         <li className="menu-item__name not-inside no-interactive">Меню</li>
-        {menuItem.map(({ text, insideItems }, index) => (
+        {menuItem.map(({ text, insideItems, type }, index) => (
           <Item
             key={index}
             name={text}
+            type={type}
             insideItems={insideItems as any}
             selectRegion={selectRegion}
           />
