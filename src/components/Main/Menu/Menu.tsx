@@ -26,6 +26,7 @@ const Menu = () => {
   const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
   const [selectRegion, setSelectRegion] = useState<number>(0);
+  const [selectEmissions, setSelectEmissions] = useState<number>(0);
 
   const handleOnSelectRegion = (region: 'SFO' | 'DFO', regionId: number) => {
     //установка параметров в query
@@ -79,6 +80,7 @@ const Menu = () => {
           index: 0,
           onClick: () => {
             dispatch(setEmissionsFuelType('уголь'));
+            setSelectEmissions(0);
           },
         },
         {
@@ -86,6 +88,7 @@ const Menu = () => {
           index: 1,
           onClick: () => {
             dispatch(setEmissionsFuelType('нефть'));
+            setSelectEmissions(1);
           },
         },
         {
@@ -93,6 +96,7 @@ const Menu = () => {
           index: 2,
           onClick: () => {
             dispatch(setEmissionsFuelType('газо-конденсатное'));
+            setSelectEmissions(2);
           },
         },
         {
@@ -100,6 +104,7 @@ const Menu = () => {
           index: 3,
           onClick: () => {
             dispatch(setEmissionsFuelType('нефтепродукты'));
+            setSelectEmissions(3);
           },
         },
         {
@@ -107,6 +112,7 @@ const Menu = () => {
           index: 4,
           onClick: () => {
             dispatch(setEmissionsFuelType('газ'));
+            setSelectEmissions(4);
           },
         },
         {
@@ -114,6 +120,7 @@ const Menu = () => {
           index: 5,
           onClick: () => {
             dispatch(setEmissionsFuelType('ВСЕГО'));
+            setSelectEmissions(5);
           },
         },
       ],
@@ -131,6 +138,7 @@ const Menu = () => {
             type={type}
             insideItems={insideItems as any}
             selectRegion={selectRegion}
+            selectEmissions={selectEmissions}
           />
         ))}
         <li

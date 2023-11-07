@@ -16,8 +16,15 @@ interface IItem {
     index?: number;
   }[];
   selectRegion: number;
+  selectEmissions: number;
 }
-const Item: FC<IItem> = ({ name, type, insideItems, selectRegion }) => {
+const Item: FC<IItem> = ({
+  name,
+  type,
+  insideItems,
+  selectRegion,
+  selectEmissions,
+}) => {
   const dispatch = useDispatch();
   const [expand, setExpand] = useState<boolean>(false);
 
@@ -59,7 +66,9 @@ const Item: FC<IItem> = ({ name, type, insideItems, selectRegion }) => {
             onClick={() => handleOnClick(index, el.onClick, el)}
             className={classNames('menu-item__inside', {
               'menu-item__inside__select':
-                type === 'region' && selectRegion === index,
+                type === 'region'
+                  ? selectRegion === index
+                  : el.index === selectEmissions,
             })}
           >
             {el.text}
