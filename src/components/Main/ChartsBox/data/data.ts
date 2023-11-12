@@ -1,4 +1,7 @@
+import { useSelector } from 'react-redux';
 import { IPopulations } from './interfaces';
+import { IRootState } from '../../../../store';
+import { getLocal } from '../../../../utils';
 
 export const templateData: IPopulations = {
   name: 'Условные обозначения',
@@ -50,7 +53,10 @@ export const templateData: IPopulations = {
 
 export const DFOData: IPopulations[] = [
   {
-    name: 'Республика Саха (Якутия), арктика',
+    name:
+      getLocal() === 'en'
+        ? 'Republic of Sakha (Yakutia), arctic'
+        : 'Республика Саха (Якутия), арктика',
     settlements: [
       {
         label: '200',
@@ -97,7 +103,10 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Республика Саха (Якутия), юг',
+    name:
+      getLocal() === 'en'
+        ? 'Republic of Sakha (Yakutia), south'
+        : 'Республика Саха (Якутия), юг',
     settlements: [
       {
         label: '200',
@@ -144,7 +153,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Забайкальский край',
+    name: getLocal() === 'en' ? 'Zabaykalsky Krai' : 'Забайкальский край',
     settlements: [
       {
         label: '200',
@@ -191,7 +200,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Камчатский край',
+    name: getLocal() === 'en' ? 'Kamchatka Krai' : 'Камчатский край',
     settlements: [
       {
         label: '200',
@@ -238,7 +247,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Приморский край',
+    name: getLocal() === 'en' ? 'Primorsky Krai' : 'Приморский край',
     settlements: [
       {
         label: '200',
@@ -285,7 +294,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Хабаровский край',
+    name: getLocal() === 'en' ? 'Khabarovsk Krai' : 'Хабаровский край',
     settlements: [
       {
         label: '200',
@@ -332,7 +341,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Магаданская область',
+    name: getLocal() === 'en' ? 'Magadan region' : 'Магаданская область',
     settlements: [
       {
         label: '200',
@@ -379,7 +388,10 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Чукотский автономный округ',
+    name:
+      getLocal() === 'en'
+        ? 'Chukotka autonomous okrug'
+        : 'Чукотский автономный округ',
     settlements: [
       {
         label: '200',
@@ -426,7 +438,10 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Сахалинская область, Курильские о-ва',
+    name:
+      getLocal() === 'en'
+        ? 'Sakhalin region, Kuril Islands'
+        : 'Сахалинская область, Курильские о-ва',
     settlements: [
       {
         label: '200',
@@ -473,7 +488,10 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Сахалинская область, о. Сахалин',
+    name:
+      getLocal() === 'en'
+        ? 'Sakhalin region, Sakhalin Islands'
+        : 'Сахалинская область, о. Сахалин',
     settlements: [
       {
         label: '200',
@@ -567,7 +585,7 @@ export const DFOData: IPopulations[] = [
   //   ],
   // },
   {
-    name: 'Амурская область',
+    name: getLocal() === 'en' ? 'Amur region' : 'Амурская область',
     settlements: [
       {
         label: '200',
@@ -617,7 +635,7 @@ export const DFOData: IPopulations[] = [
 
 export const SFOData: IPopulations[] = [
   {
-    name: 'Республика Алтай',
+    name: getLocal() === 'en' ? 'Altai Republic' : 'Республика Алтай',
     settlements: [
       {
         label: '200',
@@ -664,7 +682,7 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Республика Тыва',
+    name: getLocal() === 'en' ? 'Tyva Republic' : 'Республика Тыва',
     settlements: [
       {
         label: '200',
@@ -711,7 +729,10 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Красноярский край, арктика',
+    name:
+      getLocal() === 'en'
+        ? 'Krasnoyarsk Krai, arctic '
+        : 'Красноярский край, арктика',
     settlements: [
       {
         label: '200',
@@ -758,7 +779,10 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Красноярский край, юг',
+    name:
+      getLocal() === 'en'
+        ? 'Krasnoyarsk Krai, south '
+        : 'Красноярский край, юг',
     settlements: [
       {
         label: '200',
@@ -805,7 +829,7 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Иркутская область',
+    name: getLocal() === 'en' ? 'Irkutsk Region' : 'Иркутская область',
     settlements: [
       {
         label: '200',
@@ -852,7 +876,7 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Кемеровская область',
+    name: getLocal() === 'en' ? 'Kemerovo Region' : 'Кемеровская область',
     settlements: [
       {
         label: '200',
@@ -899,7 +923,7 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name: 'Томская область',
+    name: getLocal() === 'en' ? 'Tomsk Region' : 'Томская область',
     settlements: [
       {
         label: '200',

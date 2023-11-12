@@ -6,6 +6,7 @@ import { IRootState } from '../../store';
 import ChartsBox from './ChartsBox';
 import { memo } from 'react';
 import ChartTemplate from './ChartsBox/ChartTemplate';
+import local from '../../locale';
 import EmissionsChart from './EmissionsChart';
 
 export const chartsLegends = [
@@ -24,23 +25,8 @@ const MainContent = () => {
         <Menu />
         <div style={{ width: '100%' }}>
           <div className="title-wrapper">
-            <h1 className="title">
-              Мониторинг выбросов диоксида углерода от энергетических объектов
-              на изолированных труднодоступных территориях в восточных регионах
-              РФ
-            </h1>
-            <p className="title-description">
-              Разработанная информационно-аналитическая система предназначена
-              для мониторинга изменения выбросов диоксида углерода от
-              энергетических объектов на изолированных от энергосистем
-              труднодоступных территориях восточных регионов РФ при реализации
-              различных сценариев декарбонизации. Информация представлена из
-              созданной базы данных технико-экономических и производственных
-              показателей электростанций и котельных, обеспечивающих
-              энергоснабжение этой категории потребителей, и расчетных оценок
-              выбросов в атмосферу диоксида углерода на основе разработанной
-              математической модели
-            </p>
+            <h1 className="title">{local.title}</h1>
+            <p className="title-description">{local.description}</p>
           </div>
           <div className="main-wrapper">
             <div className="left-side">
@@ -72,7 +58,7 @@ const MainContent = () => {
             </div>
             <div className="right-side">
               <YaMap />
-              <EmissionsChart selectType="уголь" />
+              <EmissionsChart />
             </div>
           </div>
         </div>

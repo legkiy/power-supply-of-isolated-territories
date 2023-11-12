@@ -16,7 +16,8 @@
   }
   &__arrow {
     height: 32px;
-    width: 32px;
+    width: 18px !important;
+    min-width: 18px;
     transition: transform 200ms ease;
     &__revers {
       transform: rotate(180deg);
@@ -26,6 +27,7 @@
     display: flex;
     align-items: center;
     padding: 10px;
+    justify-content: center;
     &:not(.no-interactive):hover {
       cursor: pointer;
       background-color: rgba(65, 65, 65, 0.33);

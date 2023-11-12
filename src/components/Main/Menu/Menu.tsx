@@ -6,12 +6,13 @@ import { setChartData } from '../../../store/chartData/chartDataSlice';
 import { setEmissionsFuelType } from '../../../store/emissionsType/emissionsTypeSlice';
 import { Modal } from '../../index';
 import Item from './Item';
-import { FuelTypesType } from '../EmissionsChart/data/interface';
+import local from '../../../locale';
+import { setLang } from '../../../utils';
 
 export interface menuItem {
   text: string;
   onClick?: () => void;
-  type: 'region' | 'emissionsType';
+  type?: 'region' | 'emissionsType';
   insideItems?: {
     text: string;
     onClick?: () => void;
@@ -55,7 +56,7 @@ const Menu = () => {
 
   const menuItem: menuItem[] = [
     {
-      text: 'Выбрать регион',
+      text: local.menu.selectRegion,
       type: 'region',
       insideItems: [
         {
@@ -125,12 +126,33 @@ const Menu = () => {
         },
       ],
     },
+    {
+      text: local.menu.lang,
+      insideItems: [
+        {
+          text: 'EN',
+          onClick: () => {
+            setLang('en');
+            window.location.reload();
+          },
+        },
+        {
+          text: 'RU',
+          onClick: () => {
+            setLang('ru');
+            window.location.reload();
+          },
+        },
+      ],
+    },
   ];
 
   return (
     <aside className={`menu`}>
       <ul className="menu-list">
-        <li className="menu-item__name not-inside no-interactive">Меню</li>
+        <li className="menu-item__name not-inside no-interactive">
+          {local.menu.title}
+        </li>
         {menuItem.map(({ text, insideItems, type }, index) => (
           <Item
             key={index}
@@ -145,7 +167,7 @@ const Menu = () => {
           className="menu-item__name not-inside"
           onClick={() => setOpenModal(true)}
         >
-          Контакты
+          {local.menu.contacts}
         </li>
       </ul>
       {openModal && (

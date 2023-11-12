@@ -8,7 +8,7 @@ import { FuelTypesType } from '../../EmissionsChart/data/interface';
 
 interface IItem {
   name: string;
-  type: 'region' | 'emissionsType';
+  type?: 'region' | 'emissionsType';
   insideItems: {
     text: string;
     onClick: () => void;
