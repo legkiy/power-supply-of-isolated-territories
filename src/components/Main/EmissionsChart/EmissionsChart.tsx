@@ -12,6 +12,7 @@ import { Bar } from 'react-chartjs-2';
 import { FC } from 'react';
 import './EmissionsChart.scss';
 import { FuelTypesType } from './data/interface';
+import { chartColors } from './data/emissionsData';
 
 interface IEmissionsChart {}
 const EmissionsChart: FC<IEmissionsChart> = ({}) => {
@@ -29,16 +30,6 @@ const EmissionsChart: FC<IEmissionsChart> = ({}) => {
   const data: ChartData<'bar'> = {
     labels: emissionsData.map((el) => el.name),
     datasets: [{ data: emissionsFuel }],
-  };
-  const chartColors: { [key in FuelTypesType]: string } = {
-    уголь: '#5c5c5c',
-    нефть: '#79541e',
-    'газо-конденсатное': '#3e791e',
-    газ: '#1e98ff',
-    нефтепродукты: '#c74c00',
-    бензин: '#4d791e',
-    дизельное: '#86860d',
-    ВСЕГО: '#691eff',
   };
 
   const options: ChartOptions<'bar'> = {
@@ -62,20 +53,6 @@ const EmissionsChart: FC<IEmissionsChart> = ({}) => {
         barThickness: 20,
         backgroundColor: [chartColors[emissionsType.emissionsType]],
       },
-      // doughnut: {
-      //   borderWidth: 2,
-      //   borderRadius: 4,
-      //   borderAlign: 'inner',
-      //   backgroundColor: [
-      //     '#5c5c5c',
-      //     '#3e791e',
-      //     '#1e98ff',
-      //     '#79541e',
-      //     '#c74c00',
-      //     '#86860d',
-      //     '#691eff',
-      //   ],
-      // },
     },
   };
   return (

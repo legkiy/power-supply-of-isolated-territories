@@ -8,6 +8,7 @@ import { memo } from 'react';
 import ChartTemplate from './ChartsBox/ChartTemplate';
 import local from '../../locale';
 import EmissionsChart from './EmissionsChart';
+import AllEmissionsChart from './AllEmissionsChart';
 
 export const chartsLegends = [
   { text: 'до 200 чел.', backgroundColor: '#365C74' },
@@ -59,6 +60,7 @@ const MainContent = () => {
             <div className="right-side">
               <YaMap />
               <EmissionsChart />
+              <AllEmissionsChart />
             </div>
           </div>
         </div>

@@ -1,4 +1,15 @@
-import { EmissionsDataType } from './interface';
+import { EmissionsDataType, FuelTypesType } from './interface';
+
+export const chartColors: { [key in FuelTypesType]: string } = {
+  уголь: '#5c5c5c',
+  нефть: '#79541e',
+  'газо-конденсатное': '#3e791e',
+  газ: '#1e98ff',
+  нефтепродукты: '#c74c00',
+  бензин: '#4d791e',
+  дизельное: '#86860d',
+  ВСЕГО: '#691eff',
+};
 
 export const EmissionsDataSFO: EmissionsDataType[] = [
   {
