@@ -1,10 +1,11 @@
-import { useSelector } from 'react-redux';
 import { IPopulations } from './interfaces';
-import { IRootState } from '../../../../store';
 import { getLocal } from '../../../../utils';
+import local from '../../../../locale';
+
+const DFO = local.regions.DFO;
 
 export const templateData: IPopulations = {
-  name: 'Условные обозначения',
+  name: local.regions.legend,
   settlements: [
     {
       label: '200',
@@ -53,10 +54,7 @@ export const templateData: IPopulations = {
 
 export const DFOData: IPopulations[] = [
   {
-    name:
-      getLocal() === 'en'
-        ? 'Republic of Sakha (Yakutia), arctic'
-        : 'Республика Саха (Якутия), арктика',
+    name: DFO.sakhRepArctic,
     settlements: [
       {
         label: '200',
@@ -103,10 +101,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name:
-      getLocal() === 'en'
-        ? 'Republic of Sakha (Yakutia), south'
-        : 'Республика Саха (Якутия), юг',
+    name: DFO.sakhRepSouth,
     settlements: [
       {
         label: '200',
@@ -153,7 +148,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: getLocal() === 'en' ? 'Zabaykalsky Krai' : 'Забайкальский край',
+    name: DFO.Zabaykalsky,
     settlements: [
       {
         label: '200',
@@ -200,7 +195,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: getLocal() === 'en' ? 'Kamchatka Krai' : 'Камчатский край',
+    name: DFO.Kamchatka,
     settlements: [
       {
         label: '200',
@@ -247,7 +242,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: getLocal() === 'en' ? 'Primorsky Krai' : 'Приморский край',
+    name: DFO.Primorsky,
     settlements: [
       {
         label: '200',
@@ -294,7 +289,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: getLocal() === 'en' ? 'Khabarovsk Krai' : 'Хабаровский край',
+    name: DFO.Khabarovsk,
     settlements: [
       {
         label: '200',
@@ -341,7 +336,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name: getLocal() === 'en' ? 'Magadan region' : 'Магаданская область',
+    name: DFO.Magadan,
     settlements: [
       {
         label: '200',
@@ -388,10 +383,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name:
-      getLocal() === 'en'
-        ? 'Chukotka autonomous okrug'
-        : 'Чукотский автономный округ',
+    name: DFO.Chukotka,
     settlements: [
       {
         label: '200',
@@ -438,10 +430,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name:
-      getLocal() === 'en'
-        ? 'Sakhalin region, Kuril Islands'
-        : 'Сахалинская область, Курильские о-ва',
+    name: DFO.SakhalinKuril,
     settlements: [
       {
         label: '200',
@@ -488,10 +477,7 @@ export const DFOData: IPopulations[] = [
     ],
   },
   {
-    name:
-      getLocal() === 'en'
-        ? 'Sakhalin region, Sakhalin Islands'
-        : 'Сахалинская область, о. Сахалин',
+    name: DFO.Sakhalin,
     settlements: [
       {
         label: '200',
@@ -585,7 +571,7 @@ export const DFOData: IPopulations[] = [
   //   ],
   // },
   {
-    name: getLocal() === 'en' ? 'Amur region' : 'Амурская область',
+    name: DFO.Amur,
     settlements: [
       {
         label: '200',

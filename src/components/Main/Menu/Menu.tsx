@@ -73,7 +73,7 @@ const Menu = () => {
       popupWidht: '134px',
     },
     {
-      text: 'Выбросы от:',
+      text: local.menu.emissions,
       type: 'emissionsType',
       insideItems: [
         {

@@ -13,6 +13,24 @@ export const ruLocale = {
     DFO: 'ДФО',
     contacts: 'Контакты',
     lang: 'Язык',
+    emissions: 'Выбросы',
+  },
+  regions: {
+    legend: 'Условные обозначения',
+    DFO: {
+      title: 'DFO',
+      sakhRepArctic: 'Республика Саха (Якутия), арктика',
+      sakhRepSouth: 'Республика Саха (Якутия), юг',
+      Zabaykalsky: 'Забайкальский край',
+      Kamchatka: 'Камчатский край',
+      Primorsky: 'Приморский край',
+      Khabarovsk: 'Хабаровский край',
+      Magadan: 'Магаданская',
+      Chukotka: 'Чукотский автономный округ',
+      SakhalinKuril: 'Сахалинская область, Курильские о-ва',
+      Sakhalin: 'Сахалинская область, о. Сахалин',
+      Amur: 'Амурская область',
+    },
   },
 };
 
@@ -33,5 +51,23 @@ export const enLocale: LocaleType = {
     DFO: 'DFO',
     contacts: 'Contacts',
     lang: 'Language',
+    emissions: 'Emissions',
+  },
+  regions: {
+    legend: 'Legend',
+    DFO: {
+      title: 'DFO',
+      sakhRepArctic: 'Republic of Sakha (Yakutia), arctic',
+      sakhRepSouth: 'Republic of Sakha (Yakutia), south',
+      Zabaykalsky: 'Zabaykalsky Krai',
+      Kamchatka: 'Kamchatka Krai',
+      Primorsky: 'Primorsky Krai',
+      Khabarovsk: 'Khabarovsk Krai',
+      Magadan: 'Magadan region',
+      Chukotka: 'Chukotka autonomous okrug',
+      SakhalinKuril: 'Sakhalin region, Kuril Islands',
+      Sakhalin: 'Sakhalin region, Sakhalin Islands',
+      Amur: 'Amur region',
+    },
   },
 };
