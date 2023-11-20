@@ -7,14 +7,14 @@ import { setEmissionsFuelType } from '../../../store/emissionsType/emissionsType
 import { Modal } from '../../index';
 import Item from './Item';
 import local from '../../../locale';
-import { setLang } from '../../../utils';
+import { getLocal, setLang } from '../../../utils';
 
 export interface menuItem {
-  text: string;
+  text: string | ReactNode;
   onClick?: () => void;
   type?: 'region' | 'emissionsType';
   insideItems?: {
-    text: string;
+    text: string | ReactNode;
     onClick?: () => void;
     children?: ReactNode;
     index?: number;
@@ -127,17 +127,24 @@ const Menu = () => {
       ],
     },
     {
-      text: local.menu.lang,
+      text: (
+        <img
+          src={`./local/${getLocal()}.png`}
+          alt="Language"
+          height={20}
+          width={30}
+        />
+      ),
       insideItems: [
         {
-          text: 'EN',
+          text: <img src="./local/en.png" alt="EN" height={20} width={30} />,
           onClick: () => {
             setLang('en');
             window.location.reload();
           },
         },
         {
-          text: 'RU',
+          text: <img src="./local/ru.png" alt="RU" height={20} width={30} />,
           onClick: () => {
             setLang('ru');
             window.location.reload();

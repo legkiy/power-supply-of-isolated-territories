@@ -1,4 +1,4 @@
-import { FC, LiHTMLAttributes, memo, useState } from 'react';
+import { FC, LiHTMLAttributes, ReactNode, memo, useState } from 'react';
 import classNames from 'classnames';
 import { IoIosArrowDown } from 'react-icons/io';
 import { setEmissionsFuelType } from '../../../../store/emissionsType/emissionsTypeSlice';
@@ -7,10 +7,10 @@ import { useDispatch } from 'react-redux';
 import { FuelTypesType } from '../../EmissionsChart/data/interface';
 
 interface IItem {
-  name: string;
+  name: string | ReactNode;
   type?: 'region' | 'emissionsType';
   insideItems: {
-    text: string;
+    text: string | ReactNode;
     onClick: () => void;
     props?: LiHTMLAttributes<HTMLLIElement>;
     index?: number;
