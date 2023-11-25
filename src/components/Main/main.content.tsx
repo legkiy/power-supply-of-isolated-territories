@@ -59,6 +59,11 @@ const MainContent = () => {
             </div>
             <div className="right-side">
               <YaMap />
+              {/* <EmissionsChart /> */}
+            </div>
+          </div>
+          <div>
+            <div className="emissions-charts-wrapper">
               <EmissionsChart />
               <AllEmissionsChart />
             </div>

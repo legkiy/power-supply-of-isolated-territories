@@ -1,12 +1,23 @@
 .emissions {
   margin-top: 20px;
+  width: 50%;
+
   &-chart {
-    width: 400px;
+    width: 620px;
     height: 250px;
-    margin: auto;
-    margin-top: 10px;
+    margin-left: auto;
+    &-2 {
+      height: 75px;
+      width: 100%;
+      margin-left: auto;
+      &.krasn {
+        margin-left: 35px;
+      }
+    }
   }
   &-title {
+    margin-bottom: 10px;
     font-size: 14px;
+    height: 40px;
   }
 }

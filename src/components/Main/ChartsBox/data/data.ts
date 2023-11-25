@@ -2,7 +2,7 @@ import { IPopulations } from './interfaces';
 import { getLocal } from '../../../../utils';
 import local from '../../../../locale';
 
-const DFO = local.regions.DFO;
+const { DFO, SFO } = local.regions;
 
 export const templateData: IPopulations = {
   name: local.regions.legend,
@@ -621,7 +621,7 @@ export const DFOData: IPopulations[] = [
 
 export const SFOData: IPopulations[] = [
   {
-    name: getLocal() === 'en' ? 'Altai Republic' : 'Республика Алтай',
+    name: SFO.Altai,
     settlements: [
       {
         label: '200',
@@ -668,7 +668,7 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name: getLocal() === 'en' ? 'Tyva Republic' : 'Республика Тыва',
+    name: SFO.Tyva,
     settlements: [
       {
         label: '200',
@@ -715,10 +715,7 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name:
-      getLocal() === 'en'
-        ? 'Krasnoyarsk Krai, arctic '
-        : 'Красноярский край, арктика',
+    name: SFO.KrasnoyarskArctic,
     settlements: [
       {
         label: '200',
@@ -765,10 +762,7 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name:
-      getLocal() === 'en'
-        ? 'Krasnoyarsk Krai, south '
-        : 'Красноярский край, юг',
+    name: SFO.KrasnoyarskSouth,
     settlements: [
       {
         label: '200',
@@ -815,7 +809,7 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name: getLocal() === 'en' ? 'Irkutsk Region' : 'Иркутская область',
+    name: SFO.Irkutsk,
     settlements: [
       {
         label: '200',
@@ -862,7 +856,7 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name: getLocal() === 'en' ? 'Kemerovo Region' : 'Кемеровская область',
+    name: SFO.Kemerovo,
     settlements: [
       {
         label: '200',
@@ -909,7 +903,7 @@ export const SFOData: IPopulations[] = [
     ],
   },
   {
-    name: getLocal() === 'en' ? 'Tomsk Region' : 'Томская область',
+    name: SFO.Tomsk,
     settlements: [
       {
         label: '200',

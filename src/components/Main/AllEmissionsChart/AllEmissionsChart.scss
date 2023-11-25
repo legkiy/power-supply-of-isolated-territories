@@ -1,0 +1,13 @@
+.all-emissions {
+  display: flex;
+  height: 325px;
+  &-title {
+    margin-bottom: 10px;
+    font-size: 14px;
+    height: 40px;
+  }
+  &-wrapper {
+    margin-top: 20px;
+    width: 550px;
+  }
+}

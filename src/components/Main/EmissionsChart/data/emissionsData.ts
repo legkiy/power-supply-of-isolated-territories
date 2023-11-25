@@ -1,4 +1,7 @@
 import { EmissionsDataType, FuelTypesType } from './interface';
+import local from 'src/locale';
+
+const { SFO, DFO } = local.regions;
 
 export const chartColors: { [key in FuelTypesType]: string } = {
   уголь: '#5c5c5c',
@@ -13,7 +16,7 @@ export const chartColors: { [key in FuelTypesType]: string } = {
 
 export const EmissionsDataSFO: EmissionsDataType[] = [
   {
-    name: 'Республика Алтай',
+    name: SFO.Altai,
     fuel: [
       {
         type: 'уголь',
@@ -35,14 +38,10 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
         type: 'газ',
         value: 0,
       },
-      {
-        type: 'ВСЕГО',
-        value: 1.7,
-      },
     ],
   },
   {
-    name: 'Республика Тыва',
+    name: SFO.Tyva,
     fuel: [
       {
         type: 'уголь',
@@ -64,14 +63,10 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
         type: 'газ',
         value: 0,
       },
-      {
-        type: 'ВСЕГО',
-        value: 12.8,
-      },
     ],
   },
   {
-    name: 'Красноярский край',
+    name: SFO.Krasnoyarsk,
     fuel: [
       {
         type: 'уголь',
@@ -93,14 +88,10 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
         type: 'газ',
         value: 59.9,
       },
-      {
-        type: 'ВСЕГО',
-        value: 714.8,
-      },
     ],
   },
   {
-    name: 'Иркутская область',
+    name: SFO.Irkutsk,
     fuel: [
       {
         type: 'уголь',
@@ -122,14 +113,10 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
         type: 'газ',
         value: 0,
       },
-      {
-        type: 'ВСЕГО',
-        value: 30.1,
-      },
     ],
   },
   {
-    name: 'Кемеровская область',
+    name: SFO.Kemerovo,
     fuel: [
       {
         type: 'уголь',
@@ -151,14 +138,10 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
         type: 'газ',
         value: 0,
       },
-      {
-        type: 'ВСЕГО',
-        value: 0.9,
-      },
     ],
   },
   {
-    name: 'Томская область',
+    name: SFO.Tomsk,
     fuel: [
       {
         type: 'уголь',
@@ -180,17 +163,13 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
         type: 'газ',
         value: 0,
       },
-      {
-        type: 'ВСЕГО',
-        value: 12.9,
-      },
     ],
   },
 ];
 
 export const EmissionsDataDFO: EmissionsDataType[] = [
   {
-    name: 'Республика Саха (Якутия)',
+    name: DFO.sakhRep,
     fuel: [
       {
         type: 'уголь',
@@ -212,14 +191,10 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         type: 'газ',
         value: 4.2,
       },
-      {
-        type: 'ВСЕГО',
-        value: 944.0,
-      },
     ],
   },
   {
-    name: 'Камчатский край',
+    name: DFO.Kamchatka,
     fuel: [
       {
         type: 'уголь',
@@ -241,14 +216,10 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         type: 'газ',
         value: 3.6,
       },
-      {
-        type: 'ВСЕГО',
-        value: 81.6,
-      },
     ],
   },
   {
-    name: 'Хабаровский край',
+    name: DFO.Khabarovsk,
     fuel: [
       {
         type: 'уголь',
@@ -270,14 +241,10 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         type: 'газ',
         value: 14.5,
       },
-      {
-        type: 'ВСЕГО',
-        value: 409.6,
-      },
     ],
   },
   {
-    name: 'Сахалинская область',
+    name: DFO.SakhalinObl,
     fuel: [
       {
         type: 'уголь',
@@ -299,14 +266,10 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         type: 'газ',
         value: 1.4,
       },
-      {
-        type: 'ВСЕГО',
-        value: 136.9,
-      },
     ],
   },
   {
-    name: 'Приморский край',
+    name: DFO.Primorsky,
     fuel: [
       {
         type: 'уголь',
@@ -328,14 +291,10 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         type: 'газ',
         value: 0,
       },
-      {
-        type: 'ВСЕГО',
-        value: 17.2,
-      },
     ],
   },
   {
-    name: 'Магаданская область',
+    name: DFO.Magadan,
     fuel: [
       {
         type: 'уголь',
@@ -357,14 +316,10 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         type: 'газ',
         value: 0,
       },
-      {
-        type: 'ВСЕГО',
-        value: 11.5,
-      },
     ],
   },
   {
-    name: 'Забайкальский край',
+    name: DFO.Zabaykalsky,
     fuel: [
       {
         type: 'уголь',
@@ -386,14 +341,10 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         type: 'газ',
         value: 0,
       },
-      {
-        type: 'ВСЕГО',
-        value: 8.0,
-      },
     ],
   },
   {
-    name: 'Амурская область',
+    name: DFO.Amur,
     fuel: [
       {
         type: 'уголь',
@@ -415,14 +366,10 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         type: 'газ',
         value: 0,
       },
-      {
-        type: 'ВСЕГО',
-        value: 2.2,
-      },
     ],
   },
   {
-    name: 'Чукотский АО',
+    name: DFO.ChukotkaAO,
     fuel: [
       {
         type: 'уголь',
@@ -443,10 +390,6 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
       {
         type: 'газ',
         value: 0,
-      },
-      {
-        type: 'ВСЕГО',
-        value: 275.2,
       },
     ],
   },

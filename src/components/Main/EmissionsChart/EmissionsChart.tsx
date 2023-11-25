@@ -11,25 +11,47 @@ import {
 import { Bar } from 'react-chartjs-2';
 import { FC } from 'react';
 import './EmissionsChart.scss';
-import { FuelTypesType } from './data/interface';
+import { EmissionsDataType, FuelTypesType } from './data/interface';
 import { chartColors } from './data/emissionsData';
+import local from 'src/locale';
+import classNames from 'classnames';
 
 interface IEmissionsChart {}
+
 const EmissionsChart: FC<IEmissionsChart> = ({}) => {
   ChartJS.register(ArcElement, Tooltip, Legend);
   const {
     chartData: { emissionsData },
     emissionsType,
   } = useSelector((state: IRootState) => state);
-  const emissionsFuel = emissionsData.map(
-    (emiss) =>
-      emiss.fuel.find((fuel) => fuel.type === emissionsType.emissionsType)!
-        .value
+
+  const filterEmissions = emissionsData.filter(
+    (emis) =>
+      emis.name !== local.regions.SFO.Krasnoyarsk &&
+      emis.name !== local.regions.DFO.sakhRep
   );
 
+  const emissionsFuel = (fuels: EmissionsDataType[]) =>
+    fuels.map(
+      (emiss) =>
+        emiss.fuel.find((fuel) => fuel.type === emissionsType.emissionsType)!
+          .value
+    );
+
+  const overflowEmissions = emissionsData.find(
+    (emis) =>
+      emis.name === local.regions.SFO.Krasnoyarsk ||
+      emis.name === local.regions.DFO.sakhRep
+  );
+
+  const overflowData: ChartData<'bar'> = {
+    labels: [overflowEmissions].map((el) => el!.name),
+    datasets: [{ data: emissionsFuel([overflowEmissions!]) }],
+  };
+
   const data: ChartData<'bar'> = {
-    labels: emissionsData.map((el) => el.name),
-    datasets: [{ data: emissionsFuel }],
+    labels: filterEmissions.map((el) => el.name),
+    datasets: [{ data: emissionsFuel(filterEmissions) }],
   };
 
   const options: ChartOptions<'bar'> = {
@@ -39,7 +61,6 @@ const EmissionsChart: FC<IEmissionsChart> = ({}) => {
         display: false,
       },
     },
-
     maintainAspectRatio: false,
     scales: {
       x: {
@@ -64,6 +85,13 @@ const EmissionsChart: FC<IEmissionsChart> = ({}) => {
       </h4>
       <div className="emissions-chart">
         <Bar data={data} options={options} />
+      </div>
+      <div
+        className={classNames('emissions-chart-2', {
+          krasn: overflowEmissions?.name === local.regions.SFO.Krasnoyarsk,
+        })}
+      >
+        <Bar data={overflowData} options={options} />
       </div>
     </div>
   );

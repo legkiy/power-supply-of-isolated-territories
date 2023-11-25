@@ -4,6 +4,7 @@ import { Bar } from 'react-chartjs-2';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../../../store';
 import { chartColors } from '../EmissionsChart/data/emissionsData';
+import './AllEmissionsChart.scss';
 
 interface IAllEmissionsChart {}
 const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
@@ -39,7 +40,7 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
     return acc;
   }, []);
   //как вытащить элкмент из массива по след. условиям: в поле содержащем массив чисел есть число больше 200
-  datasetArray.map((el) => console.log(!!el.data.find((value) => value > 200)));
+  // datasetArray.map((el) => console.log(!!el.data.find((value) => value > 200)));
 
   const materialColors = {
     CO2: '#b82107',
@@ -52,26 +53,32 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
     labels: emissionsData.map(({ name }) => name),
     datasets: [
       ...datasetArray,
-      {
-        label: 'CO2',
-        data: [200, 400, 500],
-        stack: 'stack 1',
-      },
-      {
-        label: 'CO',
-        data: [200, 400, 300],
-        stack: 'stack 1',
-      },
-      {
-        label: 'CO',
-        data: [200, 400, 300],
-        stack: 'stack 1',
-      },
+      // {
+      //   label: 'CO2',
+      //   data: [200, 400, 500],
+      //   stack: 'stack 1',
+      // },
+      // {
+      //   label: 'CO',
+      //   data: [200, 400, 300],
+      //   stack: 'stack 1',
+      // },
+      // {
+      //   label: 'CO',
+      //   data: [200, 400, 300],
+      //   stack: 'stack 1',
+      // },
     ],
   };
 
   const options: ChartOptions<'bar'> = {
     indexAxis: 'y',
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    maintainAspectRatio: false,
     scales: {
       x: {
         stacked: true,
@@ -80,10 +87,22 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
         stacked: true,
       },
     },
+    datasets: {
+      bar: {
+        barThickness: 20,
+        // backgroundColor: [chartColors[emissionsType.emissionsType]],
+      },
+    },
   };
   return (
-    <div>
-      <Bar options={options} data={data} />
+    <div className="all-emissions-wrapper">
+      <h4 className="all-emissions-title">
+        Выбросы диоксида углерода при генерации тепловой и электрической энергии
+        на удаленных труднодоступных территориях субъектов РФ, тыс. т СО2
+      </h4>
+      <div className="all-emissions">
+        <Bar options={options} data={data} />
+      </div>
     </div>
   );
 };
