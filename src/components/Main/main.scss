@@ -48,6 +48,11 @@
         // height: 500px;
         margin-right: 15px;
         max-width: 460px;
+
+        .sticky-box {
+          top: 40px;
+          position: sticky;
+        }
       }
 
       .left-side {
@@ -82,6 +87,26 @@
 
     .emissions-charts-wrapper {
       display: flex;
+    }
+  }
+  .emissions-legend {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__title {
+      margin-top: 30px;
+    }
+
+    &__color {
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+      border-radius: 4px;
+      vertical-align: middle;
+      margin-right: 5px;
     }
   }
 }

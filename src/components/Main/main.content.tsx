@@ -9,6 +9,7 @@ import ChartTemplate from './ChartsBox/ChartTemplate';
 import local from '../../locale';
 import EmissionsChart from './EmissionsChart';
 import AllEmissionsChart from './AllEmissionsChart';
+import { chartColors } from './EmissionsChart/data/emissionsData';
 
 export const chartsLegends = [
   { text: 'до 200 чел.', backgroundColor: '#365C74' },
@@ -19,6 +20,16 @@ export const chartsLegends = [
 
 const MainContent = () => {
   const { chartData } = useSelector((state: IRootState) => state.chartData);
+  const legendEmissionsData = Object.entries(chartColors).map(
+    (el) =>
+      el[0] !== 'ВСЕГО' &&
+      el[0] !== 'бензин' &&
+      el[0] !== 'дизельное' && {
+        name: el[0],
+        color: el[1],
+      }
+  );
+  console.log(legendEmissionsData);
 
   return (
     <main className="main">
@@ -58,7 +69,28 @@ const MainContent = () => {
               </div>
             </div>
             <div className="right-side">
-              <YaMap />
+              <div className="sticky-box">
+                <YaMap />
+                <div className="emissions-legend__title">
+                  <h4>Условные обозначения графиков выбросов</h4>
+                  <div className="emissions-legend">
+                    {legendEmissionsData.map(
+                      (el) =>
+                        el && (
+                          <p>
+                            <span
+                              className="emissions-legend__color"
+                              style={{
+                                backgroundColor: el.color,
+                              }}
+                            />
+                            {el.name}
+                          </p>
+                        )
+                    )}
+                  </div>
+                </div>
+              </div>
               {/* <EmissionsChart /> */}
             </div>
           </div>
