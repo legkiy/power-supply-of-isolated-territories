@@ -1,6 +1,10 @@
 .all-emissions {
   display: flex;
-  height: 325px;
+  height: 250px;
+  width: 420px;
+  &-2 {
+    height: 75px;
+  }
   &-title {
     margin-bottom: 10px;
     font-size: 14px;

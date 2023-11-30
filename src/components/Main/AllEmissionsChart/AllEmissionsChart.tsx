@@ -1,25 +1,37 @@
 import { ChartData, ChartOptions } from 'chart.js';
-import { FC, memo, useState } from 'react';
+import { FC, memo } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../../../store';
 import { chartColors } from '../EmissionsChart/data/emissionsData';
 import './AllEmissionsChart.scss';
+import local from 'src/locale';
 
 interface IAllEmissionsChart {}
 const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
-  const {
-    chartData: { emissionsData },
-  } = useSelector((state: IRootState) => state);
+  const { allEmissionsData } = useSelector(
+    (state: IRootState) => state.emissionsType
+  );
 
-  const [overValueChart, setOverValueChart] = useState([]);
+  const overflowEmissions = allEmissionsData.find(
+    (emis) =>
+      emis.name === local.regions.SFO.Krasnoyarsk ||
+      emis.name === local.regions.DFO.sakhRep
+  );
+  console.log(overflowEmissions);
 
-  const datasetArray: {
+  const filterEmissions = allEmissionsData.filter(
+    (emis) =>
+      emis.name !== local.regions.SFO.Krasnoyarsk &&
+      emis.name !== local.regions.DFO.sakhRep
+  );
+
+  const overflowData: {
     label: string;
     data: number[];
     stack: string;
     backgroundColor?: string;
-  }[] = emissionsData.reduce((acc: any, item) => {
+  }[] = [overflowEmissions!].reduce((acc: any, item) => {
     item.fuel.forEach((fuelItem) => {
       const existingItem = acc.find(
         (bItem: { label: string }) => bItem.label === fuelItem.type
@@ -31,6 +43,39 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
           acc.push({
             label: fuelItem.type,
             data: [fuelItem.value],
+            //@ts-ignore
+            backgroundColor: chartColors[fuelItem.type],
+            stack: 'stack 0',
+          });
+        }
+      }
+    });
+    return acc;
+  }, []);
+
+  const overfowData: ChartData<'bar'> = {
+    labels: [overflowEmissions].map((el) => ''),
+    datasets: overflowData,
+  };
+
+  const datasetArray: {
+    label: string;
+    data: number[];
+    stack: string;
+    backgroundColor?: string;
+  }[] = filterEmissions.reduce((acc: any, item) => {
+    item.fuel.forEach((fuelItem) => {
+      const existingItem = acc.find(
+        (bItem: { label: string }) => bItem.label === fuelItem.type
+      );
+      if (existingItem) {
+        existingItem.data.push(fuelItem.value);
+      } else {
+        if (fuelItem.type !== 'ВСЕГО') {
+          acc.push({
+            label: fuelItem.type,
+            data: [fuelItem.value],
+            //@ts-ignore
             backgroundColor: chartColors[fuelItem.type],
             stack: 'stack 0',
           });
@@ -50,25 +95,8 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
     solid: '#685b5b',
   };
   const data: ChartData<'bar'> = {
-    labels: emissionsData.map(({ name }) => name),
-    datasets: [
-      ...datasetArray,
-      // {
-      //   label: 'CO2',
-      //   data: [200, 400, 500],
-      //   stack: 'stack 1',
-      // },
-      // {
-      //   label: 'CO',
-      //   data: [200, 400, 300],
-      //   stack: 'stack 1',
-      // },
-      // {
-      //   label: 'CO',
-      //   data: [200, 400, 300],
-      //   stack: 'stack 1',
-      // },
-    ],
+    labels: filterEmissions.map(({ name }) => ''),
+    datasets: datasetArray,
   };
 
   const options: ChartOptions<'bar'> = {
@@ -82,26 +110,34 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
     scales: {
       x: {
         stacked: true,
+        grid: {
+          display: false,
+        },
       },
       y: {
         stacked: true,
+        grid: {
+          display: true,
+        },
       },
     },
     datasets: {
       bar: {
         barThickness: 20,
-        // backgroundColor: [chartColors[emissionsType.emissionsType]],
       },
     },
   };
   return (
     <div className="all-emissions-wrapper">
       <h4 className="all-emissions-title">
-        Выбросы диоксида углерода при генерации тепловой и электрической энергии
-        на удаленных труднодоступных территориях субъектов РФ, тыс. т СО2
+        Выбросы загрязняющих веществ от котельных и ДЭС в удаленных и
+        труднодоступных территориях востока России, тыс. т
       </h4>
       <div className="all-emissions">
         <Bar options={options} data={data} />
+      </div>
+      <div className="all-emissions-2">
+        <Bar options={options} data={overfowData} />
       </div>
     </div>
   );

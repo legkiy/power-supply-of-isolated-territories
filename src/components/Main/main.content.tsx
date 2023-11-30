@@ -29,7 +29,6 @@ const MainContent = () => {
         color: el[1],
       }
   );
-  console.log(legendEmissionsData);
 
   return (
     <main className="main">

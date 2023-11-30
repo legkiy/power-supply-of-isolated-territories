@@ -1,4 +1,4 @@
-import { useSelector, useStore } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { IRootState } from '../../../store';
 import {
   Chart as ChartJS,
@@ -11,7 +11,7 @@ import {
 import { Bar } from 'react-chartjs-2';
 import { FC } from 'react';
 import './EmissionsChart.scss';
-import { EmissionsDataType, FuelTypesType } from './data/interface';
+import { EmissionsDataType } from './data/interface';
 import { chartColors } from './data/emissionsData';
 import local from 'src/locale';
 import classNames from 'classnames';

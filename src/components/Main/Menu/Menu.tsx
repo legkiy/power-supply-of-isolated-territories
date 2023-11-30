@@ -3,7 +3,10 @@ import 'tippy.js/dist/tippy.css';
 import { CSSProperties, ReactNode, memo, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setChartData } from '../../../store/chartData/chartDataSlice';
-import { setEmissionsFuelType } from '../../../store/emissionsType/emissionsTypeSlice';
+import {
+  setEmissionsFuelType,
+  setAllEmissionsData,
+} from '../../../store/emissionsType/emissionsTypeSlice';
 import { Modal } from '../../index';
 import Item from './Item';
 import local from '../../../locale';
@@ -38,6 +41,7 @@ const Menu = () => {
     window.history.pushState(null, '', newUrl);
     //установка параметров в стейт
     dispatch(setChartData(region));
+    dispatch(setAllEmissionsData(region));
     setSelectRegion(regionId);
   };
 
@@ -51,6 +55,7 @@ const Menu = () => {
     if (!!regionQuery && !!regionIdQuery) {
       setSelectRegion(+regionIdQuery);
       dispatch(setChartData(regionQuery));
+      dispatch(setAllEmissionsData(regionQuery));
     }
   }, []);
 
