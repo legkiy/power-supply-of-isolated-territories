@@ -25,40 +25,74 @@ const EmissionsChart: FC<IEmissionsChart> = ({}) => {
     emissionsType,
   } = useSelector((state: IRootState) => state);
 
+  const queryRegionParams = new URLSearchParams(window.location.search);
+
+  const regionQuery = queryRegionParams.get('region') as 'SFO' | 'DFO' | null;
+  const langQuery = queryRegionParams.get('lang') as 'ru' | 'en' | null;
+
   const filterEmissions = emissionsData.filter(
     (emis) =>
       emis.name !== local.regions.SFO.Krasnoyarsk &&
+      emis.name !== local.regions.DFO.Khabarovsk &&
+      emis.name !== local.regions.DFO.ChukotkaAO &&
       emis.name !== local.regions.DFO.sakhRep
   );
 
-  const emissionsFuel = (fuels: EmissionsDataType[]) =>
-    fuels.map(
-      (emiss) =>
-        emiss.fuel.find((fuel) => fuel.type === emissionsType.emissionsType)!
-          .value
-    );
-
-  const overflowEmissions = emissionsData.find(
+  const overflowEmissions = emissionsData.filter(
     (emis) =>
       emis.name === local.regions.SFO.Krasnoyarsk ||
+      emis.name === local.regions.DFO.Khabarovsk ||
+      emis.name === local.regions.DFO.ChukotkaAO ||
       emis.name === local.regions.DFO.sakhRep
   );
 
-  const overflowData: ChartData<'bar'> = {
-    labels: [overflowEmissions].map((el) => el!.name),
-    datasets: [{ data: emissionsFuel([overflowEmissions!]) }],
-  };
+  const emissionsFuel = (
+    data: EmissionsDataType[]
+  ): {
+    label: string;
+    data: number[];
+    stack: string;
+    backgroundColor?: string;
+  }[] =>
+    data.reduce((acc: any, item) => {
+      item.fuel.forEach((fuelItem) => {
+        const existingItem = acc.find(
+          (bItem: { label: string }) => bItem.label === fuelItem.type
+        );
+        if (existingItem) {
+          existingItem.data.push(fuelItem.value);
+        } else {
+          if (fuelItem.type !== 'ВСЕГО') {
+            acc.push({
+              label: fuelItem.type,
+              data: [fuelItem.value],
+              //@ts-ignore
+              backgroundColor: chartColors[fuelItem.type],
+              stack: 'stack 0',
+            });
+          }
+        }
+      });
+      return acc;
+    }, []);
 
+  const overflowData: ChartData<'bar'> = {
+    labels: overflowEmissions.map((el) => el!.name),
+    datasets: emissionsFuel(overflowEmissions),
+  };
   const data: ChartData<'bar'> = {
     labels: filterEmissions.map((el) => el.name),
-    datasets: [{ data: emissionsFuel(filterEmissions) }],
+    datasets: emissionsFuel(filterEmissions),
   };
 
-  const options: ChartOptions<'bar'> = {
+  const options = (barThickness: number = 10): ChartOptions<'bar'> => ({
     indexAxis: 'y',
     plugins: {
       legend: {
         display: false,
+      },
+      tooltip: {
+        usePointStyle: true,
       },
     },
     maintainAspectRatio: false,
@@ -71,27 +105,30 @@ const EmissionsChart: FC<IEmissionsChart> = ({}) => {
     },
     datasets: {
       bar: {
-        barThickness: 20,
+        pointStyle: 'circle',
+        barThickness,
         backgroundColor: [chartColors[emissionsType.emissionsType]],
       },
     },
-  };
+  });
+
   return (
     <div className="emissions">
-      {/* <Doughnut data={data} options={options} /> */}
-      <h4 className="emissions-title">
-        Выбросы диоксида углерода при генерации тепловой и электрической энергии
-        на удаленных труднодоступных территориях субъектов РФ, тыс. т СО2
-      </h4>
-      <div className="emissions-chart">
-        <Bar data={data} options={options} />
+      <h4 className="emissions-title">{local.emissions.allEmissions}</h4>
+      <div
+        className={classNames('emissions-chart', {
+          'emissions-chart-DFO': regionQuery === 'DFO',
+          'emissions-chart-DFO-en': langQuery === 'en',
+        })}
+      >
+        <Bar data={data} options={options()} />
       </div>
       <div
         className={classNames('emissions-chart-2', {
-          krasn: overflowEmissions?.name === local.regions.SFO.Krasnoyarsk,
+          'emissions-chart-2-DFO': regionQuery === 'DFO',
         })}
       >
-        <Bar data={overflowData} options={options} />
+        <Bar data={overflowData} options={options(18)} />
       </div>
     </div>
   );

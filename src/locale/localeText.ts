@@ -17,6 +17,12 @@ export const ruLocale = {
     lang: 'Язык',
     emissions: 'Выбросы',
   },
+  emissions: {
+    title:
+      'Выбросы при генерации тепловой  и электрической энергии на изолированных труднодоступных территориях',
+    coEmissions: 'Диоксида углерода, тыс.т. CO2',
+    allEmissions: 'Загрязняющие вещества, тыс.т.',
+  },
   regions: {
     legend: 'Условные обозначения',
     DFO: {
@@ -70,6 +76,12 @@ export const enLocale: LocaleType = {
     lang: 'Language',
     emissions: 'Emissions',
   },
+  emissions: {
+    title:
+      'Emissions during the generation of thermal and electrical energy in isolated, hard-to-reach areas',
+    coEmissions: 'Carbon dioxide, thousand tons CO2',
+    allEmissions: 'Pollutants, thousand tons',
+  },
   regions: {
     legend: 'Legend',
     DFO: {
@@ -82,7 +94,7 @@ export const enLocale: LocaleType = {
       Primorsky: 'Primorsky Krai',
       Khabarovsk: 'Khabarovsk Krai',
       Magadan: 'Magadan region',
-      ChukotkaAO: 'Чукотский AO',
+      ChukotkaAO: 'Chukotka AO',
       Chukotka: 'Chukotka autonomous okrug',
       SakhalinObl: 'Sakhalin region',
       SakhalinKuril: 'Sakhalin region, Kuril Islands',

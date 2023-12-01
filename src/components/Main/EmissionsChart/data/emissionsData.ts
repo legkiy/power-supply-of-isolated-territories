@@ -6,7 +6,7 @@ const { SFO, DFO } = local.regions;
 export const chartColors: { [key in FuelTypesType]: string } = {
   уголь: '#5c5c5c',
   нефть: '#79541e',
-  'газо-конденсатное': '#75791e',
+  // 'газо-конденсатное': '#75791e',
   газ: '#1e98ff',
   нефтепродукты: '#c74c00',
   бензин: '#4d791e',
@@ -25,10 +25,6 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
       },
       {
         type: 'нефть',
-        value: 0,
-      },
-      {
-        type: 'газо-конденсатное',
         value: 0,
       },
       {
@@ -53,10 +49,6 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
         value: 0,
       },
       {
-        type: 'газо-конденсатное',
-        value: 0,
-      },
-      {
         type: 'нефтепродукты',
         value: 12.8,
       },
@@ -76,10 +68,6 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
       {
         type: 'нефть',
         value: 186.0,
-      },
-      {
-        type: 'газо-конденсатное',
-        value: 0,
       },
       {
         type: 'нефтепродукты',
@@ -103,10 +91,6 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
         value: 3.2,
       },
       {
-        type: 'газо-конденсатное',
-        value: 0,
-      },
-      {
         type: 'нефтепродукты',
         value: 26.8,
       },
@@ -128,10 +112,6 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
         value: 3.2,
       },
       {
-        type: 'газо-конденсатное',
-        value: 0,
-      },
-      {
         type: 'нефтепродукты',
         value: 0.9,
       },
@@ -150,10 +130,6 @@ export const EmissionsDataSFO: EmissionsDataType[] = [
       },
       {
         type: 'нефть',
-        value: 0,
-      },
-      {
-        type: 'газо-конденсатное',
         value: 0,
       },
       {
@@ -178,11 +154,7 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
       },
       {
         type: 'нефть',
-        value: 161.2,
-      },
-      {
-        type: 'газо-конденсатное',
-        value: 39.3,
+        value: 200.5,
       },
       {
         type: 'нефтепродукты',
@@ -203,10 +175,6 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
       },
       {
         type: 'нефть',
-        value: 0,
-      },
-      {
-        type: 'газо-конденсатное',
         value: 0,
       },
       {
@@ -231,10 +199,6 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         value: 0,
       },
       {
-        type: 'газо-конденсатное',
-        value: 0,
-      },
-      {
         type: 'нефтепродукты',
         value: 179.3,
       },
@@ -253,10 +217,6 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
       },
       {
         type: 'нефть',
-        value: 0,
-      },
-      {
-        type: 'газо-конденсатное',
         value: 0,
       },
       {
@@ -281,10 +241,6 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         value: 0,
       },
       {
-        type: 'газо-конденсатное',
-        value: 0,
-      },
-      {
         type: 'нефтепродукты',
         value: 17.0,
       },
@@ -303,10 +259,6 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
       },
       {
         type: 'нефть',
-        value: 0,
-      },
-      {
-        type: 'газо-конденсатное',
         value: 0,
       },
       {
@@ -331,10 +283,6 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         value: 0,
       },
       {
-        type: 'газо-конденсатное',
-        value: 0,
-      },
-      {
         type: 'нефтепродукты',
         value: 3.8,
       },
@@ -356,10 +304,6 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
         value: 0,
       },
       {
-        type: 'газо-конденсатное',
-        value: 0,
-      },
-      {
         type: 'нефтепродукты',
         value: 2.2,
       },
@@ -378,10 +322,6 @@ export const EmissionsDataDFO: EmissionsDataType[] = [
       },
       {
         type: 'нефть',
-        value: 0,
-      },
-      {
-        type: 'газо-конденсатное',
         value: 0,
       },
       {

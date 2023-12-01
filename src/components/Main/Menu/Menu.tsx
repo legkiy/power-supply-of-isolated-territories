@@ -77,60 +77,60 @@ const Menu = () => {
       ],
       popupWidht: '134px',
     },
-    {
-      text: local.menu.emissions,
-      type: 'emissionsType',
-      insideItems: [
-        {
-          text: 'уголь',
-          index: 0,
-          onClick: () => {
-            dispatch(setEmissionsFuelType('уголь'));
-            setSelectEmissions(0);
-          },
-        },
-        {
-          text: 'нефть',
-          index: 1,
-          onClick: () => {
-            dispatch(setEmissionsFuelType('нефть'));
-            setSelectEmissions(1);
-          },
-        },
-        {
-          text: 'газо-конденс.',
-          index: 2,
-          onClick: () => {
-            dispatch(setEmissionsFuelType('газо-конденсатное'));
-            setSelectEmissions(2);
-          },
-        },
-        {
-          text: 'нефтепрод.',
-          index: 3,
-          onClick: () => {
-            dispatch(setEmissionsFuelType('нефтепродукты'));
-            setSelectEmissions(3);
-          },
-        },
-        {
-          text: 'газ',
-          index: 4,
-          onClick: () => {
-            dispatch(setEmissionsFuelType('газ'));
-            setSelectEmissions(4);
-          },
-        },
-        {
-          text: 'ВСЕГО',
-          index: 5,
-          onClick: () => {
-            dispatch(setEmissionsFuelType('ВСЕГО'));
-            setSelectEmissions(5);
-          },
-        },
-      ],
-    },
+    // {
+    //   text: local.menu.emissions,
+    //   type: 'emissionsType',
+    //   insideItems: [
+    //     {
+    //       text: 'уголь',
+    //       index: 0,
+    //       onClick: () => {
+    //         dispatch(setEmissionsFuelType('уголь'));
+    //         setSelectEmissions(0);
+    //       },
+    //     },
+    //     {
+    //       text: 'нефть',
+    //       index: 1,
+    //       onClick: () => {
+    //         dispatch(setEmissionsFuelType('нефть'));
+    //         setSelectEmissions(1);
+    //       },
+    //     },
+    //     {
+    //       text: 'газо-конденс.',
+    //       index: 2,
+    //       onClick: () => {
+    //         dispatch(setEmissionsFuelType('газо-конденсатное'));
+    //         setSelectEmissions(2);
+    //       },
+    //     },
+    //     {
+    //       text: 'нефтепрод.',
+    //       index: 3,
+    //       onClick: () => {
+    //         dispatch(setEmissionsFuelType('нефтепродукты'));
+    //         setSelectEmissions(3);
+    //       },
+    //     },
+    //     {
+    //       text: 'газ',
+    //       index: 4,
+    //       onClick: () => {
+    //         dispatch(setEmissionsFuelType('газ'));
+    //         setSelectEmissions(4);
+    //       },
+    //     },
+    //     {
+    //       text: 'ВСЕГО',
+    //       index: 5,
+    //       onClick: () => {
+    //         dispatch(setEmissionsFuelType('ВСЕГО'));
+    //         setSelectEmissions(5);
+    //       },
+    //     },
+    //   ],
+    // },
     {
       text: (
         <img

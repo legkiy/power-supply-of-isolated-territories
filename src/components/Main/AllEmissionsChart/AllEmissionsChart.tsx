@@ -6,6 +6,7 @@ import { IRootState } from '../../../store';
 import { chartColors } from '../EmissionsChart/data/emissionsData';
 import './AllEmissionsChart.scss';
 import local from 'src/locale';
+import classNames from 'classnames';
 
 interface IAllEmissionsChart {}
 const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
@@ -13,16 +14,21 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
     (state: IRootState) => state.emissionsType
   );
 
-  const overflowEmissions = allEmissionsData.find(
+  const queryRegionParams = new URLSearchParams(window.location.search);
+  const regionQuery = queryRegionParams.get('region') as 'SFO' | 'DFO' | null;
+
+  const overflowEmissions = allEmissionsData.filter(
     (emis) =>
       emis.name === local.regions.SFO.Krasnoyarsk ||
+      emis.name === local.regions.DFO.Khabarovsk ||
+      emis.name === local.regions.DFO.ChukotkaAO ||
       emis.name === local.regions.DFO.sakhRep
   );
-  console.log(overflowEmissions);
-
   const filterEmissions = allEmissionsData.filter(
     (emis) =>
       emis.name !== local.regions.SFO.Krasnoyarsk &&
+      emis.name !== local.regions.DFO.Khabarovsk &&
+      emis.name !== local.regions.DFO.ChukotkaAO &&
       emis.name !== local.regions.DFO.sakhRep
   );
 
@@ -31,7 +37,7 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
     data: number[];
     stack: string;
     backgroundColor?: string;
-  }[] = [overflowEmissions!].reduce((acc: any, item) => {
+  }[] = overflowEmissions!.reduce((acc: any, item) => {
     item.fuel.forEach((fuelItem) => {
       const existingItem = acc.find(
         (bItem: { label: string }) => bItem.label === fuelItem.type
@@ -54,9 +60,10 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
   }, []);
 
   const overfowData: ChartData<'bar'> = {
-    labels: [overflowEmissions].map((el) => ''),
+    labels: overflowEmissions.map((el) => ''),
     datasets: overflowData,
   };
+  console.log(overflowEmissions);
 
   const datasetArray: {
     label: string;
@@ -84,26 +91,20 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
     });
     return acc;
   }, []);
-  //как вытащить элкмент из массива по след. условиям: в поле содержащем массив чисел есть число больше 200
-  // datasetArray.map((el) => console.log(!!el.data.find((value) => value > 200)));
 
-  const materialColors = {
-    CO2: '#b82107',
-    CO: '#e9aa57',
-    SO2: '#eddd75',
-    NOx: '#58bfff',
-    solid: '#685b5b',
-  };
   const data: ChartData<'bar'> = {
     labels: filterEmissions.map(({ name }) => ''),
     datasets: datasetArray,
   };
 
-  const options: ChartOptions<'bar'> = {
+  const options = (barThickness: number = 10): ChartOptions<'bar'> => ({
     indexAxis: 'y',
     plugins: {
       legend: {
         display: false,
+      },
+      tooltip: {
+        usePointStyle: true,
       },
     },
     maintainAspectRatio: false,
@@ -123,21 +124,27 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
     },
     datasets: {
       bar: {
-        barThickness: 20,
+        pointStyle: 'circle',
+        barThickness,
       },
     },
-  };
+  });
   return (
     <div className="all-emissions-wrapper">
-      <h4 className="all-emissions-title">
-        Выбросы загрязняющих веществ от котельных и ДЭС в удаленных и
-        труднодоступных территориях востока России, тыс. т
-      </h4>
-      <div className="all-emissions">
-        <Bar options={options} data={data} />
+      <h4 className="all-emissions-title">{local.emissions.allEmissions}</h4>
+      <div
+        className={classNames('all-emissions', {
+          'all-emissions-DFO': regionQuery === 'DFO',
+        })}
+      >
+        <Bar options={options()} data={data} />
       </div>
-      <div className="all-emissions-2">
-        <Bar options={options} data={overfowData} />
+      <div
+        className={classNames('all-emissions-2', {
+          'all-emissions-2-DFO': regionQuery === 'DFO',
+        })}
+      >
+        <Bar options={options(18)} data={overfowData} />
       </div>
     </div>
   );

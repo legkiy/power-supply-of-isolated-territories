@@ -1,5 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { FuelTypesType } from '../../components/Main/EmissionsChart/data/interface';
+import {
+  FuelTypesType,
+  EmissionsDataType,
+} from '../../components/Main/EmissionsChart/data/interface';
+import {
+  EmissionsDataDFO,
+  EmissionsDataSFO,
+} from '../../components/Main/EmissionsChart/data/emissionsData';
 import {
   ZVEmissionsDataDFO,
   ZVEmissionsDataSFO,
@@ -8,12 +15,14 @@ import {
 
 export interface IEmissionsTypeState {
   emissionsType: FuelTypesType;
+  coEmissions: EmissionsDataType[];
   allEmissionsData: ZVEmissionsDataType;
 }
 
 const emissionsTypeState: IEmissionsTypeState = {
   emissionsType: 'уголь',
   allEmissionsData: ZVEmissionsDataSFO,
+  coEmissions: EmissionsDataSFO,
 };
 
 export const emissionsTypeSlice = createSlice({

@@ -65,9 +65,6 @@ function BarChart({ dataSet, itsTemplate, legendColors }: IProps) {
       },
     },
     plugins: {
-      datalabels: {
-        display: false,
-      },
       legend: {
         display: false,
       },

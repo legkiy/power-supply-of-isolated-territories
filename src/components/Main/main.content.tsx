@@ -70,8 +70,47 @@ const MainContent = () => {
             <div className="right-side">
               <div className="sticky-box">
                 <YaMap />
-                <div className="emissions-legend__title">
+                {/* <div className="emissions-legend__title">
                   <h4>Условные обозначения графиков выбросов</h4>
+                  <div className="emissions-legend">
+                    {legendEmissionsData.map(
+                      (el) =>
+                        el && (
+                          <p>
+                            <span
+                              className="emissions-legend__color"
+                              style={{
+                                backgroundColor: el.color,
+                              }}
+                            />
+                            {el.name}
+                          </p>
+                        )
+                    )}
+                  </div>
+                </div> */}
+              </div>
+              {/* <EmissionsChart /> */}
+            </div>
+          </div>
+          <div className="emissions-charts-box">
+            <div>
+              <div
+                style={{
+                  display: 'flex',
+                }}
+              >
+                <h4
+                  style={{
+                    width: '500px',
+                    marginLeft: 'auto',
+                    marginRight: '30px',
+                  }}
+                >
+                  {local.emissions.title}
+                </h4>
+                <div className="emissions-legend__title">
+                  <h5>Условные обозначения графиков выбросов</h5>
                   <div className="emissions-legend">
                     {legendEmissionsData.map(
                       (el) =>
@@ -90,13 +129,10 @@ const MainContent = () => {
                   </div>
                 </div>
               </div>
-              {/* <EmissionsChart /> */}
-            </div>
-          </div>
-          <div>
-            <div className="emissions-charts-wrapper">
-              <EmissionsChart />
-              <AllEmissionsChart />
+              <div className="emissions-charts-wrapper">
+                <EmissionsChart />
+                <AllEmissionsChart />
+              </div>
             </div>
           </div>
         </div>
