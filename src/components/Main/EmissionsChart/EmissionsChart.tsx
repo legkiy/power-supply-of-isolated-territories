@@ -114,7 +114,7 @@ const EmissionsChart: FC<IEmissionsChart> = ({}) => {
 
   return (
     <div className="emissions">
-      <h4 className="emissions-title">{local.emissions.allEmissions}</h4>
+      <h4 className="emissions-title">{local.emissions.coEmissions}</h4>
       <div
         className={classNames('emissions-chart', {
           'emissions-chart-DFO': regionQuery === 'DFO',
@@ -128,7 +128,7 @@ const EmissionsChart: FC<IEmissionsChart> = ({}) => {
           'emissions-chart-2-DFO': regionQuery === 'DFO',
         })}
       >
-        <Bar data={overflowData} options={options(18)} />
+        <Bar data={overflowData} options={options(13)} />
       </div>
     </div>
   );

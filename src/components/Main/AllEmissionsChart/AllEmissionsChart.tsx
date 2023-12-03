@@ -144,7 +144,7 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
           'all-emissions-2-DFO': regionQuery === 'DFO',
         })}
       >
-        <Bar options={options(18)} data={overfowData} />
+        <Bar options={options(13)} data={overfowData} />
       </div>
     </div>
   );

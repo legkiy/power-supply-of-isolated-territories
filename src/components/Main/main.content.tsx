@@ -110,7 +110,7 @@ const MainContent = () => {
                   {local.emissions.title}
                 </h4>
                 <div className="emissions-legend__title">
-                  <h5>Условные обозначения графиков выбросов</h5>
+                  <h5>{local.regions.legend}</h5>
                   <div className="emissions-legend">
                     {legendEmissionsData.map(
                       (el) =>
