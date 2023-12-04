@@ -35,7 +35,8 @@ const EmissionsChart: FC<IEmissionsChart> = ({}) => {
       emis.name !== local.regions.SFO.Krasnoyarsk &&
       emis.name !== local.regions.DFO.Khabarovsk &&
       emis.name !== local.regions.DFO.ChukotkaAO &&
-      emis.name !== local.regions.DFO.sakhRep
+      emis.name !== local.regions.DFO.sakhRep &&
+      emis.name !== local.regions.DFO.SakhalinObl
   );
 
   const overflowEmissions = emissionsData.filter(
@@ -43,7 +44,8 @@ const EmissionsChart: FC<IEmissionsChart> = ({}) => {
       emis.name === local.regions.SFO.Krasnoyarsk ||
       emis.name === local.regions.DFO.Khabarovsk ||
       emis.name === local.regions.DFO.ChukotkaAO ||
-      emis.name === local.regions.DFO.sakhRep
+      emis.name === local.regions.DFO.sakhRep ||
+      emis.name === local.regions.DFO.SakhalinObl
   );
 
   const emissionsFuel = (

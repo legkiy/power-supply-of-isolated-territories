@@ -22,14 +22,16 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
       emis.name === local.regions.SFO.Krasnoyarsk ||
       emis.name === local.regions.DFO.Khabarovsk ||
       emis.name === local.regions.DFO.ChukotkaAO ||
-      emis.name === local.regions.DFO.sakhRep
+      emis.name === local.regions.DFO.sakhRep ||
+      emis.name === local.regions.DFO.SakhalinObl
   );
   const filterEmissions = allEmissionsData.filter(
     (emis) =>
       emis.name !== local.regions.SFO.Krasnoyarsk &&
       emis.name !== local.regions.DFO.Khabarovsk &&
       emis.name !== local.regions.DFO.ChukotkaAO &&
-      emis.name !== local.regions.DFO.sakhRep
+      emis.name !== local.regions.DFO.sakhRep &&
+      emis.name !== local.regions.DFO.SakhalinObl
   );
 
   const overflowData: {
