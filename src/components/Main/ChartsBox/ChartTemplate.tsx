@@ -25,15 +25,13 @@ const ChartTemplate: FC = () => {
         legendColors={
           <div className="chart-template-legend__colors">
             {chartsLegends.map((el) => (
-              <>
-                <p>
-                  <span
-                    className="chart-template-legend-color"
-                    style={{ backgroundColor: el.backgroundColor }}
-                  ></span>
-                  {el.text}
-                </p>
-              </>
+              <p key={el.text}>
+                <span
+                  className="chart-template-legend-color"
+                  style={{ backgroundColor: el.backgroundColor }}
+                ></span>
+                {el.text}
+              </p>
             ))}
           </div>
         }

@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { IRootState } from '../../../store';
+import { IRootState } from 'src/store';
 import {
   Chart as ChartJS,
   ArcElement,
@@ -18,7 +18,7 @@ import classNames from 'classnames';
 
 interface IEmissionsChart {}
 
-const EmissionsChart: FC<IEmissionsChart> = ({}) => {
+const EmissionsChart: FC<IEmissionsChart> = () => {
   ChartJS.register(ArcElement, Tooltip, Legend);
   const {
     chartData: { emissionsData },

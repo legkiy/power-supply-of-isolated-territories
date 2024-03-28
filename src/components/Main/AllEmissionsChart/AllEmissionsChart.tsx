@@ -9,7 +9,8 @@ import local from 'src/locale';
 import classNames from 'classnames';
 
 interface IAllEmissionsChart {}
-const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
+
+const AllEmissionsChart: FC<IAllEmissionsChart> = () => {
   const { allEmissionsData } = useSelector(
     (state: IRootState) => state.emissionsType
   );
@@ -65,7 +66,6 @@ const AllEmissionsChart: FC<IAllEmissionsChart> = ({}) => {
     labels: overflowEmissions.map((el) => ''),
     datasets: overflowData,
   };
-  console.log(overflowEmissions);
 
   const datasetArray: {
     label: string;

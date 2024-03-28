@@ -115,7 +115,7 @@ const MainContent = () => {
                     {legendEmissionsData.map(
                       (el) =>
                         el && (
-                          <p>
+                          <p key={el.name}>
                             <span
                               className="emissions-legend__color"
                               style={{
