@@ -1,0 +1,45 @@
+@use '/src/styles/colors.scss';
+
+.zoom-controller {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 200px;
+  z-index: 1000;
+  background-color: rgb(242, 242, 242);
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: colors.$baseShadow;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  margin-top: -10px;
+}
+
+.slider-track {
+  background-color: #ccc;
+  width: 1px;
+  top: 20px !important;
+  left: 9.5px !important;
+}
+
+.slider-thumb {
+  background-color: colors.$primoryLight;
+  margin-bottom: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  color: #ffffff;
+}
+
+.slider-mark {
+  background-color: #ccc;
+  width: 100%;
+  height: 1px;
+  border-radius: 5px;
+}

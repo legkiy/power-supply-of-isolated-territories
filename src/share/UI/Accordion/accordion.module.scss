@@ -1,0 +1,70 @@
+@use '/src/styles/colors.scss';
+
+/* Style the accordion section */
+.accordion-section {
+  background-color: colors.$primory;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid colors.$deviderBlack;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  color: white;
+  background-color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s ease;
+  height: 45px;
+  padding: 0;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover,
+.active {
+  background-color: colors.$primoryDark;
+}
+
+/* Style the accordion content title */
+.accordion-title {
+  width: 100%;
+  margin-left: 20px;
+}
+
+/* Style the accordion chevron icon */
+.accordion-icon {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Style to rotate icon when state is active */
+.chevron {
+  transition: transform 0.2s ease;
+  // width: px;
+  margin-right: 10px;
+}
+.chevron-open {
+  transform: rotate(180deg);
+}
+
+/* Style the accordion content panel. Note: hidden by default */
+.accordion-content {
+  background-color: colors.$primoryLight;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-content-active {
+  padding: 20px;
+}
+
+.its-buttons {
+  padding: 10px 0;
+}

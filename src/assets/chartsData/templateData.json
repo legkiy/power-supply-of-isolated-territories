@@ -1,0 +1,47 @@
+{
+  "name": "legend",
+  "settlements": [
+    {
+      "label": "200",
+      "settlements": 13,
+      "population": 3000
+    },
+    {
+      "label": "500",
+      "settlements": 14,
+      "population": 4000
+    },
+    {
+      "label": "1000",
+      "settlements": 14,
+      "population": 5000
+    },
+    {
+      "label": "more1000",
+      "settlements": 16,
+      "population": 6000
+    }
+  ],
+  "fuel": [
+    {
+      "label": "уголь",
+      "data": 10
+    },
+    {
+      "label": "дрова",
+      "data": 9
+    },
+    {
+      "label": "газ",
+      "data": 8
+    },
+    {
+      "label": "нефть",
+      "data": 7
+    },
+    {
+      "label": "нефтепр.",
+      "data": 6
+    }
+  ]
+}

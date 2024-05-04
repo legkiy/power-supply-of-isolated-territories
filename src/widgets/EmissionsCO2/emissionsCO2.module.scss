@@ -1,0 +1,27 @@
+.emissions-sector {
+}
+
+.left-side {
+  // width: 50%;
+}
+
+.emission-label {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.emissions-main {
+  width: 70%;
+  &__DFO {
+    margin-left: 30px;
+  }
+}
+
+.emissions-overflow {
+  height: 70px;
+  margin-left: 12px;
+  &__DFO {
+    margin-left: 0;
+    height: 170px;
+  }
+}

@@ -1,0 +1,331 @@
+[
+  {
+    "name": "Altai",
+    "settlements": [
+      {
+        "label": "200",
+        "settlements": 4,
+        "population": 253
+      },
+      {
+        "label": "500",
+        "settlements": 3,
+        "population": 643
+      },
+      {
+        "label": "1000",
+        "settlements": 2,
+        "population": 1302
+      },
+      {
+        "label": "more1000",
+        "settlements": 1,
+        "population": 1363
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 0
+      },
+      {
+        "label": "дрова",
+        "data": 0
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 0
+      },
+      {
+        "label": "нефтепр.",
+        "data": 0.8
+      }
+    ]
+  },
+  {
+    "name": "Tyva",
+    "settlements": [
+      {
+        "label": "200",
+        "settlements": 7,
+        "population": 662
+      },
+      {
+        "label": "500",
+        "settlements": 3,
+        "population": 759
+      },
+      {
+        "label": "1000",
+        "settlements": 0,
+        "population": 0
+      },
+      {
+        "label": "more1000",
+        "settlements": 4,
+        "population": 10866
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 0
+      },
+      {
+        "label": "дрова",
+        "data": 0
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 0
+      },
+      {
+        "label": "нефтепр.",
+        "data": 5.9
+      }
+    ]
+  },
+  {
+    "name": "KrasnoyarskArctic",
+    "settlements": [
+      {
+        "label": "200",
+        "settlements": 23,
+        "population": 2023
+      },
+      {
+        "label": "500",
+        "settlements": 14,
+        "population": 4194
+      },
+      {
+        "label": "1000",
+        "settlements": 4,
+        "population": 2296
+      },
+      {
+        "label": "more1000",
+        "settlements": 4,
+        "population": 9640
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 121.6
+      },
+      {
+        "label": "дрова",
+        "data": 1.2
+      },
+      {
+        "label": "газ",
+        "data": 37.7
+      },
+      {
+        "label": "нефть",
+        "data": 21.1
+      },
+      {
+        "label": "нефтепр.",
+        "data": 26.7
+      }
+    ]
+  },
+  {
+    "name": "KrasnoyarskSouth",
+    "settlements": [
+      {
+        "label": "200",
+        "settlements": 33,
+        "population": 2855
+      },
+      {
+        "label": "500",
+        "settlements": 13,
+        "population": 3982
+      },
+      {
+        "label": "1000",
+        "settlements": 3,
+        "population": 1833
+      },
+      {
+        "label": "more1000",
+        "settlements": 4,
+        "population": 11043
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 10.8
+      },
+      {
+        "label": "дрова",
+        "data": 1.0
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 65.4
+      },
+      {
+        "label": "нефтепр.",
+        "data": 19.4
+      }
+    ]
+  },
+  {
+    "name": "Irkutsk",
+    "settlements": [
+      {
+        "label": "200",
+        "settlements": 47,
+        "population": 2421
+      },
+      {
+        "label": "500",
+        "settlements": 11,
+        "population": 3629
+      },
+      {
+        "label": "1000",
+        "settlements": 3,
+        "population": 1655
+      },
+      {
+        "label": "more1000",
+        "settlements": 1,
+        "population": 1856
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 0
+      },
+      {
+        "label": "дрова",
+        "data": 1.5
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 1.5
+      },
+      {
+        "label": "нефтепр.",
+        "data": 12.4
+      }
+    ]
+  },
+  {
+    "name": "Kemerovo",
+    "settlements": [
+      {
+        "label": "200",
+        "settlements": 41,
+        "population": 913
+      },
+      {
+        "label": "500",
+        "settlements": 1,
+        "population": 274
+      },
+      {
+        "label": "1000",
+        "settlements": 0,
+        "population": 0
+      },
+      {
+        "label": "more1000",
+        "settlements": 0,
+        "population": 0
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 0
+      },
+      {
+        "label": "дрова",
+        "data": 0
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 0
+      },
+      {
+        "label": "нефтепр.",
+        "data": 0.7
+      }
+    ]
+  },
+  {
+    "name": "Tomsk",
+    "settlements": [
+      {
+        "label": "200",
+        "settlements": 14,
+        "population": 1252
+      },
+      {
+        "label": "500",
+        "settlements": 9,
+        "population": 2468
+      },
+      {
+        "label": "1000",
+        "settlements": 2,
+        "population": 1385
+      },
+      {
+        "label": "more1000",
+        "settlements": 3,
+        "population": 4583
+      }
+    ],
+    "fuel": [
+      {
+        "label": "уголь",
+        "data": 0
+      },
+      {
+        "label": "дрова",
+        "data": 0
+      },
+      {
+        "label": "газ",
+        "data": 0
+      },
+      {
+        "label": "нефть",
+        "data": 0
+      },
+      {
+        "label": "нефтепр.",
+        "data": 5.9
+      }
+    ]
+  }
+]

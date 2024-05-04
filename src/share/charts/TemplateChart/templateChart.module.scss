@@ -1,0 +1,110 @@
+.title {
+  margin: auto 0px;
+  font-size: 13px;
+  font-weight: 400;
+  justify-content: center;
+  text-align: center;
+}
+
+.legend-colors {
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 10px;
+  justify-content: center;
+  margin: 0 5px;
+}
+
+.legend-item {
+  margin: 0;
+}
+
+//// ring
+
+.template-hover-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgb(53, 53, 53);
+  pointer-events: none;
+}
+
+.outer-ring {
+  width: 130px;
+  height: 130px;
+  top: 10px;
+  left: 5px;
+}
+
+.inner-ring {
+  width: 96px;
+  height: 96px;
+  top: 27px;
+  left: 22px;
+}
+
+.template-line {
+  position: absolute;
+  text-decoration: underline;
+  white-space: pre;
+
+  &__outer-ring {
+    top: -10px;
+    left: 110px;
+  }
+  &__sum-settlements {
+    top: 50px;
+    left: 64px;
+  }
+
+  &__inner-ring {
+    top: 90px;
+    left: 78px;
+  }
+
+  &__sum-population {
+    top: 128px;
+    left: 35px;
+  }
+  &__bar {
+    top: 40px;
+    left: 140px;
+  }
+}
+
+.template-text {
+  position: absolute;
+  font-size: 12px;
+}
+
+.outer-ring-text {
+  top: 9px;
+  left: 170px;
+  width: 100px;
+}
+
+.inner-ring-text {
+  top: 110px;
+  left: 170px;
+  width: 130px;
+}
+
+.sum-settlements {
+  top: 68px;
+  left: 160px;
+  width: 100px;
+}
+
+.sum-population {
+  top: 152px;
+  left: 152px;
+  width: 200px;
+}
+
+//// bar
+
+.fuel-consumption {
+  top: 50px;
+  left: 175px;
+  width: 110px;
+}
