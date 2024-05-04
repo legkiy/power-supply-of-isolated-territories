@@ -101,7 +101,7 @@ const RoundChart = ({
             {'                   '}
             <div className="settel-template"> сумма нас. пунктов</div>
           </span>
-          <span className="count-of-popul template">
+          <span clEeaweqwweqweassName="count-of-popul template">
             {(countOfPopulation / 1000).toFixed(0)} тыс. чел.
             <span className="template-popul">{'            '}</span>
             <div className="popul-template"> суммарное населения</div>

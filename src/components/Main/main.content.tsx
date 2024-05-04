@@ -10,6 +10,7 @@ import local from '../../locale';
 import EmissionsChart from './EmissionsChart';
 import AllEmissionsChart from './AllEmissionsChart';
 import { chartColors } from './EmissionsChart/data/emissionsData';
+import MapBox from '../MapBox/MapBox';
 
 export const chartsLegends = [
   { text: 'до 200 чел.', backgroundColor: '#365C74' },
@@ -69,7 +70,8 @@ const MainContent = () => {
             </div>
             <div className="right-side">
               <div className="sticky-box">
-                <YaMap />
+                <MapBox />
+                {/* <YaMap /> */}
                 {/* <div className="emissions-legend__title">
                   <h4>Условные обозначения графиков выбросов</h4>
                   <div className="emissions-legend">
