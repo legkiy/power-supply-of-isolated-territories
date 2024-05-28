@@ -70,9 +70,10 @@
     "fuelConsumption": "fuel consumption for energy and heat supply"
   },
   "mapLegend": {
-    "title": "Legend of power lines",
+    "title": "Legend",
     "500kV": "500 kV",
     "220kV": "220 kV",
-    "110kV": "110 kV"
+    "110kV": "110 kV",
+    "DFO":""
   }
 }

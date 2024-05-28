@@ -8,7 +8,7 @@ import {
 } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import MarkerClusterGroup from 'react-leaflet-cluster';
-import L from 'leaflet';
+import L, { MarkerCluster } from 'leaflet';
 import styles from './mapBox.module.scss';
 import { FC } from 'react';
 import ZoomController from './ZoomController';
@@ -27,13 +27,13 @@ import { useTranslation } from 'react-i18next';
 //   description: string;
 // };
 
-// const createClusterCustomIcon = function (cluster: MarkerCluster) {
-//   return L.divIcon({
-//     html: `<span>${cluster.getChildCount()}</span>`,
-//     className: setyle['custom-marker'],
-//     iconSize: L.point(33, 33, true),
-//   });
-// };
+const createClusterCustomIcon = function (cluster: MarkerCluster) {
+  return L.divIcon({
+    html: `<span>${cluster.getChildCount()}</span>`,
+    className: styles['custom-marker'],
+    iconSize: L.point(25, 25, true),
+  });
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const onEachFeature = (feature: Feature<Geometry, any>, layer: L.Layer) => {
@@ -54,6 +54,8 @@ const legend = [
   { title: '500kV', color: '#ed4543' },
   { title: '220kV', color: '#177bc9' },
   { title: '110kV', color: '#56db40' },
+  { title: 'DFO', color: '#eecac5' },
+  { title: 'SFO', color: '#c9daea' },
 ];
 
 // function convertNegativeValues(arrayOfArrays: number[][]) {
@@ -71,8 +73,9 @@ const legend = [
 
 const markerIcon = new L.Icon({
   iconUrl: markerPng,
-  iconSize: [35, 35],
+  iconSize: [30, 30],
 });
+
 const MapBox: FC = () => {
   const { t } = useTranslation();
   return (
@@ -131,7 +134,10 @@ const MapBox: FC = () => {
           />
         </FeatureGroup>
         <FeatureGroup>
-          <MarkerClusterGroup>
+          <MarkerClusterGroup
+            iconCreateFunction={createClusterCustomIcon}
+            polygonOptions={{ fill: false, stroke: false }}
+          >
             <GeoJSON
               data={pointsData as GeoJSONProps['data']}
               onEachFeature={onEachFeature}
