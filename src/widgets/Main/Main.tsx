@@ -20,6 +20,7 @@ const Main: FC = () => {
           </div>
           <div className={styles.section}>
             <MapBox />
+            
           </div>
         </div>
         <div className={styles['emissions-section']}>

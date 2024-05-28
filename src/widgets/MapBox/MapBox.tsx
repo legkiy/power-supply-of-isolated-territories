@@ -1,14 +1,24 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { FeatureGroup, MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import {
+  FeatureGroup,
+  MapContainer,
+  TileLayer,
+  GeoJSON,
+  GeoJSONProps,
+} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import L from 'leaflet';
-import setyle from './mapBox.module.scss';
+import styles from './mapBox.module.scss';
 import { FC } from 'react';
 import ZoomController from './ZoomController';
-import mapData from '@/assets/mapData/SFO_DFO.json';
+import regionsData from '@/assets/mapData/regions.json';
+import lineData from '@/assets/mapData/line.json';
+import pointsData from '@/assets/mapData/points.json';
+
 import markerPng from '/marker.png';
 import { Feature, Geometry } from 'geojson';
+import { useTranslation } from 'react-i18next';
 
 // type DataType = {
 //   long: string | number;
@@ -40,6 +50,11 @@ const onEachFeature = (feature: Feature<Geometry, any>, layer: L.Layer) => {
     });
   }
 };
+const legend = [
+  { title: '500kV', color: '#ed4543' },
+  { title: '220kV', color: '#177bc9' },
+  { title: '110kV', color: '#56db40' },
+];
 
 // function convertNegativeValues(arrayOfArrays: number[][]) {
 //   return JSON.stringify(
@@ -54,17 +69,18 @@ const onEachFeature = (feature: Feature<Geometry, any>, layer: L.Layer) => {
 //   );
 // }
 
+const markerIcon = new L.Icon({
+  iconUrl: markerPng,
+  iconSize: [35, 35],
+});
 const MapBox: FC = () => {
-  const markerIcon = new L.Icon({
-    iconUrl: markerPng,
-    iconSize: [35, 35],
-  });
+  const { t } = useTranslation();
   return (
-    <div className={setyle['map-box']}>
+    <div className={styles['map-box']}>
       <MapContainer
         center={[66.23, 110.98]}
         zoom={3}
-        className={setyle.map}
+        className={styles.map}
         whenReady={() => {
           document.querySelector('.leaflet-control-attribution')?.remove();
         }}
@@ -77,11 +93,47 @@ const MapBox: FC = () => {
         />
         <ZoomController />
         <FeatureGroup>
+          <GeoJSON
+            data={regionsData as GeoJSONProps['data']}
+            onEachFeature={onEachFeature}
+            pointToLayer={(_point, latlng) =>
+              L.marker(latlng, {
+                icon: markerIcon,
+              })
+            }
+            style={(f) => {
+              const properties = f?.properties;
+              return {
+                weight: properties?.['stroke-width'],
+                color: properties?.stroke,
+                fillColor: properties?.fill,
+              };
+            }}
+          />
+        </FeatureGroup>
+        <FeatureGroup>
+          <GeoJSON
+            data={lineData as GeoJSONProps['data']}
+            onEachFeature={onEachFeature}
+            pointToLayer={(_point, latlng) =>
+              L.marker(latlng, {
+                icon: markerIcon,
+              })
+            }
+            style={(f) => {
+              const properties = f?.properties;
+              return {
+                weight: properties?.['stroke-width'],
+                color: properties?.stroke,
+                fillColor: properties?.fill,
+              };
+            }}
+          />
+        </FeatureGroup>
+        <FeatureGroup>
           <MarkerClusterGroup>
             <GeoJSON
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              //@ts-expect-error
-              data={mapData}
+              data={pointsData as GeoJSONProps['data']}
               onEachFeature={onEachFeature}
               pointToLayer={(_point, latlng) =>
                 L.marker(latlng, {
@@ -112,6 +164,21 @@ const MapBox: FC = () => {
           ))}
         </MarkerClusterGroup> */}
       </MapContainer>
+      <div className={styles.legends}>
+        <h4>{t('mapLegend.title')}</h4>
+        <div className={styles['legends-body']}>
+          {legend.map((el) => (
+            <p>
+              <span
+                style={{
+                  backgroundColor: el.color,
+                }}
+              />
+              - {t(`mapLegend.${el.title}`)}
+            </p>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

@@ -68,5 +68,11 @@
     "settlementsGradation": "number of settlements by gradation",
     "sumPopulation": "sum of population",
     "fuelConsumption": "fuel consumption for energy and heat supply"
+  },
+  "mapLegend": {
+    "title": "Legend of power lines",
+    "500kV": "500 kV",
+    "220kV": "220 kV",
+    "110kV": "110 kV"
   }
 }
