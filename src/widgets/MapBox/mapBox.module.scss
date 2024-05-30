@@ -21,7 +21,7 @@
 }
 
 .custom-marker {
-  background-color: colors.$primoryLight;
+  background-color: rgba(colors.$primoryLight, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;

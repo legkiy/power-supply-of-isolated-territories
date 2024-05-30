@@ -8,12 +8,12 @@ import { useTranslation } from 'react-i18next';
 
 const RegionSelector: FC = () => {
   const dispatch = useAppDispatch();
-  const { queryParams, addQueryParam } = useQueryParams();
+  const { queryParams, updateQueryParam } = useQueryParams();
   const { t } = useTranslation();
 
   const handaleSelectRegion = (region: 'SFO' | 'DFO') => {
     dispatch(setChartsData(region));
-    addQueryParam('region', region);
+    updateQueryParam('region', region);
   };
 
   useEffect(() => {

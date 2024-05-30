@@ -23,9 +23,7 @@ const NavBar = () => {
         <Accordion
           title={
             <img
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              //@ts-ignore
-              src={localIcons[i18n.language]}
+              src={localIcons[i18n.language as 'ru' | 'en']}
               width={30}
               height={20}
             />

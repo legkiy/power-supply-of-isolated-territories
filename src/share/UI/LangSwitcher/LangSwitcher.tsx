@@ -25,14 +25,7 @@ const LangSwitcher: FC = () => {
           disabled={i18n.language === lang}
           key={lang}
         >
-          <img
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            //@ts-ignore
-            src={localIcons[lang]}
-            width={30}
-            height={20}
-            alt={lang}
-          />
+          <img src={localIcons[lang]} width={30} height={20} alt={lang} />
         </AccordionButton>
       ))}
     </div>

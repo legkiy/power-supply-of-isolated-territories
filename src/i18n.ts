@@ -4,7 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import RU_LOCALE from './locales/ru.json';
 import EN_LOCALE from './locales/en.json';
 
-export const LOCALES = ['ru', 'en'];
+export const LOCALES: ('ru' | 'en')[] = ['ru', 'en'];
 
 i18next
   .use(initReactI18next)

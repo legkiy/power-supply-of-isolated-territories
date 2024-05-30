@@ -4,28 +4,22 @@ interface QueryParams {
   [key: string]: string;
 }
 
-function useQueryParams() {
-  const [queryParams, setQueryParams] = useState<QueryParams>(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-    const params: QueryParams = {};
+const handleParams = () => {
+  const searchParams = new URLSearchParams(window.location.search);
+  const params: QueryParams = {};
+  for (const [key, value] of searchParams.entries()) {
+    params[key] = value;
+  }
+  return params;
+};
 
-    for (const [key, value] of searchParams.entries()) {
-      params[key] = value;
-    }
-    return params;
-  });
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+function useQueryParams() {
+  const [queryParams, setQueryParams] = useState<QueryParams>(handleParams);
 
   useEffect(() => {
-    function handlePopstate() {
-      const searchParams = new URLSearchParams(window.location.search);
-      const params: QueryParams = {};
-      for (const [key, value] of searchParams.entries()) {
-        params[key] = value;
-      }
-      setQueryParams(params);
-    }
-
+    const handlePopstate = () => {
+      setQueryParams(handleParams());
+    };
     window.addEventListener('popstate', handlePopstate);
 
     return () => {
@@ -33,7 +27,7 @@ function useQueryParams() {
     };
   }, []);
 
-  function addQueryParam(paramName: string, paramValue: string) {
+  function updateQueryParam(paramName: string, paramValue: string) {
     const newParams = { ...queryParams, [paramName]: paramValue };
     const searchParams = new URLSearchParams(newParams);
     const newUrl = `${window.location.pathname}?${searchParams.toString()}`;
@@ -41,8 +35,8 @@ function useQueryParams() {
     setQueryParams(newParams);
   }
 
-  function updateQueryParam(paramName: string, newValue: string) {
-    const newParams = { ...queryParams, [paramName]: newValue };
+  function removeQueryParam(paramName: string) {
+    const { [paramName]: _, ...newParams } = queryParams;
     const searchParams = new URLSearchParams(newParams);
     const newUrl = `${window.location.pathname}?${searchParams.toString()}`;
     window.history.pushState({}, '', newUrl);
@@ -51,8 +45,8 @@ function useQueryParams() {
 
   return {
     queryParams,
-    addQueryParam,
     updateQueryParam,
+    removeQueryParam,
   };
 }
 
