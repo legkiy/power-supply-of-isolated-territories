@@ -6,6 +6,7 @@ interface QueryParams {
 
 const handleParams = () => {
   const searchParams = new URLSearchParams(window.location.search);
+
   const params: QueryParams = {};
   for (const [key, value] of searchParams.entries()) {
     params[key] = value;
@@ -18,7 +19,7 @@ function useQueryParams() {
 
   useEffect(() => {
     const handlePopstate = () => {
-      setQueryParams(handleParams());
+      setQueryParams(handleParams);
     };
     window.addEventListener('popstate', handlePopstate);
 

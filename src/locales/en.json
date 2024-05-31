@@ -74,6 +74,7 @@
     "500kV": "500 kV",
     "220kV": "220 kV",
     "110kV": "110 kV",
-    "DFO":""
+    "DFO": "Far Eastern Federal District",
+    "SFO": "Siberian Federal District"
   }
 }

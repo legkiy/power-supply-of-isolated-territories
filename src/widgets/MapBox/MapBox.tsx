@@ -18,16 +18,10 @@ import pointsData from '@/assets/mapData/points.json';
 import pointsAir from '@/assets/mapData/pointsAir.json';
 import markerPng from '/marker.png';
 import markerAir from '/windIcon.svg';
+import windsClasterIcon from '/windsClasterIcon.svg';
 import { Feature, Geometry } from 'geojson';
 import { useTranslation } from 'react-i18next';
-import { markerIcon } from '@/share/utils/createMapIcons';
-
-// type DataType = {
-//   long: string | number;
-//   lat: string | number;
-//   title: string;
-//   description: string;
-// };
+import { clusterIcon, markerIcon } from '@/share/utils/createMapIcons';
 
 const createClusterCustomIcon = function (cluster: MarkerCluster) {
   return L.divIcon({
@@ -162,7 +156,10 @@ const MapBox: FC = () => {
         </FeatureGroup>
         <FeatureGroup>
           <MarkerClusterGroup
-            iconCreateFunction={createClusterCustomIcon}
+            iconCreateFunction={clusterIcon({
+              icon: windsClasterIcon,
+              size: 35,
+            })}
             polygonOptions={{ fill: false, stroke: false }}
             maxClusterRadius={50}
           >
@@ -199,7 +196,7 @@ const MapBox: FC = () => {
         <h4>{t('mapLegend.title')}</h4>
         <div className={styles['legends-body']}>
           {legend.map((el) => (
-            <p>
+            <p key={el.title}>
               <span
                 style={{
                   backgroundColor: el.color,
