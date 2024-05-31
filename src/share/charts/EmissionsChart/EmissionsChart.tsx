@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -64,4 +64,4 @@ const EmissionsChart: FC<IEmissionsChart> = ({ data, options }) => {
 
   return <Bar data={data} options={optionsChart} />;
 };
-export default memo(EmissionsChart);
+export default EmissionsChart;

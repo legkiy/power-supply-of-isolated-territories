@@ -7,8 +7,10 @@ import {
   EmissionsCO2,
   Pollutants,
 } from '@/widgets';
+import { useTranslation } from 'react-i18next';
 
 const Main: FC = () => {
+  const { t } = useTranslation();
   return (
     <main className={styles.main}>
       <div className={styles['main-content']}>
@@ -20,13 +22,15 @@ const Main: FC = () => {
           </div>
           <div className={styles.section}>
             <MapBox />
-            
           </div>
         </div>
-        <div className={styles['emissions-section']}>
-          <EmissionsCO2 />
-          <div className={styles['emissions-devider']} />
-          <Pollutants />
+        <div>
+          <h4 className={styles['emissions-title']}>{t('emissions.title')}</h4>
+          <div className={styles['emissions-section']}>
+            <EmissionsCO2 />
+            <div className={styles['emissions-devider']} />
+            <Pollutants />
+          </div>
         </div>
       </div>
     </main>

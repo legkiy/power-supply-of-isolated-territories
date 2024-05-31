@@ -15,10 +15,12 @@ import ZoomController from './ZoomController';
 import regionsData from '@/assets/mapData/regions.json';
 import lineData from '@/assets/mapData/line.json';
 import pointsData from '@/assets/mapData/points.json';
-
+import pointsAir from '@/assets/mapData/pointsAir.json';
 import markerPng from '/marker.png';
+import markerAir from '/windIcon.svg';
 import { Feature, Geometry } from 'geojson';
 import { useTranslation } from 'react-i18next';
+import { markerIcon } from '@/share/utils/createMapIcons';
 
 // type DataType = {
 //   long: string | number;
@@ -71,7 +73,7 @@ const legend = [
 //   );
 // }
 
-const markerIcon = new L.Icon({
+const _markerIcon = new L.Icon({
   iconUrl: markerPng,
   iconSize: [30, 30],
 });
@@ -101,7 +103,7 @@ const MapBox: FC = () => {
             onEachFeature={onEachFeature}
             pointToLayer={(_point, latlng) =>
               L.marker(latlng, {
-                icon: markerIcon,
+                icon: _markerIcon,
               })
             }
             style={(f) => {
@@ -120,7 +122,7 @@ const MapBox: FC = () => {
             onEachFeature={onEachFeature}
             pointToLayer={(_point, latlng) =>
               L.marker(latlng, {
-                icon: markerIcon,
+                icon: _markerIcon,
               })
             }
             style={(f) => {
@@ -137,13 +139,14 @@ const MapBox: FC = () => {
           <MarkerClusterGroup
             iconCreateFunction={createClusterCustomIcon}
             polygonOptions={{ fill: false, stroke: false }}
+            maxClusterRadius={30}
           >
             <GeoJSON
               data={pointsData as GeoJSONProps['data']}
               onEachFeature={onEachFeature}
               pointToLayer={(_point, latlng) =>
                 L.marker(latlng, {
-                  icon: markerIcon,
+                  icon: _markerIcon,
                 })
               }
               style={(f) => {
@@ -157,6 +160,28 @@ const MapBox: FC = () => {
             />
           </MarkerClusterGroup>
         </FeatureGroup>
+        <FeatureGroup>
+          <MarkerClusterGroup
+            iconCreateFunction={createClusterCustomIcon}
+            polygonOptions={{ fill: false, stroke: false }}
+            maxClusterRadius={50}
+          >
+            <GeoJSON
+              data={pointsAir as GeoJSONProps['data']}
+              onEachFeature={onEachFeature}
+              pointToLayer={markerIcon(markerAir, 25)}
+              style={(f) => {
+                const properties = f?.properties;
+                return {
+                  weight: properties?.['stroke-width'],
+                  color: properties?.stroke,
+                  fillColor: properties?.fill,
+                };
+              }}
+            />
+          </MarkerClusterGroup>
+        </FeatureGroup>
+
         {/* <MarkerClusterGroup
           showCoverageOnHover={false}
           iconCreateFunction={createClusterCustomIcon}
