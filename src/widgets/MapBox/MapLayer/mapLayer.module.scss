@@ -1,0 +1,13 @@
+@use '/src/styles/colors.scss';
+
+.custom-marker {
+  background-color: rgba(colors.$primoryLight, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  &:hover {
+    box-shadow: colors.$baseShadow;
+  }
+}

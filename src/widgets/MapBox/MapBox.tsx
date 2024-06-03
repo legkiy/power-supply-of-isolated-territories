@@ -21,7 +21,8 @@ import markerAir from '/windIcon.svg';
 import windsClasterIcon from '/windsClasterIcon.svg';
 import { Feature, Geometry } from 'geojson';
 import { useTranslation } from 'react-i18next';
-import { clusterIcon, markerIcon } from '@/share/utils/createMapIcons';
+import { customClusterIcon, markerIcon } from '@/share/utils/createMapIcons';
+import MapLayer from './MapLayer';
 
 const createClusterCustomIcon = function (cluster: MarkerCluster) {
   return L.divIcon({
@@ -87,7 +88,8 @@ const MapBox: FC = () => {
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          url="https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}"
           // url="http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
         />
         <ZoomController />
@@ -154,9 +156,9 @@ const MapBox: FC = () => {
             />
           </MarkerClusterGroup>
         </FeatureGroup>
-        <FeatureGroup>
+        {/* <FeatureGroup>
           <MarkerClusterGroup
-            iconCreateFunction={clusterIcon({
+            iconCreateFunction={customClusterIcon({
               icon: windsClasterIcon,
               size: 35,
             })}
@@ -166,7 +168,7 @@ const MapBox: FC = () => {
             <GeoJSON
               data={pointsAir as GeoJSONProps['data']}
               onEachFeature={onEachFeature}
-              pointToLayer={markerIcon(markerAir, 25)}
+              pointToLayer={markerIcon({ icon: markerAir, size: 25 })}
               style={(f) => {
                 const properties = f?.properties;
                 return {
@@ -177,7 +179,12 @@ const MapBox: FC = () => {
               }}
             />
           </MarkerClusterGroup>
-        </FeatureGroup>
+        </FeatureGroup> */}
+        <MapLayer
+          data={pointsAir as GeoJSONProps['data']}
+          clusterIcon={windsClasterIcon}
+          pointIcon={markerAir}
+        />
 
         {/* <MarkerClusterGroup
           showCoverageOnHover={false}

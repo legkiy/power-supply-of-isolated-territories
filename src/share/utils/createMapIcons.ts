@@ -1,7 +1,12 @@
 import L, { MarkerCluster } from 'leaflet';
 import { Feature, Point } from 'geojson';
+import markerPng from '/marker.png';
 
-export const markerIcon = (icon: string, size: number = 30) => {
+type MarkerIcon = {
+  icon?: string;
+  size: number;
+};
+export const markerIcon = ({ icon = markerPng, size = 30 }: MarkerIcon) => {
   const iconDiv = new L.Icon({
     iconUrl: icon,
     iconSize: [size, size],
@@ -14,17 +19,27 @@ export const markerIcon = (icon: string, size: number = 30) => {
 };
 
 type ClusterIcon = {
-  icon: string;
+  icon?: string;
   className?: string;
   size?: number;
   showCount?: boolean;
 };
-export const clusterIcon = ({
+
+export const customClusterIcon = ({
   icon,
   className,
   size = 30,
   showCount,
 }: ClusterIcon) => {
+  if (!icon) {
+    return (cluster: MarkerCluster) =>
+      L.divIcon({
+        html: `<span>${cluster.getChildCount()}</span>`,
+        className: className,
+        iconSize: L.point(25, 25, true),
+      });
+  }
+
   return (_cluster: MarkerCluster) =>
     new L.DivIcon({
       iconUrl: icon,
@@ -45,7 +60,7 @@ export const clusterIcon = ({
         border-radius: 5px;">
         ${showCount ? _cluster.getChildCount() : ''}
         </p></div>`,
-      className: className,
+      className: 'className',
       iconSize: L.point(size, size, true),
     });
 };
