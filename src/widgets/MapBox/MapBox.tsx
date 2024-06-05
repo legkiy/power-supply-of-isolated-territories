@@ -21,7 +21,6 @@ import markerAir from '/windIcon.svg';
 import windsClasterIcon from '/windsClasterIcon.svg';
 import { Feature, Geometry } from 'geojson';
 import { useTranslation } from 'react-i18next';
-import { customClusterIcon, markerIcon } from '@/share/utils/createMapIcons';
 import MapLayer from './MapLayer';
 
 const createClusterCustomIcon = function (cluster: MarkerCluster) {
