@@ -8,31 +8,38 @@ import {
   Pollutants,
 } from '@/widgets';
 import { useTranslation } from 'react-i18next';
-import { Box, Container, useMediaQuery } from '@mui/material';
-import theme, { navBarWidth } from '@/styles/muiTheme';
+import { Box, Container } from '@mui/material';
+import { appBarSize, navBarSize } from '@/styles/muiTheme';
 
 const Main: FC = () => {
   const { t } = useTranslation();
-  const matchesLG = useMediaQuery(theme.breakpoints.down('lg'));
-  const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const mt = !matchesSM ? `${60}px` : `${54}px`;
 
   return (
     <Box
       component="main"
-      sx={{
-        mt: !matchesSM ? `${60}px` : `${54}px`,
-        ml: !matchesLG ? `${navBarWidth}px` : '0px',
-      }}
+      sx={({ breakpoints }) => ({
+        [breakpoints.down('sm')]: {
+          mt: `${appBarSize.mobile}px`,
+        },
+        mt: `${appBarSize.desktop}px`,
+        [breakpoints.down('lg')]: {
+          mx: 2,
+        },
+        ml: `${navBarSize.desktop}px`,
+      })}
     >
       <Container
-        sx={{
+        sx={({ breakpoints }) => ({
           backgroundColor: 'white',
-        }}
+          [breakpoints.down('md')]: {
+            px: 0.5,
+          },
+          px: 1,
+          py: 2,
+        })}
         maxWidth="lg"
       >
-        dsadsa
+        <AboutInfo />
       </Container>
     </Box>
     // <main className={styles.main}>

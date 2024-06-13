@@ -12,7 +12,7 @@ import {
 import ru from '/localeIcon/ru.png';
 import en from '/localeIcon/en.png';
 import { useState } from 'react';
-import theme, { navBarWidth, mobileNavBarWidth } from '@/styles/muiTheme';
+import theme, { navBarSize } from '@/styles/muiTheme';
 import { useActions, useAppSelector } from '@/store';
 import { IoArrowBackOutline } from 'react-icons/io5';
 import logoWhite from '@/assets/logo-white.png';
@@ -39,7 +39,7 @@ const NavBar = () => {
       sx={{
         '& .MuiDrawer-paper': {
           boxSizing: 'border-box',
-          width: matchesLG ? mobileNavBarWidth : navBarWidth,
+          width: matchesLG ? navBarSize.mobile : navBarSize.desktop,
         },
       }}
       PaperProps={{

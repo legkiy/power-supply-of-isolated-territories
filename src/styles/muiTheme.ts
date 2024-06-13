@@ -1,7 +1,14 @@
 import { createTheme } from '@mui/material';
 
-export const navBarWidth = 140;
-export const mobileNavBarWidth = 180;
+export const navBarSize = {
+  desktop: 140,
+  mobile: 180,
+};
+
+export const appBarSize = {
+  desktop: 64,
+  mobile: 56,
+};
 
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
@@ -12,11 +19,22 @@ declare module '@mui/material/styles' {
     xl: true;
     smd: true;
   }
+  interface Palette {
+    gold: Palette['primary'];
+  }
+
+  interface PaletteOptions {
+    gold?: PaletteOptions['primary'];
+  }
 }
+
 const theme = createTheme({
   palette: {
     primary: {
       main: '#365c74',
+    },
+    gold: {
+      main: '#d6a11c',
     },
   },
   breakpoints: {
@@ -33,13 +51,6 @@ const theme = createTheme({
     borderRadius: 10,
   },
   components: {
-    // MuiToolbar: {
-    //   styleOverrides: {
-    //     root: {
-    //       minHeight: 'auto',
-    //     },
-    //   },
-    // },
     MuiLink: {
       styleOverrides: {
         root: {
@@ -49,6 +60,17 @@ const theme = createTheme({
           cursor: 'pointer',
         },
       },
+    },
+  },
+  typography: {
+    h1: {
+      fontSize: '1.2rem',
+      textAlign: 'center',
+    },
+    subtitle1: {
+      textAlign: 'justify',
+      lineHeight: 1.2,
+      letterSpacing: 0,
     },
   },
 });
