@@ -5,6 +5,7 @@ import { IoArrowBackOutline } from 'react-icons/io5';
 import logoWhite from '@/assets/logo-white.png';
 import {
   AppBar,
+  Box,
   IconButton,
   Link,
   Toolbar,
@@ -24,7 +25,7 @@ const Header: FC = () => {
   const actions = useActions();
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Toolbar>
         <Link href="https://isem.irk.ru/solutions/">
           <IoArrowBackOutline />
@@ -34,9 +35,17 @@ const Header: FC = () => {
             src={logoWhite}
             alt="логотип ИСЭМ"
           />
-          {!matchesMD && t('FSBI')}
-          {!matchesMD && <br />}
-          {matchesMD ? t('ISEM_short') : t('ISEM')}
+          <Box
+            sx={{
+              ml: 4,
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            {!matchesMD && t('FSBI')}
+            {!matchesMD && <br />}
+            {matchesMD ? t('ISEM_short') : t('ISEM')}
+          </Box>
         </Link>
         {matchesLG && (
           <IconButton

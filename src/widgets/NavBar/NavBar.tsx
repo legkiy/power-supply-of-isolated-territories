@@ -53,10 +53,11 @@ const NavBar = () => {
         sx={{
           display: 'flex',
           alignItems: 'center',
-          height: 64,
+          height: { xs: 56, sm: 64 },
           pl: 1,
           gap: 1,
           backgroundColor: theme.palette.primary.main,
+          color: 'white',
           transition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
           boxShadow:
             '0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14)',
@@ -70,6 +71,13 @@ const NavBar = () => {
           alt="логотип ИСЭМ"
         />
       </Box>
+      <Box
+        sx={{
+          flexGrow: 1,
+          backgroundColor: theme.palette.primary.main,
+          borderColor: 'hsl(215, 15%, 92%)',
+        }}
+      ></Box>
     </Drawer>
   );
   // return (
