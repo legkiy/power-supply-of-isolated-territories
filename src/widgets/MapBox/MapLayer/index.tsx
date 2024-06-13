@@ -8,8 +8,7 @@ import styles from './mapLayer.module.scss';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const onEachFeature = (feature: Feature<Geometry, any>, layer: L.Layer) => {
-  const description = feature.properties?.description;
-  const iconCaption = feature.properties?.iconCaption;
+  const { description, iconCaption, tooltipPermament } = feature.properties;
   // layer.options.fillColor = feature.properties?.fill;
   if (description) {
     layer.bindPopup(description); // Popup
@@ -17,7 +16,7 @@ const onEachFeature = (feature: Feature<Geometry, any>, layer: L.Layer) => {
 
   if (iconCaption) {
     layer.bindTooltip(iconCaption, {
-      // permanent: true,
+      permanent: tooltipPermament,
     });
   }
 };
@@ -26,9 +25,15 @@ interface MapLayer {
   pointIcon?: string;
   clusterIcon?: string;
   data: GeoJSONProps['data'];
+  disableCluster?: boolean;
 }
 
-const MapLayer: FC<MapLayer> = ({ pointIcon, data, clusterIcon }) => {
+const MapLayer: FC<MapLayer> = ({
+  pointIcon,
+  data,
+  clusterIcon,
+  disableCluster = false,
+}) => {
   return (
     <FeatureGroup>
       <MarkerClusterGroup
@@ -38,10 +43,10 @@ const MapLayer: FC<MapLayer> = ({ pointIcon, data, clusterIcon }) => {
           className: styles['custom-marker'],
         })}
         polygonOptions={{ fill: false, stroke: false }}
-        maxClusterRadius={50}
+        maxClusterRadius={disableCluster ? 0 : 50}
       >
         <GeoJSON
-          data={data}
+          data={data as GeoJSONProps['data']}
           onEachFeature={onEachFeature}
           pointToLayer={markerIcon({ icon: pointIcon, size: 25 })}
           style={(f) => {
@@ -50,6 +55,8 @@ const MapLayer: FC<MapLayer> = ({ pointIcon, data, clusterIcon }) => {
               weight: properties?.['stroke-width'],
               color: properties?.stroke,
               fillColor: properties?.fill,
+              opacity: properties?.['stroke-opacity'],
+
             };
           }}
         />

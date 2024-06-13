@@ -8,7 +8,10 @@
         "type": "Point",
         "coordinates": [180.85758978465154, 66.39206390635134]
       },
-      "properties": { "iconCaption": "Эгвекинот", "marker-color": "#ed4543" }
+      "properties": {
+        "iconCaption": "Эгвекинот",
+        "marker-color": "#ed4543"
+      }
     },
     {
       "type": "Feature",

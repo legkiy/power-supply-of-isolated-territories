@@ -1,5 +1,6 @@
 {
   "back": "Back",
+  "close":"Close",
   "FSBI": "Federal State Budgetary Institution of Science",
   "ISEM": "Institute of Energy Systems named after. L.A. Melentyev of the Siberian Branch of the Russian Academy of Sciences",
   "title": "Monitoring emissions of pollutants and carbon dioxide into the atmosphere from energy facilities in isolated, hard-to-reach areas in the eastern regions of the Russian Federation",
@@ -76,5 +77,8 @@
     "110kV": "110 kV",
     "DFO": "Far Eastern Federal District",
     "SFO": "Siberian Federal District"
+  },
+  "contacts":{
+    "title":"Contacts"
   }
 }

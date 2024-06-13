@@ -6,21 +6,21 @@ $sizes: (
   'xl': 1200px,
 );
 
+@mixin screenSize($size) {
+  @if map-has-key($sizes, $size) {
+    $min-width: map-get($sizes, $size);
+    @media only screen and (min-width: $min-width) {
+      @content;
+    }
+  }
+}
+
 @mixin media($media) {
   @each $size, $resolution in $sizes {
     @if $media == $size {
       @media only screen and (min-width: $resolution) {
         @content;
       }
-    }
-  }
-}
-
-@mixin screenSize($size) {
-  @if map-has-key($sizes, $size) {
-    $min-width: map-get($sizes, $size);
-    @media only screen and (min-width: $min-width) {
-      @content;
     }
   }
 }

@@ -6,6 +6,7 @@ import logoWhite from '@/assets/logo-white.png';
 
 const Header: FC = () => {
   const { t } = useTranslation();
+
   return (
     <header className={styles.header}>
       <a

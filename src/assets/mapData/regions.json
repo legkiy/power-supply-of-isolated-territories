@@ -1012,7 +1012,7 @@
         "fill-opacity": 0.1,
         "stroke": "#ed4543",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -1339,7 +1339,7 @@
         "fill-opacity": 0.1,
         "stroke": "#ed4543",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -2359,7 +2359,7 @@
         "fill-opacity": 0.1,
         "stroke": "#ed4543",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -3021,7 +3021,7 @@
         "fill-opacity": 0.15,
         "stroke": "#1e98ff",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -3624,7 +3624,7 @@
         "fill-opacity": 0.15,
         "stroke": "#1e98ff",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -3928,7 +3928,7 @@
         "fill-opacity": 0.15,
         "stroke": "#1e98ff",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -4322,7 +4322,7 @@
         "fill-opacity": 0.15,
         "stroke": "#1e98ff",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -4869,7 +4869,7 @@
         "fill-opacity": 0.15,
         "stroke": "#1e98ff",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -5599,7 +5599,7 @@
         "fill-opacity": 0.15,
         "stroke": "#1e98ff",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -6095,7 +6095,7 @@
         "fill-opacity": 0.15,
         "stroke": "#1e98ff",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -7115,7 +7115,7 @@
         "fill-opacity": 0.15,
         "stroke": "#1e98ff",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -7961,7 +7961,7 @@
         "fill-opacity": 0.15,
         "stroke": "#1e98ff",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -8931,7 +8931,7 @@
         "fill-opacity": 0.1,
         "stroke": "#ed4543",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -9951,7 +9951,7 @@
         "fill-opacity": 0.1,
         "stroke": "#ed4543",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -10971,7 +10971,7 @@
         "fill-opacity": 0.1,
         "stroke": "#ed4543",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -11971,7 +11971,7 @@
         "fill-opacity": 0.1,
         "stroke": "#ed4543",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -12991,7 +12991,7 @@
         "fill-opacity": 0.1,
         "stroke": "#ed4543",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -14011,7 +14011,7 @@
         "fill-opacity": 0.15,
         "stroke": "#1e98ff",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -15031,7 +15031,7 @@
         "fill-opacity": 0.1,
         "stroke": "#ed4543",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -15385,7 +15385,7 @@
         "fill-opacity": 0.1,
         "stroke": "#ed4543",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     },
     {
@@ -16377,7 +16377,7 @@
         "fill-opacity": 0.1,
         "stroke": "#ed4543",
         "stroke-width": "1",
-        "stroke-opacity": 1
+        "stroke-opacity": 0.5
       }
     }
   ]
