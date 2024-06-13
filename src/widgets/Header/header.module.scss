@@ -1,42 +1,6 @@
 @use 'src/styles/colors';
 @import 'src/styles/mixins';
 
-.header {
-  // position: fixed;
-  top: 0px;
-  left: auto;
-  right: 0px;
-  height: 50px;
-  width: 100%;
-
-  background-color: colors.$primory;
-  color: white;
-  display: flex;
-  padding: 4px 0;
-  border-bottom: 1px solid colors.$deviderBlack;
-  z-index: 1000;
-
-  @include screenSize(xs) {
-  }
-
-  a {
-    display: flex;
-    color: white;
-    text-decoration: none;
-  }
-
-  h2 {
-    margin: auto;
-    text-align: left;
-    font-weight: 400;
-    font-size: small;
-
-    @include screenSize(xs) {
-      font-size: medium;
-    }
-  }
-}
-
 .back-botttom {
   display: flex;
   align-items: center;
@@ -44,9 +8,13 @@
   text-align: center;
   vertical-align: middle;
   align-self: center;
+  display: flex;
+  color: white;
+  text-decoration: none;
 }
 
 .header-img {
+  margin: 0 10px;
   width: 60px;
   align-self: center;
   display: block;

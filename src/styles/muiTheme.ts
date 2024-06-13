@@ -1,5 +1,7 @@
 import { createTheme } from '@mui/material';
 
+export const navBarWidth = 160;
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -8,6 +10,25 @@ const theme = createTheme({
   },
   shape: {
     borderRadius: 10,
+  },
+  components: {
+    // MuiToolbar: {
+    //   styleOverrides: {
+    //     root: {
+    //       minHeight: 'auto',
+    //     },
+    //   },
+    // },
+
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: 'white',
+          display: 'flex',
+          alignItems: 'center',
+        },
+      },
+    },
   },
 });
 
