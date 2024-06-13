@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import styles from './navbar.module.scss';
 import { Accordion, AccordionButton, LangSwitcher } from '@/share/UI';
-import { Box, Button, Drawer, useMediaQuery } from '@mui/material';
+import { Box, Button, Drawer, Link, useMediaQuery } from '@mui/material';
 import { RegionSelector } from '..';
 import {
   Dialog,
@@ -12,7 +12,7 @@ import {
 import ru from '/localeIcon/ru.png';
 import en from '/localeIcon/en.png';
 import { useState } from 'react';
-import theme, { navBarWidth } from '@/styles/muiTheme';
+import theme, { navBarWidth, mobileNavBarWidth } from '@/styles/muiTheme';
 import { useActions, useAppSelector } from '@/store';
 import { IoArrowBackOutline } from 'react-icons/io5';
 import logoWhite from '@/assets/logo-white.png';
@@ -37,10 +37,9 @@ const NavBar = () => {
       open={matchesLG ? navBarState : false}
       onClose={() => actions.toggleNavBar()}
       sx={{
-        // display: { xs: 'none', lg: 'block' },
         '& .MuiDrawer-paper': {
           boxSizing: 'border-box',
-          width: navBarWidth,
+          width: matchesLG ? mobileNavBarWidth : navBarWidth,
         },
       }}
       PaperProps={{
@@ -54,22 +53,27 @@ const NavBar = () => {
           display: 'flex',
           alignItems: 'center',
           height: { xs: 56, sm: 64 },
-          pl: 1,
-          gap: 1,
           backgroundColor: theme.palette.primary.main,
           color: 'white',
-          transition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+          // transition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
           boxShadow:
             '0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14)',
         }}
       >
-        <IoArrowBackOutline />
-        {t('back')}
-        <img
-          className={styles['header-img']}
-          src={logoWhite}
-          alt="логотип ИСЭМ"
-        />
+        <Link
+          href="https://isem.irk.ru/solutions/"
+          sx={{
+            mx: 'auto',
+          }}
+        >
+          <IoArrowBackOutline size={20} />
+          {t('back')}
+          <img
+            className={styles['header-img']}
+            src={logoWhite}
+            alt="логотип ИСЭМ"
+          />
+        </Link>
       </Box>
       <Box
         sx={{

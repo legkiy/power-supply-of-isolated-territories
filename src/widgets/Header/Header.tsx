@@ -21,6 +21,7 @@ const Header: FC = () => {
 
   const matchesLG = useMediaQuery(theme.breakpoints.down('lg'));
   const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesSMD = useMediaQuery(theme.breakpoints.down('smd'));
 
   const actions = useActions();
 
@@ -28,22 +29,31 @@ const Header: FC = () => {
     <AppBar position="fixed">
       <Toolbar>
         <Link href="https://isem.irk.ru/solutions/">
-          <IoArrowBackOutline />
-          {t('back')}
-          <img
-            className={styles['header-img']}
-            src={logoWhite}
-            alt="логотип ИСЭМ"
-          />
+          {matchesLG && (
+            <>
+              <IoArrowBackOutline />
+              {t('back')}
+              <img
+                className={styles['header-img']}
+                src={logoWhite}
+                alt="логотип ИСЭМ"
+              />
+            </>
+          )}
+
           <Box
             sx={{
-              ml: 4,
+              ml: !matchesLG ? 15 : 0,
               display: 'flex',
               flexDirection: 'column',
             }}
           >
-            {!matchesMD && t('FSBI')}
-            {!matchesMD && <br />}
+            {!matchesSMD && (
+              <>
+                {t('FSBI')}
+                <br />
+              </>
+            )}
             {matchesMD ? t('ISEM_short') : t('ISEM')}
           </Box>
         </Link>
