@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material';
 
-export const navBarWidth = 160;
+export const navBarWidth = 180;
 
 const theme = createTheme({
   palette: {

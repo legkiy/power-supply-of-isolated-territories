@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import styles from './navbar.module.scss';
 import { Accordion, AccordionButton, LangSwitcher } from '@/share/UI';
-import { Button, Drawer, useMediaQuery } from '@mui/material';
+import { Box, Button, Drawer, useMediaQuery } from '@mui/material';
 import { RegionSelector } from '..';
 import {
   Dialog,
@@ -14,6 +14,8 @@ import en from '/localeIcon/en.png';
 import { useState } from 'react';
 import theme, { navBarWidth } from '@/styles/muiTheme';
 import { useActions, useAppSelector } from '@/store';
+import { IoArrowBackOutline } from 'react-icons/io5';
+import logoWhite from '@/assets/logo-white.png';
 
 const localIcons = {
   ru: ru,
@@ -47,7 +49,27 @@ const NavBar = () => {
         },
       }}
     >
-      jopa
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          height: 64,
+          pl: 1,
+          gap: 1,
+          backgroundColor: theme.palette.primary.main,
+          transition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+          boxShadow:
+            '0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14)',
+        }}
+      >
+        <IoArrowBackOutline />
+        {t('back')}
+        <img
+          className={styles['header-img']}
+          src={logoWhite}
+          alt="логотип ИСЭМ"
+        />
+      </Box>
     </Drawer>
   );
   // return (
