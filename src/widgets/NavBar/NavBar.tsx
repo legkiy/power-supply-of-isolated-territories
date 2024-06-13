@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import styles from './navbar.module.scss';
-import { Accordion, AccordionButton, Button, LangSwitcher } from '@/share/UI';
+import { Accordion, AccordionButton, LangSwitcher } from '@/share/UI';
+import { Button } from '@mui/material';
 import { RegionSelector } from '..';
 import {
   Dialog,
@@ -56,7 +57,13 @@ const NavBar = () => {
             </p>
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => setOpenContact(false)}>{t('close')}</Button>
+            <Button
+              onClick={() => setOpenContact(false)}
+              variant="contained"
+              color="error"
+            >
+              {t('close')}
+            </Button>
           </DialogActions>
         </Dialog>
       </div>

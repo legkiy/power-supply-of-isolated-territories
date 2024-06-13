@@ -5,6 +5,8 @@ import { customClusterIcon, markerIcon } from '@/share/utils/createMapIcons';
 import { Feature, Geometry } from 'geojson';
 import { FC } from 'react';
 import styles from './mapLayer.module.scss';
+import markerPng from '/marker.png';
+import { IMapLayer } from '@/store/mapSlice/mapSlice';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const onEachFeature = (feature: Feature<Geometry, any>, layer: L.Layer) => {
@@ -21,24 +23,17 @@ const onEachFeature = (feature: Feature<Geometry, any>, layer: L.Layer) => {
   }
 };
 
-interface MapLayer {
-  pointIcon?: string;
-  clusterIcon?: string;
-  data: GeoJSONProps['data'];
-  disableCluster?: boolean;
-}
-
-const MapLayer: FC<MapLayer> = ({
-  pointIcon,
+const MapLayer: FC<IMapLayer> = ({
+  marker = markerPng,
   data,
-  clusterIcon,
+  clusterMarker,
   disableCluster = false,
 }) => {
   return (
     <FeatureGroup>
       <MarkerClusterGroup
         iconCreateFunction={customClusterIcon({
-          icon: clusterIcon,
+          icon: clusterMarker,
           size: 35,
           className: styles['custom-marker'],
         })}
@@ -48,15 +43,15 @@ const MapLayer: FC<MapLayer> = ({
         <GeoJSON
           data={data as GeoJSONProps['data']}
           onEachFeature={onEachFeature}
-          pointToLayer={markerIcon({ icon: pointIcon, size: 25 })}
+          pointToLayer={markerIcon({ icon: marker, size: 25 })}
           style={(f) => {
             const properties = f?.properties;
+
             return {
               weight: properties?.['stroke-width'],
               color: properties?.stroke,
               fillColor: properties?.fill,
               opacity: properties?.['stroke-opacity'],
-
             };
           }}
         />

@@ -1,17 +1,12 @@
-import { MapContainer, TileLayer, GeoJSONProps } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import styles from './mapBox.module.scss';
 import { FC } from 'react';
 import ZoomController from './ZoomController';
-import regionsData from '@/assets/mapData/regions.json';
-import lineData from '@/assets/mapData/line.json';
-import settlementsPoints from '@/assets/mapData/points.json';
-import pointsAir from '@/assets/mapData/pointsAir.json';
-import markerPng from '/marker.png';
-import markerAir from '/windIcon.svg';
-import windsClasterIcon from '/windsClasterIcon.svg';
 import { useTranslation } from 'react-i18next';
 import MapLayer from './MapLayer';
+import { useAppSelector } from '@/store';
+import MapControlLayers from './MapControlLayers';
 
 const legend = [
   { title: '500kV', color: '#ed4543' },
@@ -23,6 +18,7 @@ const legend = [
 
 const MapBox: FC = () => {
   const { t } = useTranslation();
+  const layers = useAppSelector((store) => store.map.layers);
   return (
     <div className={styles['map-box']}>
       <MapContainer
@@ -40,18 +36,9 @@ const MapBox: FC = () => {
           url="https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}"
           // url="http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
         />
+        <MapControlLayers />
         <ZoomController />
-        <MapLayer data={regionsData as GeoJSONProps['data']} />
-        <MapLayer data={lineData as GeoJSONProps['data']} />
-        <MapLayer
-          data={settlementsPoints as GeoJSONProps['data']}
-          pointIcon={markerPng}
-        />
-        <MapLayer
-          data={pointsAir as GeoJSONProps['data']}
-          clusterIcon={windsClasterIcon}
-          pointIcon={markerAir}
-        />
+        {layers.map((el) => el.active && <MapLayer key={el.name} {...el} />)}
       </MapContainer>
       <div className={styles.legends}>
         <h4>{t('mapLegend.title')}</h4>
