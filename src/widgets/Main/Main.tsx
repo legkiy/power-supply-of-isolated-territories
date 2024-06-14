@@ -8,7 +8,7 @@ import {
   Pollutants,
 } from '@/widgets';
 import { useTranslation } from 'react-i18next';
-import { Box, Container } from '@mui/material';
+import { Box, Container, Grid, Stack } from '@mui/material';
 import { appBarSize, navBarSize } from '@/styles/muiTheme';
 
 const Main: FC = () => {
@@ -34,12 +34,22 @@ const Main: FC = () => {
           [breakpoints.down('md')]: {
             px: 0.5,
           },
+          py: 1,
           px: 1,
-          py: 2,
+          maxWidth: 1300,
         })}
-        maxWidth="lg"
+        maxWidth="xl"
+        disableGutters
       >
         <AboutInfo />
+        <Grid container spacing={1}>
+          <Grid item lg={7.5} xs={12}>
+            <ChartSection />
+          </Grid>
+          <Grid item lg={4.5} xs={12}>
+            <MapBox />
+          </Grid>
+        </Grid>
       </Container>
     </Box>
     // <main className={styles.main}>

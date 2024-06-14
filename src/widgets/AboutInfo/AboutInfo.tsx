@@ -10,14 +10,19 @@ const AboutInfo: FC = () => {
 
   const matchMD = useMediaQuery(theme.breakpoints.down('md'));
   return (
-    <Stack spacing={2}>
+    <Stack
+      spacing={2}
+      sx={{
+        py: 2,
+      }}
+    >
       <Typography
         variant="h1"
         fontWeight={700}
         sx={({ palette, typography }) => ({
           color: palette.gold.main,
           cursor: matchMD ? 'pointer' : 'text',
-          fontSize: matchMD ? 18 : typography.h1.fontSize,
+          fontSize: matchMD ? 16 : typography.h1.fontSize,
         })}
         onClick={() => (matchMD ? setShowInfo((prev) => !prev) : null)}
       >

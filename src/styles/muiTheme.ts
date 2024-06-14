@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material';
 
 export const navBarSize = {
-  desktop: 140,
+  desktop: 130,
   mobile: 180,
 };
 

@@ -1,7 +1,7 @@
 @use '/src/styles/colors.scss';
 
 .card {
-  padding: 5px 2px;
+  // padding: 5px 1px;
   border-radius: 0.5rem;
   box-shadow: colors.$baseShadow;
   display: flex;
@@ -9,6 +9,7 @@
 }
 
 .title {
+  padding: 5px 2px;
   margin: auto 0px;
   font-size: 13px;
   font-weight: 400;
