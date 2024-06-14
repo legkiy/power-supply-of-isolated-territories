@@ -1,7 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import styles from './navbar.module.scss';
-import { Accordion, AccordionButton, LangSwitcher } from '@/share/UI';
-import { Box, Button, Drawer, Link, useMediaQuery } from '@mui/material';
+import { Accordion, LangSwitcher } from '@/share/UI';
+import {
+  Box,
+  Button,
+  Divider,
+  Drawer,
+  Link,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import { RegionSelector } from '..';
 import {
   Dialog,
@@ -30,6 +39,25 @@ const NavBar = () => {
 
   const { navBarState } = useAppSelector((store) => store.global);
   const actions = useActions();
+
+  const menuItems = [
+    {
+      children: <RegionSelector />,
+      title: t('naigate.selectRegion'),
+      itsButtons: true,
+    },
+    {
+      children: <LangSwitcher />,
+      title: (
+        <img
+          src={localIcons[i18n.language as 'ru' | 'en']}
+          width={30}
+          height={20}
+        />
+      ),
+      itsButtons: true,
+    },
+  ];
 
   return (
     <Drawer
@@ -81,7 +109,51 @@ const NavBar = () => {
           backgroundColor: theme.palette.primary.main,
           borderColor: 'hsl(215, 15%, 92%)',
         }}
-      ></Box>
+      >
+        <Stack>
+          <Typography variant="h6" color="white" textAlign="center">
+            {t('naigate.title')}
+          </Typography>
+          <Divider />
+          {menuItems.map((item, index) => (
+            <Accordion {...item} key={index} />
+          ))}
+          <Button
+            onClick={() => setOpenContact(true)}
+            sx={{
+              color: 'white',
+            }}
+          >
+            <Typography textTransform={'capitalize'}>
+              {t('contacts.title')}
+            </Typography>
+          </Button>
+          <Dialog open={openContact} onClose={() => setOpenContact(false)}>
+            <DialogTitle>{t('contacts.title')}</DialogTitle>
+            <DialogContent>
+              <p>
+                Содержание страницы: <i>Иванова Ирина Юрьевна</i>{' '}
+                <a href="mailto:nord@isem.irk.ru">nord@isem.irk.ru</a>
+              </p>
+              <p>
+                Тех. реализация: <i>Максаков Никита Владимирович</i>{' '}
+                <a href="mailto:nikita.max@isem.irk.ru">
+                  nikita.max@isem.irk.ru
+                </a>
+              </p>
+            </DialogContent>
+            <DialogActions>
+              <Button
+                onClick={() => setOpenContact(false)}
+                variant="contained"
+                color="error"
+              >
+                {t('close')}
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </Stack>
+      </Box>
     </Drawer>
   );
   // return (

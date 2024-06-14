@@ -34,11 +34,11 @@ const Main: FC = () => {
           [breakpoints.down('md')]: {
             px: 0.5,
           },
+          maxWidth: '1300px',
           py: 1,
           px: 1,
-          maxWidth: 1300,
         })}
-        maxWidth="xl"
+        maxWidth={false}
         disableGutters
       >
         <AboutInfo />
@@ -50,6 +50,38 @@ const Main: FC = () => {
             <MapBox />
           </Grid>
         </Grid>
+        <h4 className={styles['emissions-title']}>{t('emissions.title')}</h4>
+        <Stack
+          spacing={1}
+          direction={'row'}
+          sx={({ breakpoints }) => ({
+            [breakpoints.down('lg')]: {
+              overflowX: 'scroll',
+            },
+            position: 'relative',
+          })}
+        >
+          <Box
+            sx={({ breakpoints }) => ({
+              width: '50%',
+              [breakpoints.down('lg')]: {
+                width: '100%',
+              },
+            })}
+          >
+            <EmissionsCO2 />
+          </Box>
+          <Box
+            sx={({ breakpoints }) => ({
+              width: '50%',
+              [breakpoints.down('lg')]: {
+                width: '100%',
+              },
+            })}
+          >
+            <Pollutants />
+          </Box>
+        </Stack>
       </Container>
     </Box>
     // <main className={styles.main}>

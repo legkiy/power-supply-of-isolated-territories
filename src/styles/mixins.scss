@@ -9,7 +9,7 @@ $sizes: (
 @mixin screenSize($size) {
   @if map-has-key($sizes, $size) {
     $min-width: map-get($sizes, $size);
-    @media only screen and (min-width: $min-width) {
+    @media only screen and (max-width: $min-width) {
       @content;
     }
   }

@@ -45,12 +45,40 @@ const ChartSection: FC = () => {
   );
 
   return (
-    <Grid container spacing={1}>
-      <Grid item xs={4.8}>
+    <Grid
+      container
+      spacing={1}
+      sx={({ breakpoints }) => ({
+        [breakpoints.down('lg')]: {
+          flexWrap: 'nowrap',
+          overflowX: 'scroll',
+          p: 1,
+          ml: -0.5,
+          // pl: 2,
+        },
+      })}
+    >
+      <Grid
+        item
+        xs={4.8}
+        sx={({ breakpoints }) => ({
+          [breakpoints.down('lg')]: {
+            minWidth: '302px',
+          },
+        })}
+      >
         <TemplateChart />
       </Grid>
       {series.map((series, index) => (
-        <Grid item xs={2.4} sx={{}}>
+        <Grid
+          item
+          xs={2.4}
+          sx={({ breakpoints }) => ({
+            [breakpoints.down('lg')]: {
+              minWidth: '140px',
+            },
+          })}
+        >
           <ChartCard
             style={{ width: '100%', height: '100%' }}
             title={t(`regions.${settlementsChartData[index].name}`)}

@@ -6,7 +6,7 @@ const Footer: FC = () => {
   const { t } = useTranslation();
   return (
     <div className={styles.footer}>
-      <p>{t('footerTitle')}</p>
+      {t('footerTitle')}
     </div>
   );
 };

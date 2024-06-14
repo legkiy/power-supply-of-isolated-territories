@@ -20,7 +20,7 @@ const MapBox: FC = () => {
   const { t } = useTranslation();
   const layers = useAppSelector((store) => store.map.layers);
   return (
-    <div className={styles['map-box']}>
+    <div className={styles['map-box']} >
       <MapContainer
         center={[66.23, 110.98]}
         zoom={3}

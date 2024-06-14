@@ -1,5 +1,4 @@
 import { Footer, Header, Main } from '@/widgets';
-import styles from './baseLayout.module.scss';
 import NavBar from '@/widgets/NavBar/NavBar';
 
 const BaseLayout = () => {
@@ -8,6 +7,7 @@ const BaseLayout = () => {
       <Header />
       <NavBar />
       <Main />
+      <Footer />
 
       {/* <div className={styles['separeted-main']}>
       <NavBar />

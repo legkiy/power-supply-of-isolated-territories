@@ -55,6 +55,7 @@ const TemplateChart: FC = () => {
       title={
         <div>
           <h5 className={styles.title}>{t('regions.legend')}</h5>
+          <h5 className={styles.title}>{t('regions.legend')}</h5>
           <div className={styles['legend-colors']}>
             {settlementsColorsLabels.map((cl) => (
               <p className={styles['legend-item']} key={cl.color}>
