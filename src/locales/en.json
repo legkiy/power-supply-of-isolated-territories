@@ -1,0 +1,92 @@
+{
+  "back": "Back",
+  "close": "Close",
+  "FSBI": "Federal State Budgetary Institution of Science",
+  "ISEM": "Institute of Energy Systems named after. L.A. Melentyev of the Siberian Branch of the Russian Academy of Sciences",
+  "ISEM_short": "ISEM",
+  "title": "Monitoring emissions of pollutants and carbon dioxide into the atmosphere from energy facilities in isolated, hard-to-reach areas in the eastern regions of the Russian Federation",
+  "description": "The developed information and analytical system is designed to monitor changes in carbon dioxide emissions from energy facilities in hard-to-reach territories of the eastern regions of the Russian Federation isolated from energy systems during the implementation of various decarbonization scenarios. The information is presented from the created database of technical, economic and production indicators of power plants and boiler houses that provide energy supply to this category of consumers, and estimates of carbon dioxide emissions into the atmosphere based on the developed mathematical model",
+  "footerTitle": "The estimates were obtained during the implementation of the draft state assignment on the topic: FWEU-2021-0004 and research work “Creation of information and analytical support for a module for forecasting the development of the Russian energy sector in terms of the analysis of energy technologies for remote and hard-to-reach areas outside the zone of centralized energy supply” as part of the development of the most important innovative project of national importance “Unified national system for monitoring climate-active substances” (agreement on the provision of grants from the federal budget in the form of subsidies in accordance with paragraph 4 of Article 78.1 of the Budget Code of the Russian Federation dated March 1, 2023 No. 139-15-2023-003) (2023-2024 ). Developers of the information and analytical system: employees of the department of complex and regional energy problems of the ISEM SB RAS",
+  "naigate": {
+    "title": "Menu",
+    "selectRegion": "Select region",
+    "SFO": "SFO",
+    "DFO": "DFO",
+    "contacts": "Contacts",
+    "lang": "Language",
+    "emissions": "Emissions"
+  },
+  "emissions": {
+    "title": "Emissions during the generation of thermal and electrical energy in isolated, hard-to-reach areas",
+    "coEmissions": "Carbon dioxide, thousand tons CO2",
+    "allEmissions": "Pollutants, thousand tons"
+  },
+  "thousandPeople": "k people",
+  "kmt": "kmt",
+  "regions": {
+    "settlements": "settlements",
+    "population": "population",
+    "legend": "Legend",
+    "sakhRep": "Republic of Sakha (Yakutia)",
+    "sakhRepArctic": "Republic of Sakha (Yakutia), arctic",
+    "sakhRepSouth": "Republic of Sakha (Yakutia), south",
+    "Zabaykalsky": "Zabaykalsky Krai",
+    "Kamchatka": "Kamchatka Krai",
+    "Primorsky": "Primorsky Krai",
+    "Khabarovsk": "Khabarovsk Krai",
+    "Magadan": "Magadan region",
+    "ChukotkaAO": "Chukotka AO",
+    "Chukotka": "Chukotka autonomous okrug",
+    "SakhalinObl": "Sakhalin region",
+    "SakhalinKuril": "Sakhalin region, Kuril Islands",
+    "Sakhalin": "Sakhalin region, Sakhalin Islands",
+    "Amur": "Amur region",
+    "Altai": "Altai Republic",
+    "Tyva": "Tyva Republic",
+    "Krasnoyarsk": "Krasnoyarsk Krai",
+    "KrasnoyarskArctic": "Krasnoyarsk Krai, arctic",
+    "KrasnoyarskSouth": "Krasnoyarsk Krai, south",
+    "Irkutsk": "Irkutsk Region",
+    "Kemerovo": "Kemerovo Region",
+    "Tomsk": "Tomsk Region"
+  },
+  "fuel": {
+    "уголь": "coal",
+    "дрова": "firewood",
+    "газ": "gas",
+    "нефть": "oil",
+    "нефтепр.": "oil prod.",
+    "нефтепродукты": "oil products"
+  },
+  "settlements": {
+    "200": "up to 200 people.",
+    "500": "200 - 500 people.",
+    "1000": "500 - 1000 people.",
+    "more1000": "more than 1000 people."
+  },
+  "templateText": {
+    "populationGradation": "population by gradation",
+    "sumSettlements": "sum of settlements",
+    "settlementsGradation": "number of settlements by gradation",
+    "sumPopulation": "sum of population",
+    "fuelConsumption": "fuel consumption for energy and heat supply"
+  },
+  "mapLegend": {
+    "title": "Legend",
+    "500kV": "500 kV",
+    "220kV": "220 kV",
+    "110kV": "110 kV",
+    "DFO": "Far Eastern Federal District",
+    "SFO": "Siberian Federal District"
+  },
+  "contacts": {
+    "title": "Contacts"
+  },
+  "map": {
+    "layers": "Layers",
+    "regions": "Regions",
+    "LAP": "Power line",
+    "settlementsPoints": "Settlements",
+    "windPoints": "Windmills"
+  }
+}

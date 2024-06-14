@@ -1,0 +1,63 @@
+@use '/src/styles/colors.scss';
+
+%boxRadius {
+  border-radius: 8px;
+}
+
+.map-box {
+  position: sticky;
+  top: 20px;
+
+  @extend %boxRadius;
+}
+
+.map {
+  position: relative;
+  height: 640px;
+  width: 100%;
+  box-shadow: colors.$baseShadow;
+
+  @extend %boxRadius;
+}
+
+.custom-marker {
+  background-color: rgba(colors.$primoryLight, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  &:hover {
+    box-shadow: colors.$baseShadow;
+  }
+}
+
+.legends {
+  text-align: center;
+  h4 {
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+}
+
+.legends-body {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px 20px;
+  flex-wrap: wrap;
+  p {
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+  }
+  span {
+    margin-top: 3px;
+    margin-right: 6px;
+    display: block;
+    height: 15px;
+    width: 16px;
+    border-radius: 5px;
+  }
+}

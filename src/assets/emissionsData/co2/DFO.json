@@ -1,0 +1,191 @@
+[
+  {
+    "name": "sakhRep",
+    "fuel": [
+      {
+        "type": "уголь",
+        "value": 511.6
+      },
+      {
+        "type": "нефть",
+        "value": 200.5
+      },
+      {
+        "type": "нефтепродукты",
+        "value": 227.7
+      },
+      {
+        "type": "газ",
+        "value": 4.2
+      }
+    ]
+  },
+  {
+    "name": "Kamchatka",
+    "fuel": [
+      {
+        "type": "уголь",
+        "value": 0
+      },
+      {
+        "type": "нефть",
+        "value": 0
+      },
+      {
+        "type": "нефтепродукты",
+        "value": 78.0
+      },
+      {
+        "type": "газ",
+        "value": 3.6
+      }
+    ]
+  },
+  {
+    "name": "Khabarovsk",
+    "fuel": [
+      {
+        "type": "уголь",
+        "value": 215.8
+      },
+      {
+        "type": "нефть",
+        "value": 0
+      },
+      {
+        "type": "нефтепродукты",
+        "value": 179.3
+      },
+      {
+        "type": "газ",
+        "value": 14.5
+      }
+    ]
+  },
+  {
+    "name": "SakhalinObl",
+    "fuel": [
+      {
+        "type": "уголь",
+        "value": 34.9
+      },
+      {
+        "type": "нефть",
+        "value": 0
+      },
+      {
+        "type": "нефтепродукты",
+        "value": 100.6
+      },
+      {
+        "type": "газ",
+        "value": 1.4
+      }
+    ]
+  },
+  {
+    "name": "Primorsky",
+    "fuel": [
+      {
+        "type": "уголь",
+        "value": 0.2
+      },
+      {
+        "type": "нефть",
+        "value": 0
+      },
+      {
+        "type": "нефтепродукты",
+        "value": 17.0
+      },
+      {
+        "type": "газ",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "name": "Magadan",
+    "fuel": [
+      {
+        "type": "уголь",
+        "value": 0
+      },
+      {
+        "type": "нефть",
+        "value": 0
+      },
+      {
+        "type": "нефтепродукты",
+        "value": 11.5
+      },
+      {
+        "type": "газ",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "name": "Zabaykalsky",
+    "fuel": [
+      {
+        "type": "уголь",
+        "value": 4.1
+      },
+      {
+        "type": "нефть",
+        "value": 0
+      },
+      {
+        "type": "нефтепродукты",
+        "value": 3.8
+      },
+      {
+        "type": "газ",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "name": "Amur",
+    "fuel": [
+      {
+        "type": "уголь",
+        "value": 0
+      },
+      {
+        "type": "нефть",
+        "value": 0
+      },
+      {
+        "type": "нефтепродукты",
+        "value": 2.2
+      },
+      {
+        "type": "газ",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "name": "ChukotkaAO",
+    "fuel": [
+      {
+        "type": "уголь",
+        "value": 201.6
+      },
+      {
+        "type": "нефть",
+        "value": 0
+      },
+      {
+        "type": "нефтепродукты",
+        "value": 73.6
+      },
+      {
+        "type": "газ",
+        "value": 0
+      }
+    ]
+  }
+]

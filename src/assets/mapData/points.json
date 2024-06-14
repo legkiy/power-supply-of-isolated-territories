@@ -1,0 +1,96 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 86,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [180.85758978465154, 66.39206390635134]
+      },
+      "properties": {
+        "iconCaption": "Эгвекинот",
+        "marker-color": "#ed4543"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 91,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.75468451121438, 62.06780481798989]
+      },
+      "properties": { "iconCaption": "Якутск", "marker-color": "#ed4543" }
+    },
+    {
+      "type": "Feature",
+      "id": 92,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [114.08783427834389, 62.52476050655558]
+      },
+      "properties": { "iconCaption": "Мирный", "marker-color": "#ed4543" }
+    },
+    {
+      "type": "Feature",
+      "id": 93,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [150.94731146433926, 59.60526746059404]
+      },
+      "properties": { "iconCaption": "Магадан", "marker-color": "#ed4543" }
+    },
+    {
+      "type": "Feature",
+      "id": 94,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [166.50944525340176, 68.06112875646532]
+      },
+      "properties": { "iconCaption": "Билибино", "marker-color": "#ed4543" }
+    },
+
+    {
+      "type": "Feature",
+      "id": 96,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [158.67893988230756, 53.05957416611478]
+      },
+      "properties": {
+        "iconCaption": "Петропавловск - Камчатский",
+        "marker-color": "#ed4543"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 97,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [142.58396917918245, 46.734508332605714]
+      },
+      "properties": {
+        "iconCaption": "Южно-Сахалинск",
+        "marker-color": "#ed4543"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 98,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.15973447744419, 69.28543713581342]
+      },
+      "properties": { "iconCaption": "Норильск", "marker-color": "#ed4543" }
+    },
+    {
+      "type": "Feature",
+      "id": 99,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [177.51825, 64.72743]
+      },
+      "properties": { "iconCaption": "Анадырь", "marker-color": "#ed4543" }
+    }
+  ]
+}

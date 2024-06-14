@@ -1,0 +1,17 @@
+@use '/src/styles/colors.scss';
+
+.button {
+  outline: none;
+  width: fit-content;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.6rem;
+  padding: 5px 10px;
+  transition: all 0.1s ease;
+
+  &:active {
+    box-shadow: inset 0px 0px 0px 100px rgba(0, 0, 0, 0.161);
+    transform: scale(0.95);
+  }
+}

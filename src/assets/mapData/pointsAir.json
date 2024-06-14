@@ -1,0 +1,437 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": 1,
+      "name": "Хамар-Дабан",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [103.35, 51.31]
+      },
+      "properties": {
+        "description": "Хамар-Дабан<br/>Скорость ветра 1.3 м/с"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Иркутск",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [104.18, 52.17]
+      },
+      "properties": {
+        "description": "Иркутск<br/>Скорость ветра 2.3 м/с"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Большое Голоустное",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.24, 52.02]
+      },
+      "properties": {
+        "description": "Большое Голоустное<br/>Скорость ветра 4.5 м/с"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Солнечная (Покойники)",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [108.25, 54.03]
+      },
+      "properties": {
+        "description": "Солнечная (Покойники)<br/>Скорость ветра 3.6 м/с"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Усть-Ордынский",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [104.45, 52.48]
+      },
+      "properties": {
+        "description": "Усть-Ордынский<br/>Скорость ветра 3 м/с"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Бохан",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [103.47, 53.09]
+      },
+      "properties": {
+        "description": "Бохан<br/>Скорость ветра 1.7 м/с"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Баяндай",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.3, 53.04]
+      },
+      "properties": {
+        "description": "Баяндай<br/>Скорость ветра 2.1 м/с"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Зима",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [102.03, 53.55]
+      },
+      "properties": {
+        "description": "Зима<br/>Скорость ветра 2.2 м/с"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Усть-Уда",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [103.01, 54.1]
+      },
+      "properties": {
+        "description": "Усть-Уда<br/>Скорость ветра 1.7 м/с"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Тулун",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [100.34, 54.34]
+      },
+      "properties": {
+        "description": "Тулун<br/>Скорость ветра 2 м/с"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Нижнеудинск",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [99.01, 54.54]
+      },
+      "properties": {
+        "description": "Нижнеудинск<br/>Скорость ветра 2 м/с"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Тайшет",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.01, 55.56]
+      },
+      "properties": {
+        "description": "Тайшет<br/>Скорость ветра 2.9 м/с"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Верхняя Гутара",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [96.58, 54.13]
+      },
+      "properties": {
+        "description": "Верхняя Гутара<br/>Скорость ветра 1.6 м/с"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Алыгджер",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.13, 53.38]
+      },
+      "properties": {
+        "description": "Алыгджер<br/>Скорость ветра 3.1 м/с"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Братск",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [101.37, 56.09]
+      },
+      "properties": {
+        "description": "Братск<br/>Скорость ветра 1.9 м/с"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Качуг",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.52, 53.57]
+      },
+      "properties": {
+        "description": "Качуг<br/>Скорость ветра 2.1 м/с"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Жигалово",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.08, 54.48]
+      },
+      "properties": {
+        "description": "Жигалово<br/>Скорость ветра 1 м/с"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Киренск",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [108.06, 57.47]
+      },
+      "properties": {
+        "description": "Киренск<br/>Скорость ветра 1.8 м/с"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Бодайбо",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [114.12, 57.51]
+      },
+      "properties": {
+        "description": "Бодайбо<br/>Скорость ветра 1.4 м/с"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Перевоз",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [116.56, 59]
+      },
+      "properties": {
+        "description": "Перевоз<br/>Скорость ветра 1.7 м/с"
+      }
+    },
+    {
+      "id": 21,
+      "name": "Наканно",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [108.27, 62.54]
+      },
+      "properties": {
+        "description": "Наканно<br/>Скорость ветра 1.9 м/с"
+      }
+    },
+    {
+      "id": 22,
+      "name": "Ербогачен",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [108, 61.16]
+      },
+      "properties": {
+        "description": "Ербогачен<br/>Скорость ветра 2.1 м/с"
+      }
+    },
+    {
+      "id": 23,
+      "name": "Непа",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [108.13, 59.14]
+      },
+      "properties": {
+        "description": "Непа<br/>Скорость ветра 2 м/с"
+      }
+    },
+    {
+      "id": 24,
+      "name": "Невон",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [102.43, 58.02]
+      },
+      "properties": {
+        "description": "Невон<br/>Скорость ветра 2 м/с"
+      }
+    },
+    {
+      "id": 25,
+      "name": "Токма",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.52, 58.15]
+      },
+      "properties": {
+        "description": "Токма<br/>Скорость ветра 1.7 м/с"
+      }
+    },
+    {
+      "id": 26,
+      "name": "Ичера",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [109.46, 58.3]
+      },
+      "properties": {
+        "description": "Ичера<br/>Скорость ветра 1.6 м/с"
+      }
+    },
+    {
+      "id": 27,
+      "name": "Осетрово (Усть-Кут)",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.5, 56.48]
+      },
+      "properties": {
+        "description": "Осетрово (Усть-Кут)<br/>Скорость ветра 1.6 м/с"
+      }
+    },
+    {
+      "id": 28,
+      "name": "Орлинга",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.51, 56.02]
+      },
+      "properties": {
+        "description": "Орлинга<br/>Скорость ветра 1.3 м/с"
+      }
+    },
+    {
+      "id": 29,
+      "name": "Казачинское",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.34, 56.16]
+      },
+      "properties": {
+        "description": "Казачинское<br/>Скорость ветра 1.6 м/с"
+      }
+    },
+    {
+      "id": 30,
+      "name": "Инга",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [101.58, 52.58]
+      },
+      "properties": {
+        "description": "Инга<br/>Скорость ветра 1.4 м/с"
+      }
+    },
+    {
+      "id": 31,
+      "name": "Головское",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.31, 55.29]
+      },
+      "properties": {
+        "description": "Головское<br/>Скорость ветра 1.5 м/с"
+      }
+    },
+    {
+      "id": 32,
+      "name": "Червянка",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [99.32, 57.39]
+      },
+      "properties": {
+        "description": "Червянка<br/>Скорость ветра 1.7 м/с"
+      }
+    },
+    {
+      "id": 33,
+      "name": "Максимово",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105, 57.07]
+      },
+      "properties": {
+        "description": "Максимово<br/>Скорость ветра 1.3 м/с"
+      }
+    },
+    {
+      "id": 34,
+      "name": "Онгурен",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.35, 53.37]
+      },
+      "properties": {
+        "description": "Онгурен<br/>Скорость ветра 6 м/с"
+      }
+    },
+    {
+      "id": 35,
+      "name": "Узуры",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.44, 53.19]
+      },
+      "properties": {
+        "description": "Узуры<br/>Скорость ветра 3.7 м/с"
+      }
+    },
+    {
+      "id": 36,
+      "name": "Хужир",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.2, 53.11]
+      },
+      "properties": {
+        "description": "Хужир<br/>Скорость ветра 2.5 м/с"
+      }
+    }
+  ]
+}

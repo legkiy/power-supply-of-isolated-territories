@@ -1,0 +1,18 @@
+@use 'src/styles/colors';
+
+.about-info {
+  // padding: 15px;
+
+  h1 {
+    color: colors.$gold;
+    font-size: large;
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 10px;
+  }
+
+  p {
+    text-align: justify;
+  }
+}

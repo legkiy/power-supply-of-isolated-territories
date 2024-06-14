@@ -1,0 +1,25 @@
+@use 'src/styles/colors';
+
+.navbar {
+  flex-shrink: 0;
+  background-color: colors.$primory;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  margin-left: 0px;
+  width: 110px;
+}
+
+.navbar-content {
+  height: 100%;
+  width: 100%;
+  margin-top: 58px;
+}
+
+.nav-title {
+  color: white;
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid colors.$deviderBlack;
+}

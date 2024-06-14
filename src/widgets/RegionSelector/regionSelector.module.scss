@@ -1,0 +1,10 @@
+.region-selector {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 16px 0;
+
+  * {
+    color: white;
+  }
+}

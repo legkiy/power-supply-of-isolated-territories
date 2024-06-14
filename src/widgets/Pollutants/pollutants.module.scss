@@ -1,0 +1,27 @@
+.pollutants-sector {
+}
+
+.left-side {
+  // width: 50%;
+}
+
+.pollutants-label {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.pollutants-main {
+  width: 70%;
+  &__DFO {
+    // margin-left: 30px;
+  }
+}
+
+.pollutants-overflow {
+  height: 70px;
+  // margin-left: 12px;
+  &__DFO {
+    // margin-left: 0;
+    height: 170px;
+  }
+}

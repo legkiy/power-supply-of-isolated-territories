@@ -1,0 +1,21 @@
+.accordion-button {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: white;
+
+  &:hover {
+    box-shadow: inset 0px 0px 0px 100px rgba(0, 0, 0, 0.161);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    box-shadow: inset 0px 0px 0px 100px rgb(114, 114, 114);
+    filter: grayscale(80%);
+  }
+}
