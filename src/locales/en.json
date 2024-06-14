@@ -26,7 +26,6 @@
   "regions": {
     "settlements": "settlements",
     "population": "population",
-    "legend": "Legend",
     "sakhRep": "Republic of Sakha (Yakutia)",
     "sakhRepArctic": "Republic of Sakha (Yakutia), arctic",
     "sakhRepSouth": "Republic of Sakha (Yakutia), south",
@@ -65,6 +64,8 @@
     "more1000": "more than 1000 people."
   },
   "templateText": {
+    "legend": "Legend",
+    "gradations": "gradations of population points",
     "populationGradation": "population by gradation",
     "sumSettlements": "sum of settlements",
     "settlementsGradation": "number of settlements by gradation",

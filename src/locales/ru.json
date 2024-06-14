@@ -26,7 +26,6 @@
   "regions": {
     "settlements": "нас. пункты",
     "population": "население",
-    "legend": "Условные обозначения",
     "sakhRep": "Республика Саха (Якутия)",
     "sakhRepArctic": "Республика Саха (Якутия), арктика",
     "sakhRepSouth": "Республика Саха (Якутия), юг",
@@ -65,6 +64,8 @@
     "more1000": "более 1000 чел."
   },
   "templateText": {
+    "legend": "Условные обозначения",
+    "gradations": "градации нас. пунктов",
     "populationGradation": "население по градациям",
     "sumSettlements": "сумма нас. пунктов",
     "settlementsGradation": "кол-во нас. пунктов по градациям",
