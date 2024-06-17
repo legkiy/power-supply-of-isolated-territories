@@ -6,7 +6,7 @@ interface ICard extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
   title?: string | ReactNode;
 }
 
-const Card: FC<ICard> = ({ children, title, ...props }) => {
+const ChartCard: FC<ICard> = ({ children, title, ...props }) => {
   return (
     <div className={styles.card} {...props}>
       {title && typeof title === 'string' ? (
@@ -18,4 +18,4 @@ const Card: FC<ICard> = ({ children, title, ...props }) => {
     </div>
   );
 };
-export default memo(Card);
+export default memo(ChartCard);

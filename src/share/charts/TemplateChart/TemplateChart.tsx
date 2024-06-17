@@ -7,7 +7,7 @@ import {
   settlementsColors,
   settlementsColorsLabels,
 } from '../colors';
-import { Card } from '@/share/UI';
+import { ChartCard } from '@/share/UI';
 import styles from './templateChart.module.scss';
 import { FC, useMemo, useState } from 'react';
 import clsx from 'clsx';
@@ -51,12 +51,11 @@ const TemplateChart: FC = () => {
   );
 
   return (
-    <Card
+    <ChartCard
       title={
         <div>
           <h5 className={styles.title}>{t('templateText.legend')}</h5>
           <h5 className={styles.title}>{t('templateText.gradations')}</h5>
-
           <div className={styles['legend-colors']}>
             {settlementsColorsLabels.map((cl) => (
               <p className={styles['legend-item']} key={cl.color}>
@@ -75,7 +74,9 @@ const TemplateChart: FC = () => {
           </div>
         </div>
       }
-      style={{ width: '38.7%' }}
+      style={{ width: '100%' }}
+
+      // style={{ width: '38.7%' }}
     >
       <div
         style={{
@@ -202,7 +203,7 @@ const TemplateChart: FC = () => {
           </div>
         </div>
       </div>
-    </Card>
+    </ChartCard>
   );
 };
 export default TemplateChart;

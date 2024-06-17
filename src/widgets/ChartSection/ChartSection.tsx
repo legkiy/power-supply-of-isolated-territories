@@ -1,4 +1,4 @@
-import { Card } from '@/share/UI';
+import { ChartCard } from '@/share/UI';
 import { useAppSelector } from '@/store';
 import { FC } from 'react';
 import styles from './chartSection.module.scss';
@@ -6,6 +6,7 @@ import { ChartDataset } from 'chart.js';
 import { useTranslation } from 'react-i18next';
 import { BarChart, RingChart, TemplateChart } from '@/share/charts';
 import { fuelColors, settlementsColors } from '@/share/charts/colors';
+import { Grid } from '@mui/material';
 
 const ChartSection: FC = () => {
   const t = useTranslation().t;
@@ -44,17 +45,65 @@ const ChartSection: FC = () => {
   );
 
   return (
+    <Grid
+      container
+      spacing={1}
+      sx={({ breakpoints }) => ({
+        [breakpoints.down('lg')]: {
+          flexWrap: 'nowrap',
+          overflowX: 'scroll',
+          p: 1,
+          ml: -0.5,
+          // pl: 2,
+        },
+      })}
+    >
+      <Grid
+        item
+        xs={4.8}
+        sx={({ breakpoints }) => ({
+          [breakpoints.down('lg')]: {
+            minWidth: '302px',
+          },
+        })}
+      >
+        <TemplateChart />
+      </Grid>
+      {series.map((series, index) => (
+        <Grid
+          item
+          xs={2.4}
+          sx={({ breakpoints }) => ({
+            [breakpoints.down('lg')]: {
+              minWidth: '140px',
+            },
+          })}
+        >
+          <ChartCard
+            style={{ width: '100%', height: '100%' }}
+            title={t(`regions.${settlementsChartData[index].name}`)}
+            key={index}
+          >
+            <RingChart series={series.settlements} />
+            <BarChart series={series.fuel} labels={fuelLabels} />
+          </ChartCard>
+        </Grid>
+      ))}
+    </Grid>
+  );
+
+  return (
     <div className={styles['chart-section']}>
       <TemplateChart />
       {series.map((series, index) => (
-        <Card
+        <ChartCard
           style={{ width: '18.4%' }}
           title={t(`regions.${settlementsChartData[index].name}`)}
           key={index}
         >
           <RingChart series={series.settlements} />
           <BarChart series={series.fuel} labels={fuelLabels} />
-        </Card>
+        </ChartCard>
       ))}
     </div>
   );
