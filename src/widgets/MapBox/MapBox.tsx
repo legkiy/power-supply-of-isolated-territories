@@ -17,10 +17,10 @@ const legend = [
 ];
 
 const MapBox: FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const layers = useAppSelector((store) => store.map.layers);
   return (
-    <div className={styles['map-box']} >
+    <div className={styles['map-box']}>
       <MapContainer
         center={[66.23, 110.98]}
         zoom={3}
@@ -33,7 +33,9 @@ const MapBox: FC = () => {
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          url="https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}"
+          url={`https://www.google.${
+            i18n.language === 'ru' ? 'ru' : 'cn'
+          }/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}`}
           // url="http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
         />
         <MapControlLayers />
