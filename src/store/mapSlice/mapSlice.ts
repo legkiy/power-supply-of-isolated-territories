@@ -3,9 +3,9 @@ import { GeoJSONProps } from 'react-leaflet';
 import regionsData from '@/assets/mapData/regions.json';
 import lineData from '@/assets/mapData/line.json';
 import settlementsPoints from '@/assets/mapData/points.json';
-import windPoints from '@/assets/mapData/pointsAir.json';
-import windMarker from '/windIcon.svg';
-import windsClasterIcon from '/windsClasterIcon.svg';
+// import windPoints from '@/assets/mapData/pointsAir.json';
+// import windMarker from '/windIcon.svg';
+// import windsClasterIcon from '/windsClasterIcon.svg';
 
 export interface IMapLayer {
   name: string;
@@ -41,14 +41,14 @@ const InitaState: IMapSlice = {
       data: settlementsPoints as GeoJSONProps['data'],
       active: true,
     },
-    {
-      name: 'windPoints',
-      type: 'Point',
-      data: windPoints as GeoJSONProps['data'],
-      active: true,
-      marker: windMarker,
-      clusterMarker: windsClasterIcon,
-    },
+    // {
+    //   name: 'windPoints',
+    //   type: 'Point',
+    //   data: windPoints as GeoJSONProps['data'],
+    //   active: true,
+    //   marker: windMarker,
+    //   clusterMarker: windsClasterIcon,
+    // },
   ],
 };
 
