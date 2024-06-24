@@ -11,6 +11,7 @@ i18next
   .use(LanguageDetector)
   .init({
     fallbackLng: 'ru',
+    
     supportedLngs: LOCALES,
     resources: {
       en: {

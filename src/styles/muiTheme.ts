@@ -98,6 +98,9 @@ const theme = createTheme({
       lineHeight: 1.2,
       letterSpacing: 0,
     },
+    button: {
+      textTransform: 'none',
+    },
   },
 });
 

@@ -7,6 +7,7 @@ import { FC } from 'react';
 import styles from './mapLayer.module.scss';
 import markerPng from '/marker.png';
 import { IMapLayer } from '@/store/mapSlice/mapSlice';
+import { useActions } from '@/store';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const onEachFeature = (feature: Feature<Geometry, any>, layer: L.Layer) => {
@@ -29,8 +30,19 @@ const MapLayer: FC<IMapLayer> = ({
   clusterMarker,
   disableCluster = false,
 }) => {
+  const actions = useActions();
+
   return (
-    <FeatureGroup>
+    <FeatureGroup
+      eventHandlers={{
+        click: (e) => {
+          actions.setCoords({
+            lat: e.latlng.lat,
+            lng: e.latlng.lng,
+          });
+        },
+      }}
+    >
       <MarkerClusterGroup
         iconCreateFunction={customClusterIcon({
           icon: clusterMarker,

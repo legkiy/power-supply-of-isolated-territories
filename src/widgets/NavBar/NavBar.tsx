@@ -60,9 +60,6 @@ const NavBar = () => {
       itsButtons: true,
     },
   ];
-
-  console.log(import.meta.env.DEV);
-
   return (
     <Drawer
       variant={matchesLG ? 'temporary' : 'permanent'}
@@ -125,6 +122,7 @@ const NavBar = () => {
           {import.meta.env.DEV && (
             <FormControlLabel
               label="Dev Panel"
+              sx={{ m: 0 }}
               control={
                 <Switch
                   checked={openDevPanel}
