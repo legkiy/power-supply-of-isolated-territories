@@ -84,28 +84,6 @@ const Main: FC = () => {
         </Stack>
       </Container>
     </Box>
-    // <main className={styles.main}>
-    //   <div className={styles['main-content']}>
-    //     <AboutInfo />
-
-    //     <div className={styles.sections}>
-    //       <div className={styles.section}>
-    //         <ChartSection />
-    //       </div>
-    //       <div className={styles.section}>
-    //         <MapBox />
-    //       </div>
-    //     </div>
-    //     <div>
-    //       <h4 className={styles['emissions-title']}>{t('emissions.title')}</h4>
-    //       <div className={styles['emissions-section']}>
-    //         <EmissionsCO2 />
-    //         <div className={styles['emissions-devider']} />
-    //         <Pollutants />
-    //       </div>
-    //     </div>
-    //   </div>
-    // </main>
   );
 };
 export default Main;

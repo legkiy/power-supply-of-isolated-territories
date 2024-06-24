@@ -1,0 +1,485 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 86,
+      "geometry": { "type": "Point", "coordinates": [102.75, 51.75] },
+      "properties": {
+        "description": "JAN: 1.42;\n    FEB: 2.54;\n    MAR: 4.09;\n    APR: 5.01;\n    MAY: 5.93;\n    JUN: 5.65;\n    JUL: 4.88;\n    AUG: 4.68;\n    SEP: 3.43;\n    OCT: 2.53;\n    NOV: 1.45;\n    DEC: 1.09;\n    ANN: 3.56;\n    LAT: 51.75;\n    LON: 102.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 87,
+      "geometry": { "type": "Point", "coordinates": [103.25, 51.75] },
+      "properties": {
+        "description": "JAN: 1.42;\n    FEB: 2.54;\n    MAR: 4.09;\n    APR: 5.01;\n    MAY: 5.93;\n    JUN: 5.65;\n    JUL: 4.88;\n    AUG: 4.68;\n    SEP: 3.43;\n    OCT: 2.53;\n    NOV: 1.45;\n    DEC: 1.09;\n    ANN: 3.56;\n    LAT: 51.75;\n    LON: 103.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 88,
+      "geometry": { "type": "Point", "coordinates": [103.75, 51.75] },
+      "properties": {
+        "description": "JAN: 1.42;\n    FEB: 2.54;\n    MAR: 4.09;\n    APR: 5.01;\n    MAY: 5.93;\n    JUN: 5.65;\n    JUL: 4.88;\n    AUG: 4.68;\n    SEP: 3.43;\n    OCT: 2.53;\n    NOV: 1.45;\n    DEC: 1.09;\n    ANN: 3.56;\n    LAT: 51.75;\n    LON: 103.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 89,
+      "geometry": { "type": "Point", "coordinates": [104.25, 51.75] },
+      "properties": {
+        "description": "JAN: 1.3;\n    FEB: 2.49;\n    MAR: 4.18;\n    APR: 4.8;\n    MAY: 5.98;\n    JUN: 5.76;\n    JUL: 5.24;\n    AUG: 4.64;\n    SEP: 3.46;\n    OCT: 2.39;\n    NOV: 1.37;\n    DEC: 0.88;\n    ANN: 3.55;\n    LAT: 51.75;\n    LON: 104.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 90,
+      "geometry": { "type": "Point", "coordinates": [104.75, 51.75] },
+      "properties": {
+        "description": "JAN: 1.3;\n    FEB: 2.49;\n    MAR: 4.18;\n    APR: 4.8;\n    MAY: 5.98;\n    JUN: 5.76;\n    JUL: 5.24;\n    AUG: 4.64;\n    SEP: 3.46;\n    OCT: 2.39;\n    NOV: 1.37;\n    DEC: 0.88;\n    ANN: 3.55;\n    LAT: 51.75;\n    LON: 104.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 91,
+      "geometry": { "type": "Point", "coordinates": [105.25, 51.75] },
+      "properties": {
+        "description": "JAN: 1.3;\n    FEB: 2.49;\n    MAR: 4.18;\n    APR: 4.8;\n    MAY: 5.98;\n    JUN: 5.76;\n    JUL: 5.24;\n    AUG: 4.64;\n    SEP: 3.46;\n    OCT: 2.39;\n    NOV: 1.37;\n    DEC: 0.88;\n    ANN: 3.55;\n    LAT: 51.75;\n    LON: 105.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 92,
+      "geometry": { "type": "Point", "coordinates": [105.75, 51.75] },
+      "properties": {
+        "description": "JAN: 1.3;\n    FEB: 2.49;\n    MAR: 4.18;\n    APR: 4.8;\n    MAY: 5.98;\n    JUN: 5.76;\n    JUL: 5.24;\n    AUG: 4.64;\n    SEP: 3.46;\n    OCT: 2.39;\n    NOV: 1.37;\n    DEC: 0.88;\n    ANN: 3.55;\n    LAT: 51.75;\n    LON: 105.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 93,
+      "geometry": { "type": "Point", "coordinates": [106.25, 51.75] },
+      "properties": {
+        "description": "JAN: 1.31;\n    FEB: 2.42;\n    MAR: 4.03;\n    APR: 4.76;\n    MAY: 6.3;\n    JUN: 6.13;\n    JUL: 5.62;\n    AUG: 4.84;\n    SEP: 3.65;\n    OCT: 2.38;\n    NOV: 1.38;\n    DEC: 0.82;\n    ANN: 3.64;\n    LAT: 51.75;\n    LON: 106.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 94,
+      "geometry": { "type": "Point", "coordinates": [106.75, 51.75] },
+      "properties": {
+        "description": "JAN: 1.31;\n    FEB: 2.42;\n    MAR: 4.03;\n    APR: 4.76;\n    MAY: 6.3;\n    JUN: 6.13;\n    JUL: 5.62;\n    AUG: 4.84;\n    SEP: 3.65;\n    OCT: 2.38;\n    NOV: 1.38;\n    DEC: 0.82;\n    ANN: 3.64;\n    LAT: 51.75;\n    LON: 106.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 95,
+      "geometry": { "type": "Point", "coordinates": [107.25, 51.75] },
+      "properties": {
+        "description": "JAN: 1.31;\n    FEB: 2.42;\n    MAR: 4.03;\n    APR: 4.76;\n    MAY: 6.3;\n    JUN: 6.13;\n    JUL: 5.62;\n    AUG: 4.84;\n    SEP: 3.65;\n    OCT: 2.38;\n    NOV: 1.38;\n    DEC: 0.82;\n    ANN: 3.64;\n    LAT: 51.75;\n    LON: 107.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 96,
+      "geometry": { "type": "Point", "coordinates": [107.75, 51.75] },
+      "properties": {
+        "description": "JAN: 1.31;\n    FEB: 2.42;\n    MAR: 4.03;\n    APR: 4.76;\n    MAY: 6.3;\n    JUN: 6.13;\n    JUL: 5.62;\n    AUG: 4.84;\n    SEP: 3.65;\n    OCT: 2.38;\n    NOV: 1.38;\n    DEC: 0.82;\n    ANN: 3.64;\n    LAT: 51.75;\n    LON: 107.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 97,
+      "geometry": { "type": "Point", "coordinates": [108.25, 51.75] },
+      "properties": {
+        "description": "JAN: 1.43;\n    FEB: 2.51;\n    MAR: 3.99;\n    APR: 4.66;\n    MAY: 6.22;\n    JUN: 6.04;\n    JUL: 5.51;\n    AUG: 5.13;\n    SEP: 3.64;\n    OCT: 2.4;\n    NOV: 1.38;\n    DEC: 0.93;\n    ANN: 3.66;\n    LAT: 51.75;\n    LON: 108.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 98,
+      "geometry": { "type": "Point", "coordinates": [102.75, 52.25] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.75;\n    APR: 4.49;\n    MAY: 5.91;\n    JUN: 5.87;\n    JUL: 5.24;\n    AUG: 4.66;\n    SEP: 3.21;\n    OCT: 2.33;\n    NOV: 1.3;\n    DEC: 0.9;\n    ANN: 3.45;\n    LAT: 52.25;\n    LON: 102.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 99,
+      "geometry": { "type": "Point", "coordinates": [103.25, 52.25] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.75;\n    APR: 4.49;\n    MAY: 5.91;\n    JUN: 5.87;\n    JUL: 5.24;\n    AUG: 4.66;\n    SEP: 3.21;\n    OCT: 2.33;\n    NOV: 1.3;\n    DEC: 0.9;\n    ANN: 3.45;\n    LAT: 52.25;\n    LON: 103.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 100,
+      "geometry": { "type": "Point", "coordinates": [103.75, 52.25] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.75;\n    APR: 4.49;\n    MAY: 5.91;\n    JUN: 5.87;\n    JUL: 5.24;\n    AUG: 4.66;\n    SEP: 3.21;\n    OCT: 2.33;\n    NOV: 1.3;\n    DEC: 0.9;\n    ANN: 3.45;\n    LAT: 52.25;\n    LON: 103.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 101,
+      "geometry": { "type": "Point", "coordinates": [104.25, 52.25] },
+      "properties": {
+        "description": "JAN: 1.22;\n    FEB: 2.56;\n    MAR: 4.15;\n    APR: 4.69;\n    MAY: 6.04;\n    JUN: 5.92;\n    JUL: 5.26;\n    AUG: 4.91;\n    SEP: 3.41;\n    OCT: 2.24;\n    NOV: 1.3;\n    DEC: 0.83;\n    ANN: 3.55;\n    LAT: 52.25;\n    LON: 104.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 102,
+      "geometry": { "type": "Point", "coordinates": [104.75, 52.25] },
+      "properties": {
+        "description": "JAN: 1.22;\n    FEB: 2.56;\n    MAR: 4.15;\n    APR: 4.69;\n    MAY: 6.04;\n    JUN: 5.92;\n    JUL: 5.26;\n    AUG: 4.91;\n    SEP: 3.41;\n    OCT: 2.24;\n    NOV: 1.3;\n    DEC: 0.83;\n    ANN: 3.55;\n    LAT: 52.25;\n    LON: 104.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 103,
+      "geometry": { "type": "Point", "coordinates": [105.25, 52.25] },
+      "properties": {
+        "description": "JAN: 1.22;\n    FEB: 2.56;\n    MAR: 4.15;\n    APR: 4.69;\n    MAY: 6.04;\n    JUN: 5.92;\n    JUL: 5.26;\n    AUG: 4.91;\n    SEP: 3.41;\n    OCT: 2.24;\n    NOV: 1.3;\n    DEC: 0.83;\n    ANN: 3.55;\n    LAT: 52.25;\n    LON: 105.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 104,
+      "geometry": { "type": "Point", "coordinates": [105.75, 52.25] },
+      "properties": {
+        "description": "JAN: 1.22;\n    FEB: 2.56;\n    MAR: 4.15;\n    APR: 4.69;\n    MAY: 6.04;\n    JUN: 5.92;\n    JUL: 5.26;\n    AUG: 4.91;\n    SEP: 3.41;\n    OCT: 2.24;\n    NOV: 1.3;\n    DEC: 0.83;\n    ANN: 3.55;\n    LAT: 52.25;\n    LON: 105.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 105,
+      "geometry": { "type": "Point", "coordinates": [106.25, 52.25] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.77;\n    APR: 5.11;\n    MAY: 6.09;\n    JUN: 6.18;\n    JUL: 5.5;\n    AUG: 4.88;\n    SEP: 3.46;\n    OCT: 2.16;\n    NOV: 1.26;\n    DEC: 0.74;\n    ANN: 3.57;\n    LAT: 52.25;\n    LON: 106.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 106,
+      "geometry": { "type": "Point", "coordinates": [106.75, 52.25] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.77;\n    APR: 5.11;\n    MAY: 6.09;\n    JUN: 6.18;\n    JUL: 5.5;\n    AUG: 4.88;\n    SEP: 3.46;\n    OCT: 2.16;\n    NOV: 1.26;\n    DEC: 0.74;\n    ANN: 3.57;\n    LAT: 52.25;\n    LON: 106.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 107,
+      "geometry": { "type": "Point", "coordinates": [107.25, 52.25] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.77;\n    APR: 5.11;\n    MAY: 6.09;\n    JUN: 6.18;\n    JUL: 5.5;\n    AUG: 4.88;\n    SEP: 3.46;\n    OCT: 2.16;\n    NOV: 1.26;\n    DEC: 0.74;\n    ANN: 3.57;\n    LAT: 52.25;\n    LON: 107.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 108,
+      "geometry": { "type": "Point", "coordinates": [107.75, 52.25] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.77;\n    APR: 5.11;\n    MAY: 6.09;\n    JUN: 6.18;\n    JUL: 5.5;\n    AUG: 4.88;\n    SEP: 3.46;\n    OCT: 2.16;\n    NOV: 1.26;\n    DEC: 0.74;\n    ANN: 3.57;\n    LAT: 52.25;\n    LON: 107.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 109,
+      "geometry": { "type": "Point", "coordinates": [108.25, 52.25] },
+      "properties": {
+        "description": "JAN: 1.26;\n    FEB: 2.38;\n    MAR: 3.81;\n    APR: 4.76;\n    MAY: 6.08;\n    JUN: 6.11;\n    JUL: 5.17;\n    AUG: 4.98;\n    SEP: 3.4;\n    OCT: 2.07;\n    NOV: 1.17;\n    DEC: 0.75;\n    ANN: 3.5;\n    LAT: 52.25;\n    LON: 108.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 110,
+      "geometry": { "type": "Point", "coordinates": [102.75, 52.75] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.75;\n    APR: 4.49;\n    MAY: 5.91;\n    JUN: 5.87;\n    JUL: 5.24;\n    AUG: 4.66;\n    SEP: 3.21;\n    OCT: 2.33;\n    NOV: 1.3;\n    DEC: 0.9;\n    ANN: 3.45;\n    LAT: 52.75;\n    LON: 102.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 111,
+      "geometry": { "type": "Point", "coordinates": [103.25, 52.75] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.75;\n    APR: 4.49;\n    MAY: 5.91;\n    JUN: 5.87;\n    JUL: 5.24;\n    AUG: 4.66;\n    SEP: 3.21;\n    OCT: 2.33;\n    NOV: 1.3;\n    DEC: 0.9;\n    ANN: 3.45;\n    LAT: 52.75;\n    LON: 103.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 112,
+      "geometry": { "type": "Point", "coordinates": [103.75, 52.75] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.75;\n    APR: 4.49;\n    MAY: 5.91;\n    JUN: 5.87;\n    JUL: 5.24;\n    AUG: 4.66;\n    SEP: 3.21;\n    OCT: 2.33;\n    NOV: 1.3;\n    DEC: 0.9;\n    ANN: 3.45;\n    LAT: 52.75;\n    LON: 103.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 113,
+      "geometry": { "type": "Point", "coordinates": [104.25, 52.75] },
+      "properties": {
+        "description": "JAN: 1.22;\n    FEB: 2.56;\n    MAR: 4.15;\n    APR: 4.69;\n    MAY: 6.04;\n    JUN: 5.92;\n    JUL: 5.26;\n    AUG: 4.91;\n    SEP: 3.41;\n    OCT: 2.24;\n    NOV: 1.3;\n    DEC: 0.83;\n    ANN: 3.55;\n    LAT: 52.75;\n    LON: 104.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 114,
+      "geometry": { "type": "Point", "coordinates": [104.75, 52.75] },
+      "properties": {
+        "description": "JAN: 1.22;\n    FEB: 2.56;\n    MAR: 4.15;\n    APR: 4.69;\n    MAY: 6.04;\n    JUN: 5.92;\n    JUL: 5.26;\n    AUG: 4.91;\n    SEP: 3.41;\n    OCT: 2.24;\n    NOV: 1.3;\n    DEC: 0.83;\n    ANN: 3.55;\n    LAT: 52.75;\n    LON: 104.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 115,
+      "geometry": { "type": "Point", "coordinates": [105.25, 52.75] },
+      "properties": {
+        "description": "JAN: 1.22;\n    FEB: 2.56;\n    MAR: 4.15;\n    APR: 4.69;\n    MAY: 6.04;\n    JUN: 5.92;\n    JUL: 5.26;\n    AUG: 4.91;\n    SEP: 3.41;\n    OCT: 2.24;\n    NOV: 1.3;\n    DEC: 0.83;\n    ANN: 3.55;\n    LAT: 52.75;\n    LON: 105.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 116,
+      "geometry": { "type": "Point", "coordinates": [105.75, 52.75] },
+      "properties": {
+        "description": "JAN: 1.22;\n    FEB: 2.56;\n    MAR: 4.15;\n    APR: 4.69;\n    MAY: 6.04;\n    JUN: 5.92;\n    JUL: 5.26;\n    AUG: 4.91;\n    SEP: 3.41;\n    OCT: 2.24;\n    NOV: 1.3;\n    DEC: 0.83;\n    ANN: 3.55;\n    LAT: 52.75;\n    LON: 105.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 117,
+      "geometry": { "type": "Point", "coordinates": [106.25, 52.75] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.77;\n    APR: 5.11;\n    MAY: 6.09;\n    JUN: 6.18;\n    JUL: 5.5;\n    AUG: 4.88;\n    SEP: 3.46;\n    OCT: 2.16;\n    NOV: 1.26;\n    DEC: 0.74;\n    ANN: 3.57;\n    LAT: 52.75;\n    LON: 106.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 118,
+      "geometry": { "type": "Point", "coordinates": [106.75, 52.75] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.77;\n    APR: 5.11;\n    MAY: 6.09;\n    JUN: 6.18;\n    JUL: 5.5;\n    AUG: 4.88;\n    SEP: 3.46;\n    OCT: 2.16;\n    NOV: 1.26;\n    DEC: 0.74;\n    ANN: 3.57;\n    LAT: 52.75;\n    LON: 106.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 119,
+      "geometry": { "type": "Point", "coordinates": [107.25, 52.75] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.77;\n    APR: 5.11;\n    MAY: 6.09;\n    JUN: 6.18;\n    JUL: 5.5;\n    AUG: 4.88;\n    SEP: 3.46;\n    OCT: 2.16;\n    NOV: 1.26;\n    DEC: 0.74;\n    ANN: 3.57;\n    LAT: 52.75;\n    LON: 107.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 120,
+      "geometry": { "type": "Point", "coordinates": [107.75, 52.75] },
+      "properties": {
+        "description": "JAN: 1.23;\n    FEB: 2.38;\n    MAR: 3.77;\n    APR: 5.11;\n    MAY: 6.09;\n    JUN: 6.18;\n    JUL: 5.5;\n    AUG: 4.88;\n    SEP: 3.46;\n    OCT: 2.16;\n    NOV: 1.26;\n    DEC: 0.74;\n    ANN: 3.57;\n    LAT: 52.75;\n    LON: 107.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 121,
+      "geometry": { "type": "Point", "coordinates": [108.25, 52.75] },
+      "properties": {
+        "description": "JAN: 1.26;\n    FEB: 2.38;\n    MAR: 3.81;\n    APR: 4.76;\n    MAY: 6.08;\n    JUN: 6.11;\n    JUL: 5.17;\n    AUG: 4.98;\n    SEP: 3.4;\n    OCT: 2.07;\n    NOV: 1.17;\n    DEC: 0.75;\n    ANN: 3.5;\n    LAT: 52.75;\n    LON: 108.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 122,
+      "geometry": { "type": "Point", "coordinates": [102.75, 53.25] },
+      "properties": {
+        "description": "JAN: 1.16;\n    FEB: 2.37;\n    MAR: 4.09;\n    APR: 4.61;\n    MAY: 6.14;\n    JUN: 6.18;\n    JUL: 5.32;\n    AUG: 4.65;\n    SEP: 3.05;\n    OCT: 2.1;\n    NOV: 1.15;\n    DEC: 0.7;\n    ANN: 3.46;\n    LAT: 53.25;\n    LON: 102.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 123,
+      "geometry": { "type": "Point", "coordinates": [103.25, 53.25] },
+      "properties": {
+        "description": "JAN: 1.16;\n    FEB: 2.37;\n    MAR: 4.09;\n    APR: 4.61;\n    MAY: 6.14;\n    JUN: 6.18;\n    JUL: 5.32;\n    AUG: 4.65;\n    SEP: 3.05;\n    OCT: 2.1;\n    NOV: 1.15;\n    DEC: 0.7;\n    ANN: 3.46;\n    LAT: 53.25;\n    LON: 103.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 124,
+      "geometry": { "type": "Point", "coordinates": [103.75, 53.25] },
+      "properties": {
+        "description": "JAN: 1.16;\n    FEB: 2.37;\n    MAR: 4.09;\n    APR: 4.61;\n    MAY: 6.14;\n    JUN: 6.18;\n    JUL: 5.32;\n    AUG: 4.65;\n    SEP: 3.05;\n    OCT: 2.1;\n    NOV: 1.15;\n    DEC: 0.7;\n    ANN: 3.46;\n    LAT: 53.25;\n    LON: 103.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 125,
+      "geometry": { "type": "Point", "coordinates": [104.25, 53.25] },
+      "properties": {
+        "description": "JAN: 1.11;\n    FEB: 2.3;\n    MAR: 3.9;\n    APR: 4.64;\n    MAY: 5.94;\n    JUN: 5.93;\n    JUL: 4.98;\n    AUG: 4.66;\n    SEP: 3.09;\n    OCT: 2.01;\n    NOV: 1.21;\n    DEC: 0.72;\n    ANN: 3.38;\n    LAT: 53.25;\n    LON: 104.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 126,
+      "geometry": { "type": "Point", "coordinates": [104.75, 53.25] },
+      "properties": {
+        "description": "JAN: 1.11;\n    FEB: 2.3;\n    MAR: 3.9;\n    APR: 4.64;\n    MAY: 5.94;\n    JUN: 5.93;\n    JUL: 4.98;\n    AUG: 4.66;\n    SEP: 3.09;\n    OCT: 2.01;\n    NOV: 1.21;\n    DEC: 0.72;\n    ANN: 3.38;\n    LAT: 53.25;\n    LON: 104.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 127,
+      "geometry": { "type": "Point", "coordinates": [105.25, 53.25] },
+      "properties": {
+        "description": "JAN: 1.11;\n    FEB: 2.3;\n    MAR: 3.9;\n    APR: 4.64;\n    MAY: 5.94;\n    JUN: 5.93;\n    JUL: 4.98;\n    AUG: 4.66;\n    SEP: 3.09;\n    OCT: 2.01;\n    NOV: 1.21;\n    DEC: 0.72;\n    ANN: 3.38;\n    LAT: 53.25;\n    LON: 105.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 128,
+      "geometry": { "type": "Point", "coordinates": [105.75, 53.25] },
+      "properties": {
+        "description": "JAN: 1.11;\n    FEB: 2.3;\n    MAR: 3.9;\n    APR: 4.64;\n    MAY: 5.94;\n    JUN: 5.93;\n    JUL: 4.98;\n    AUG: 4.66;\n    SEP: 3.09;\n    OCT: 2.01;\n    NOV: 1.21;\n    DEC: 0.72;\n    ANN: 3.38;\n    LAT: 53.25;\n    LON: 105.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 129,
+      "geometry": { "type": "Point", "coordinates": [106.25, 53.25] },
+      "properties": {
+        "description": "JAN: 1.13;\n    FEB: 2.23;\n    MAR: 3.61;\n    APR: 4.63;\n    MAY: 5.85;\n    JUN: 5.99;\n    JUL: 4.88;\n    AUG: 4.72;\n    SEP: 3.07;\n    OCT: 1.96;\n    NOV: 1.16;\n    DEC: 0.66;\n    ANN: 3.33;\n    LAT: 53.25;\n    LON: 106.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 130,
+      "geometry": { "type": "Point", "coordinates": [106.75, 53.25] },
+      "properties": {
+        "description": "JAN: 1.13;\n    FEB: 2.23;\n    MAR: 3.61;\n    APR: 4.63;\n    MAY: 5.85;\n    JUN: 5.99;\n    JUL: 4.88;\n    AUG: 4.72;\n    SEP: 3.07;\n    OCT: 1.96;\n    NOV: 1.16;\n    DEC: 0.66;\n    ANN: 3.33;\n    LAT: 53.25;\n    LON: 106.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 131,
+      "geometry": { "type": "Point", "coordinates": [107.25, 53.25] },
+      "properties": {
+        "description": "JAN: 1.13;\n    FEB: 2.23;\n    MAR: 3.61;\n    APR: 4.63;\n    MAY: 5.85;\n    JUN: 5.99;\n    JUL: 4.88;\n    AUG: 4.72;\n    SEP: 3.07;\n    OCT: 1.96;\n    NOV: 1.16;\n    DEC: 0.66;\n    ANN: 3.33;\n    LAT: 53.25;\n    LON: 107.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 132,
+      "geometry": { "type": "Point", "coordinates": [107.75, 53.25] },
+      "properties": {
+        "description": "JAN: 1.13;\n    FEB: 2.23;\n    MAR: 3.61;\n    APR: 4.63;\n    MAY: 5.85;\n    JUN: 5.99;\n    JUL: 4.88;\n    AUG: 4.72;\n    SEP: 3.07;\n    OCT: 1.96;\n    NOV: 1.16;\n    DEC: 0.66;\n    ANN: 3.33;\n    LAT: 53.25;\n    LON: 107.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 133,
+      "geometry": { "type": "Point", "coordinates": [108.25, 53.25] },
+      "properties": {
+        "description": "JAN: 1.13;\n    FEB: 2.35;\n    MAR: 3.73;\n    APR: 5.02;\n    MAY: 6.35;\n    JUN: 6.32;\n    JUL: 5.01;\n    AUG: 4.83;\n    SEP: 3.06;\n    OCT: 2.0;\n    NOV: 1.04;\n    DEC: 0.62;\n    ANN: 3.46;\n    LAT: 53.25;\n    LON: 108.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 134,
+      "geometry": { "type": "Point", "coordinates": [102.75, 53.75] },
+      "properties": {
+        "description": "JAN: 1.16;\n    FEB: 2.37;\n    MAR: 4.09;\n    APR: 4.61;\n    MAY: 6.14;\n    JUN: 6.18;\n    JUL: 5.32;\n    AUG: 4.65;\n    SEP: 3.05;\n    OCT: 2.1;\n    NOV: 1.15;\n    DEC: 0.7;\n    ANN: 3.46;\n    LAT: 53.75;\n    LON: 102.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 135,
+      "geometry": { "type": "Point", "coordinates": [103.25, 53.75] },
+      "properties": {
+        "description": "JAN: 1.16;\n    FEB: 2.37;\n    MAR: 4.09;\n    APR: 4.61;\n    MAY: 6.14;\n    JUN: 6.18;\n    JUL: 5.32;\n    AUG: 4.65;\n    SEP: 3.05;\n    OCT: 2.1;\n    NOV: 1.15;\n    DEC: 0.7;\n    ANN: 3.46;\n    LAT: 53.75;\n    LON: 103.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 136,
+      "geometry": { "type": "Point", "coordinates": [103.75, 53.75] },
+      "properties": {
+        "description": "JAN: 1.16;\n    FEB: 2.37;\n    MAR: 4.09;\n    APR: 4.61;\n    MAY: 6.14;\n    JUN: 6.18;\n    JUL: 5.32;\n    AUG: 4.65;\n    SEP: 3.05;\n    OCT: 2.1;\n    NOV: 1.15;\n    DEC: 0.7;\n    ANN: 3.46;\n    LAT: 53.75;\n    LON: 103.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 137,
+      "geometry": { "type": "Point", "coordinates": [104.25, 53.75] },
+      "properties": {
+        "description": "JAN: 1.11;\n    FEB: 2.3;\n    MAR: 3.9;\n    APR: 4.64;\n    MAY: 5.94;\n    JUN: 5.93;\n    JUL: 4.98;\n    AUG: 4.66;\n    SEP: 3.09;\n    OCT: 2.01;\n    NOV: 1.21;\n    DEC: 0.72;\n    ANN: 3.38;\n    LAT: 53.75;\n    LON: 104.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 138,
+      "geometry": { "type": "Point", "coordinates": [104.75, 53.75] },
+      "properties": {
+        "description": "JAN: 1.11;\n    FEB: 2.3;\n    MAR: 3.9;\n    APR: 4.64;\n    MAY: 5.94;\n    JUN: 5.93;\n    JUL: 4.98;\n    AUG: 4.66;\n    SEP: 3.09;\n    OCT: 2.01;\n    NOV: 1.21;\n    DEC: 0.72;\n    ANN: 3.38;\n    LAT: 53.75;\n    LON: 104.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 139,
+      "geometry": { "type": "Point", "coordinates": [105.25, 53.75] },
+      "properties": {
+        "description": "JAN: 1.11;\n    FEB: 2.3;\n    MAR: 3.9;\n    APR: 4.64;\n    MAY: 5.94;\n    JUN: 5.93;\n    JUL: 4.98;\n    AUG: 4.66;\n    SEP: 3.09;\n    OCT: 2.01;\n    NOV: 1.21;\n    DEC: 0.72;\n    ANN: 3.38;\n    LAT: 53.75;\n    LON: 105.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 140,
+      "geometry": { "type": "Point", "coordinates": [105.75, 53.75] },
+      "properties": {
+        "description": "JAN: 1.11;\n    FEB: 2.3;\n    MAR: 3.9;\n    APR: 4.64;\n    MAY: 5.94;\n    JUN: 5.93;\n    JUL: 4.98;\n    AUG: 4.66;\n    SEP: 3.09;\n    OCT: 2.01;\n    NOV: 1.21;\n    DEC: 0.72;\n    ANN: 3.38;\n    LAT: 53.75;\n    LON: 105.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 141,
+      "geometry": { "type": "Point", "coordinates": [106.25, 53.75] },
+      "properties": {
+        "description": "JAN: 1.13;\n    FEB: 2.23;\n    MAR: 3.61;\n    APR: 4.63;\n    MAY: 5.85;\n    JUN: 5.99;\n    JUL: 4.88;\n    AUG: 4.72;\n    SEP: 3.07;\n    OCT: 1.96;\n    NOV: 1.16;\n    DEC: 0.66;\n    ANN: 3.33;\n    LAT: 53.75;\n    LON: 106.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 142,
+      "geometry": { "type": "Point", "coordinates": [106.75, 53.75] },
+      "properties": {
+        "description": "JAN: 1.13;\n    FEB: 2.23;\n    MAR: 3.61;\n    APR: 4.63;\n    MAY: 5.85;\n    JUN: 5.99;\n    JUL: 4.88;\n    AUG: 4.72;\n    SEP: 3.07;\n    OCT: 1.96;\n    NOV: 1.16;\n    DEC: 0.66;\n    ANN: 3.33;\n    LAT: 53.75;\n    LON: 106.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 143,
+      "geometry": { "type": "Point", "coordinates": [107.25, 53.75] },
+      "properties": {
+        "description": "JAN: 1.13;\n    FEB: 2.23;\n    MAR: 3.61;\n    APR: 4.63;\n    MAY: 5.85;\n    JUN: 5.99;\n    JUL: 4.88;\n    AUG: 4.72;\n    SEP: 3.07;\n    OCT: 1.96;\n    NOV: 1.16;\n    DEC: 0.66;\n    ANN: 3.33;\n    LAT: 53.75;\n    LON: 107.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 144,
+      "geometry": { "type": "Point", "coordinates": [107.75, 53.75] },
+      "properties": {
+        "description": "JAN: 1.13;\n    FEB: 2.23;\n    MAR: 3.61;\n    APR: 4.63;\n    MAY: 5.85;\n    JUN: 5.99;\n    JUL: 4.88;\n    AUG: 4.72;\n    SEP: 3.07;\n    OCT: 1.96;\n    NOV: 1.16;\n    DEC: 0.66;\n    ANN: 3.33;\n    LAT: 53.75;\n    LON: 107.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 145,
+      "geometry": { "type": "Point", "coordinates": [108.25, 53.75] },
+      "properties": {
+        "description": "JAN: 1.13;\n    FEB: 2.35;\n    MAR: 3.73;\n    APR: 5.02;\n    MAY: 6.35;\n    JUN: 6.32;\n    JUL: 5.01;\n    AUG: 4.83;\n    SEP: 3.06;\n    OCT: 2.0;\n    NOV: 1.04;\n    DEC: 0.62;\n    ANN: 3.46;\n    LAT: 53.75;\n    LON: 108.25;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;"
+      }
+    }
+  ]
+}

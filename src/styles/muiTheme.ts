@@ -33,6 +33,9 @@ const theme = createTheme({
     primary: {
       main: '#365c74',
     },
+    success: {
+      main: '#36e223',
+    },
     gold: {
       main: '#d6a11c',
     },
@@ -51,6 +54,14 @@ const theme = createTheme({
     borderRadius: 10,
   },
   components: {
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          color: '#fff',
+        },
+      },
+    },
+
     MuiLink: {
       styleOverrides: {
         root: {
@@ -58,6 +69,21 @@ const theme = createTheme({
           display: 'flex',
           alignItems: 'center',
           cursor: 'pointer',
+        },
+      },
+    },
+    MuiTypography: {
+      defaultProps: {
+        textTransform: 'none',
+      },
+    },
+    MuiSwitch: {
+      defaultProps: {
+        color: 'success',
+        sx: {
+          '.MuiSwitch-thumb': {
+            backgroundColor: '#fff',
+          },
         },
       },
     },

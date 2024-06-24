@@ -1,19 +1,22 @@
+import { useAppSelector } from '@/store';
 import { Footer, Header, Main } from '@/widgets';
 import NavBar from '@/widgets/NavBar/NavBar';
+import DevLayout from '../DevLayout/DevLayout';
 
 const BaseLayout = () => {
+  const openDevPanel = useAppSelector((state) => state.global.openDevPanel);
   return (
     <>
       <Header />
       <NavBar />
-      <Main />
-      <Footer />
-
-      {/* <div className={styles['separeted-main']}>
-      <NavBar />
-        <Main />
-      </div>
-      <Footer /> */}
+      {openDevPanel ? (
+        <DevLayout />
+      ) : (
+        <>
+          <Main />
+          <Footer />
+        </>
+      )}
     </>
   );
 };

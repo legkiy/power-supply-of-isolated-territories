@@ -6,8 +6,10 @@ import {
   Button,
   Divider,
   Drawer,
+  FormControlLabel,
   Link,
   Stack,
+  Switch,
   Typography,
   useMediaQuery,
 } from '@mui/material';
@@ -37,7 +39,7 @@ const NavBar = () => {
 
   const matchesLG = useMediaQuery(theme.breakpoints.down('lg'));
 
-  const { navBarState } = useAppSelector((store) => store.global);
+  const { navBarState, openDevPanel } = useAppSelector((store) => store.global);
   const actions = useActions();
 
   const menuItems = [
@@ -58,6 +60,8 @@ const NavBar = () => {
       itsButtons: true,
     },
   ];
+
+  console.log(import.meta.env.DEV);
 
   return (
     <Drawer
@@ -118,6 +122,19 @@ const NavBar = () => {
           {menuItems.map((item, index) => (
             <Accordion {...item} key={index} />
           ))}
+          {import.meta.env.DEV && (
+            <FormControlLabel
+              label="Dev Panel"
+              control={
+                <Switch
+                  checked={openDevPanel}
+                  title="Dev Panel"
+                  onChange={() => actions.toggleDevPanel()}
+                />
+              }
+            />
+          )}
+
           <Button
             onClick={() => setOpenContact(true)}
             sx={{

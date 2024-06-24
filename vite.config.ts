@@ -13,7 +13,7 @@ export default defineConfig({
   },
   plugins: [react()],
   server: {
-    port: 5000,
+    port: 5555,
   },
   build: {
     outDir: 'build',
