@@ -1,9 +1,19 @@
 import { Container, Paper, Stack } from '@mui/material';
 import { appBarSize, navBarSize } from '@/styles/muiTheme';
-import LoadNasaData from './components/LoadNasaData/LoadNasaData';
+import { LoadNasaData, LoadNasaForm } from './components';
 import { MapBox } from '@/widgets';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const DevLayout = () => {
+  // useEffect(() => {
+  //   axiosInstanse.get('/').then(console.log);
+  // }, []);
+  useEffect(() => {
+    axios
+      .get(import.meta.env.VITE_PYTHON_API_URL + '/api/test', {})
+      .then(console.log);
+  }, []);
   return (
     <Container
       sx={({ breakpoints }) => ({
@@ -33,6 +43,7 @@ const DevLayout = () => {
       >
         <Stack spacing={2}>
           <LoadNasaData />
+          <LoadNasaForm />
           <MapBox />
         </Stack>
       </Paper>

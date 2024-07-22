@@ -6,7 +6,7 @@ type RequestFunction<T> = (
 ) => Promise<T>;
 
 const useCreateRequest = <T, D>(requestFunction: RequestFunction<T>) => {
-  const [data, setData] = useState<null | D | T>(null);
+  const [response, setResponse] = useState<null | D | T>(null);
   const [pending, setPending] = useState<boolean>(false);
   const [complete, setComplete] = useState<boolean>(false);
   const [error, setError] = useState<unknown>(null);
@@ -19,14 +19,15 @@ const useCreateRequest = <T, D>(requestFunction: RequestFunction<T>) => {
     setProgress(0);
 
     try {
-      const response = await requestFunction((event: AxiosProgressEvent) => {
+      const _response = await requestFunction((event: AxiosProgressEvent) => {
         const total = event.total;
         if (total) {
           const currentProgress = Math.round((event.loaded * 100) / total);
           setProgress(currentProgress);
         }
       });
-      setData(response);
+
+      setResponse(_response);
       setComplete(true);
     } catch (err) {
       setError(err);
@@ -39,6 +40,6 @@ const useCreateRequest = <T, D>(requestFunction: RequestFunction<T>) => {
   //   executeRequest();
   // }, [executeRequest]);
 
-  return { data, pending, complete, error, progress, executeRequest };
+  return { response, pending, complete, error, progress, executeRequest };
 };
 export default useCreateRequest;

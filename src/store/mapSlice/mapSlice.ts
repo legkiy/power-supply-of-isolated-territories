@@ -7,14 +7,16 @@ import powerPoints from '@/assets/neuralData/powerPints.json';
 import irkSettelments from '@/assets/neuralData/irkSettelments.json';
 import solarPoligons from '@/assets/neuralData/solarPoligons.json';
 
-// import windPoints from '@/assets/mapData/pointsAir.json';
-// import windMarker from '/windIcon.svg';
-// import windsClasterIcon from '/windsClasterIcon.svg';
+import windPoints from '@/assets/mapData/pointsAir.json';
+import windMarker from '/windIcon.svg';
+import windsClasterIcon from '/windsClasterIcon.svg';
+
+type GeoJsonData = GeoJSONProps['data'] & { features: unknown };
 
 export interface IMapLayer {
   name: string;
   type: 'Polygon' | 'Point' | 'LineString';
-  data: GeoJSONProps['data'];
+  data: GeoJsonData;
   active: boolean;
   marker?: string;
   clusterMarker?: string;
@@ -56,27 +58,27 @@ const InitaState: IMapSlice = {
     // {
     //   name: 'powerPoints',
     //   type: 'Point',
-    //   data: powerPoints as GeoJSONProps['data'],
+    //   data: powerPoints as unknown as GeoJsonData,
     //   active: true,
     //   disableCluster: true,
     // },
     {
       name: 'irkSettelments',
       type: 'Point',
-      data: irkSettelments as GeoJSONProps['data'],
+      data: irkSettelments as GeoJsonData,
       active: true,
       disableCluster: true,
     },
     {
       name: 'solarPoligons',
       type: 'Polygon',
-      data: solarPoligons as GeoJSONProps['data'],
+      data: solarPoligons as GeoJsonData,
       active: true,
     },
     // {
     //   name: 'windPoints',
     //   type: 'Point',
-    //   data: windPoints as GeoJSONProps['data'],
+    //   data: windPoints as GeoJsonData,
     //   active: true,
     //   marker: windMarker,
     //   clusterMarker: windsClasterIcon,
