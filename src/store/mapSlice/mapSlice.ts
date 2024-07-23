@@ -11,7 +11,7 @@ import windPoints from '@/assets/mapData/pointsAir.json';
 import windMarker from '/windIcon.svg';
 import windsClasterIcon from '/windsClasterIcon.svg';
 
-type GeoJsonData = GeoJSONProps['data'] & { features: unknown };
+export type GeoJsonData = GeoJSONProps['data'] & { features: unknown };
 
 export interface IMapLayer {
   name: string;

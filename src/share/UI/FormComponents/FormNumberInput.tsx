@@ -3,10 +3,8 @@ import { FC, ReactNode } from 'react';
 import { Controller, FieldValues, UseFormReturn } from 'react-hook-form';
 
 type FormNumberInputType = TextFieldProps & {
-  // control: Control<FieldValues>;
   name: string;
   label: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   methods: UseFormReturn<any & FieldValues, any, undefined>; // Типизируем весь объект methods
 };
 

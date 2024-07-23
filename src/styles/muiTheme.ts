@@ -61,7 +61,6 @@ const theme = createTheme({
         },
       },
     },
-
     MuiLink: {
       styleOverrides: {
         root: {
@@ -83,6 +82,35 @@ const theme = createTheme({
         sx: {
           '.MuiSwitch-thumb': {
             backgroundColor: '#fff',
+          },
+        },
+      },
+    },
+    MuiSlider: {
+      defaultProps: {
+        sx: {
+          '& .MuiSlider-valueLabel': {
+            top: -2,
+            borderRadius: '6px',
+            backgroundColor: '#fff',
+            p: 0,
+            color: '#000',
+            '&::before': {
+              display: 'none',
+            },
+          },
+          '& .MuiSlider-thumb': {
+            height: 20,
+            width: 20,
+            backgroundColor: '#fff',
+            boxShadow: '0 0 2px 0px rgba(0, 0, 0, 0.1)',
+            '&:focus, &:hover, &.Mui-active': {
+              boxShadow: '0px 0px 4px 2px rgba(0, 0, 0, 0.1)',
+            },
+            '&:before': {
+              boxShadow:
+                '0px 0px 1px 0px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.14), 0px 0px 1px 0px rgba(0,0,0,0.12)',
+            },
           },
         },
       },

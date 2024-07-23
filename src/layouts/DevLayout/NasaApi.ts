@@ -1,3 +1,4 @@
+import { GeoJsonData } from '@/store/mapSlice/mapSlice';
 import axios, { AxiosProgressEvent } from 'axios';
 
 //https://power.larc.nasa.gov/api/temporal/monthly/regional?start=2020&end=2022&latitude-min=53&latitude-max=56&longitude-min=105.26&longitude-max=108.6&community=RE&parameters=ALLSKY_SFC_SW_DWN,WS10M,WD10M&format=csv&user=DAVE
@@ -39,7 +40,9 @@ interface RectangleGeometry {
 interface Feature {
   type: string;
   geometry: Geometry;
-  properties: object;
+  properties: {
+    parameter: any;
+  };
 }
 
 interface TransformedFeature {
@@ -163,22 +166,14 @@ class NasaApi {
     }
   }
 
-  static async getRegionPoints(
-    points: INasaPoligon,
-    format: 'csv' | 'json'
-    // onDownloadProgress?: (event: AxiosProgressEvent) => void
-  ) {
+  static async getRegionPoints(points: INasaPoligon, year: number[]) {
     try {
       const params: NasaParams<INasaPoligon> = {
-        start: 2020,
-        end: 2022,
-        // 'latitude-max': 59.0,
-        // 'latitude-min': 53.5,
-        // 'longitude-min': 105.0,
-        // 'longitude-max': 110.5,
+        start: year[0],
+        end: year[1],
         community: 'RE',
         parameters: 'ALLSKY_SFC_SW_DWN,WS10M,WD10M,PS',
-        format: format,
+        format: 'json',
         'time-standard': 'LST',
         'wind-surface': 'vegtype_1',
         'wind-elevation': 10.0,
@@ -189,49 +184,45 @@ class NasaApi {
         `https://power.larc.nasa.gov/api/temporal/monthly/regional`,
         {
           params,
-          responseType: format === 'csv' ? 'blob' : 'json',
-          // onDownloadProgress,
+          responseType: 'json',
         }
       );
 
-      if (format === 'json') {
-        const outputJson = (res.data.features as []).map(
-          (feature: Feature, index) => {
-            const newFeature: TransformedFeature = {
-              ...feature,
-              properties: {
-                fill: '#ffff37',
-                'fill-opacity': 0.1,
-                stroke: '#ffff37',
-                'stroke-width': '1',
-                'stroke-opacity': 0.5,
-                ...feature.properties,
-              },
-              id: index,
-              geometry: transformGeometry(feature.geometry),
-            };
-            return newFeature;
-          }
-        );
+      const outputJson = (res.data.features as []).map(
+        (feature: Feature, index) => {
+          // const propersFields = Object.entries(
+          //   feature.properties.parameter
+          // ).map(([name]) => name);
 
-        return outputJson;
-      }
-      return res.data;
+          const propers = Object.entries(
+            feature.properties.parameter['ALLSKY_SFC_SW_DWN']
+          );
 
-      // if (download) {
-      //   const url = window.URL.createObjectURL(
-      //     new Blob([res.data], { type: 'text/csv' })
-      //   );
-      //   const link = document.createElement('a');
-      //   link.href = url;
-      //   link.setAttribute('download', `nasa_data.${format}`);
-      //   document.body.appendChild(link);
-      //   link.click();
-      //   document.body.removeChild(link);
-      // }
-      // console.log(res.data);
+          const newFeature: TransformedFeature = {
+            ...feature,
+            properties: {
+              fill: '#ffff37',
+              'fill-opacity': 0.1,
+              stroke: '#ffff37',
+              'stroke-width': '1',
+              'stroke-opacity': 0.5,
+              ...feature.properties,
+              display: {},
+            },
+            id: index,
+            geometry: transformGeometry(feature.geometry),
+          };
+          // console.log(feature.properties.parameter['ALLSKY_SFC_SW_DWN']);
+
+          // console.log(propers);
+
+          return newFeature;
+        }
+      );
+
+      return outputJson as unknown as GeoJsonData;
     } catch (error) {
-      console.error('NASA load error', error);
+      throw new Error(error as string);
     }
   }
 }

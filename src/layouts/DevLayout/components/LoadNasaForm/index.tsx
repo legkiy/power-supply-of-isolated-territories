@@ -1,13 +1,17 @@
-import { Card, CardActions, CardContent, Grid } from '@mui/material';
+import { Card, CardActions, CardContent, Grid, TextField } from '@mui/material';
 import { FC, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import NasaApi from '../../NasaApi';
 import LoadingButton from '@mui/lab/LoadingButton';
-import { FormNumberInput } from '@/share/UI/FormComponents';
+import { FormNumberInput, FormDateSlider } from '@/share/UI/FormComponents';
+import { useActions } from '@/store';
+import { GeoJsonData } from '@/store/mapSlice/mapSlice';
 
 const schema = yup.object({
+  title: yup.string().required('Укажите имя области'),
+  years: yup.array().of(yup.number()),
   'latitude-min': yup.number().positive().required(),
   'longitude-min': yup.number().positive().required(),
   'latitude-max': yup
@@ -34,7 +38,6 @@ const schema = yup.object({
         return value > longMin && value - longMin <= 10;
       }
     ),
-  numberTest: yup.number(),
 });
 
 const LoadNasaForm: FC = () => {
@@ -44,9 +47,19 @@ const LoadNasaForm: FC = () => {
     complite: false,
   });
 
+  const actions = useActions();
+
   const methods = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      years: [2020, new Date().getFullYear() - 2],
+    },
   });
+
+  const {
+    register,
+    formState: { errors },
+  } = methods;
 
   const onSubmit = methods.handleSubmit(async (data) => {
     setLoadingSattus({
@@ -54,17 +67,21 @@ const LoadNasaForm: FC = () => {
       complite: false,
       error: false,
     });
+    const { years, ...restData } = data;
     try {
-      const res = await NasaApi.getRegionPoints(data, 'json');
-      console.log(res);
+      const res = await NasaApi.getRegionPoints(restData, years as number[]);
+      actions.addLayer({
+        type: 'Polygon',
+        data: res as GeoJsonData,
+        name: 'test',
+        active: true,
+      });
       setLoadingSattus({
         loading: false,
         complite: true,
         error: false,
       });
     } catch (error) {
-      console.error(error);
-
       setLoadingSattus({
         loading: false,
         complite: false,
@@ -80,32 +97,21 @@ const LoadNasaForm: FC = () => {
           <CardContent>
             <Grid container spacing={2}>
               <Grid item xs={6}>
-                <FormNumberInput
-                  name="latitude-min"
-                  label="latitude-min"
-                  methods={methods}
-                />
-                {/* <TextField
+                <TextField
                   fullWidth
-                  label="latitude-min"
-                  {...register('latitude-min')}
-                  error={!!errors['latitude-min']}
-                  helperText={errors['latitude-min']?.message}
-                /> */}
+                  label="title"
+                  // name="title"
+                  {...register('title')}
+                  error={!!errors.title}
+                  helperText={errors.title?.message}
+                />
               </Grid>
-              <Grid item xs={6}>
-                <FormNumberInput
-                  name="longitude-min"
-                  label="longitude-min"
+              <Grid item xs={12}>
+                <FormDateSlider
+                  value={[2020, 2023]}
                   methods={methods}
+                  name="years"
                 />
-                {/* <TextField
-                  fullWidth
-                  label="longitude-min"
-                  {...register('longitude-min')}
-                  error={!!errors['longitude-min']}
-                  helperText={errors['longitude-min']?.message}
-                /> */}
               </Grid>
               <Grid item xs={6}>
                 <FormNumberInput
@@ -113,13 +119,6 @@ const LoadNasaForm: FC = () => {
                   label="latitude-max"
                   methods={methods}
                 />
-                {/* <TextField
-                  fullWidth
-                  label="latitude-max"
-                  {...register('latitude-max')}
-                  error={!!errors['latitude-max']}
-                  helperText={errors['latitude-max']?.message}
-                /> */}
               </Grid>
               <Grid item xs={6}>
                 <FormNumberInput
@@ -127,13 +126,20 @@ const LoadNasaForm: FC = () => {
                   label="longitude-max"
                   methods={methods}
                 />
-                {/* <TextField
-                  fullWidth
-                  label="longitude-max"
-                  {...register('longitude-max')}
-                  error={!!errors['longitude-max']}
-                  helperText={errors['longitude-max']?.message}
-                /> */}
+              </Grid>
+              <Grid item xs={6}>
+                <FormNumberInput
+                  name="latitude-min"
+                  label="latitude-min"
+                  methods={methods}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <FormNumberInput
+                  name="longitude-min"
+                  label="longitude-min"
+                  methods={methods}
+                />
               </Grid>
             </Grid>
           </CardContent>
