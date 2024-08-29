@@ -4,3 +4,5 @@ export type {
   SettlementsType,
 } from './settlementsCharts';
 export type { EmissionsDataType, FuelTypesType } from './emissionsType';
+
+export * from './nasaTypes'

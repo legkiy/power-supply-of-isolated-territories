@@ -1,17 +1,25 @@
-import { Card, CardActions, CardContent, Grid, TextField } from '@mui/material';
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CircularProgress,
+  Grid,
+  TextField,
+} from '@mui/material';
 import { FC, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import NasaApi from '../../NasaApi';
+import { NasaApi } from '@/share/api';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { FormNumberInput, FormDateSlider } from '@/share/UI/FormComponents';
 import { useActions } from '@/store';
 import { GeoJsonData } from '@/store/mapSlice/mapSlice';
+import { useTranslation } from 'react-i18next';
 
 const schema = yup.object({
   title: yup.string().required('Укажите имя области'),
-  years: yup.array().of(yup.number()),
+  years: yup.array().of(yup.number().required()).required(),
   'latitude-min': yup.number().positive().required(),
   'longitude-min': yup.number().positive().required(),
   'latitude-max': yup
@@ -41,6 +49,7 @@ const schema = yup.object({
 });
 
 const LoadNasaForm: FC = () => {
+  const { t } = useTranslation();
   const [loadingStatus, setLoadingSattus] = useState({
     loading: false,
     error: false,
@@ -67,13 +76,15 @@ const LoadNasaForm: FC = () => {
       complite: false,
       error: false,
     });
-    const { years, ...restData } = data;
+    const { title, ...restData } = data;
     try {
-      const res = await NasaApi.getRegionPoints(restData, years as number[]);
+      // const res = await NasaApi.getPoligonsFromBack(restData);
+      const res = await NasaApi.getMaxPoligonsFromNasa(restData);
+
       actions.addLayer({
         type: 'Polygon',
-        data: res as GeoJsonData,
-        name: 'test',
+        data: res as unknown as GeoJsonData,
+        name: title,
         active: true,
       });
       setLoadingSattus({
@@ -99,11 +110,12 @@ const LoadNasaForm: FC = () => {
               <Grid item xs={6}>
                 <TextField
                   fullWidth
-                  label="title"
+                  label={t('nasa.form.title')}
                   // name="title"
                   {...register('title')}
                   error={!!errors.title}
                   helperText={errors.title?.message}
+                  size="small"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -115,30 +127,34 @@ const LoadNasaForm: FC = () => {
               </Grid>
               <Grid item xs={6}>
                 <FormNumberInput
-                  name="latitude-max"
-                  label="latitude-max"
-                  methods={methods}
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <FormNumberInput
-                  name="longitude-max"
-                  label="longitude-max"
-                  methods={methods}
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <FormNumberInput
                   name="latitude-min"
-                  label="latitude-min"
+                  label={t('nasa.form.latitude-min')}
                   methods={methods}
+                  size="small"
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <FormNumberInput
+                  name="latitude-max"
+                  label={t('nasa.form.latitude-max')}
+                  methods={methods}
+                  size="small"
                 />
               </Grid>
               <Grid item xs={6}>
                 <FormNumberInput
                   name="longitude-min"
-                  label="longitude-min"
+                  label={t('nasa.form.longitude-min')}
                   methods={methods}
+                  size="small"
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <FormNumberInput
+                  name="longitude-max"
+                  label={t('nasa.form.longitude-max')}
+                  methods={methods}
+                  size="small"
                 />
               </Grid>
             </Grid>
@@ -148,6 +164,11 @@ const LoadNasaForm: FC = () => {
               type="submit"
               variant="contained"
               loading={loadingStatus.loading}
+              endIcon={
+                loadingStatus.loading && (
+                  <CircularProgress color="inherit" size={16} />
+                )
+              }
               loadingPosition="end"
               color="success"
               fullWidth
@@ -160,7 +181,7 @@ const LoadNasaForm: FC = () => {
                 mx: 'auto',
               }}
             >
-              Submit
+              {t('nasa.form.find')}
             </LoadingButton>
           </CardActions>
         </form>

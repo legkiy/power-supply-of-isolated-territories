@@ -7,7 +7,7 @@ interface DateSliderProps {
   value: number[];
   methods: UseFormReturn<any & FieldValues, any, undefined>; // Типизируем весь объект methods
 }
-const FormDateSlider: FC<DateSliderProps> = ({ name, methods }) => {
+const FormDateSlider: FC<DateSliderProps > = ({ name, methods }) => {
   const currentYear = new Date().getFullYear() - 2;
 
   const { control } = methods;

@@ -89,5 +89,15 @@
     "LAP": "ЛЭП",
     "settlementsPoints": "Нас. пункты",
     "windPoints": "Ветряки"
+  },
+  "nasa": {
+    "form": {
+      "title": "Название",
+      "latitude-min": "Широта минимальная",
+      "latitude-max": "Широта максимальная",
+      "longitude-min": "Долгота минимальная",
+      "longitude-max": "Долгота максимальная",
+      "find": "Найти"
+    }
   }
 }

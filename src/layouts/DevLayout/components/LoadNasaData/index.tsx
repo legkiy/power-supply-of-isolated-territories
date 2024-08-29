@@ -1,5 +1,5 @@
 import { Button, ButtonGroup, MenuItem, Select, Stack } from '@mui/material';
-import NasaApi from '../../NasaApi';
+import { NasaApi } from '@/share/api';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useCreateRequest } from '@/share/hooks';
 import { FaRegSave } from 'react-icons/fa';
@@ -147,7 +147,7 @@ const LoadNasaData = () => {
             regionData.executeRequest();
           }}
           loading={regionData.pending}
-          loadingPosition="end"
+          // loadingPosition="end"
           sx={{
             '.MuiLoadingButton-loadingIndicator': {
               position: 'unset',

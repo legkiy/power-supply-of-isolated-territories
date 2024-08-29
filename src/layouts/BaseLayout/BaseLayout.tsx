@@ -1,8 +1,9 @@
 import { useAppSelector } from '@/store';
 import { Footer, Header, Main } from '@/widgets';
 import NavBar from '@/widgets/NavBar/NavBar';
-import { lazy, Suspense } from 'react';
-const DevLayout = lazy(() => import('../DevLayout/DevLayout.tsx'));
+import { Suspense } from 'react';
+import DevLayout from '../DevLayout/DevLayout';
+// const DevLayout = lazy(() => import('../DevLayout/DevLayout.tsx'));
 
 const BaseLayout = () => {
   const openDevPanel = useAppSelector((state) => state.global.openDevPanel);

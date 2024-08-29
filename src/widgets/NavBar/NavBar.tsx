@@ -60,6 +60,8 @@ const NavBar = () => {
       itsButtons: true,
     },
   ];
+  console.log(import.meta.env);
+
   return (
     <Drawer
       variant={matchesLG ? 'temporary' : 'permanent'}
@@ -119,7 +121,7 @@ const NavBar = () => {
           {menuItems.map((item, index) => (
             <Accordion {...item} key={index} />
           ))}
-          {import.meta.env.DEV && (
+          {import.meta.env.VITE_SHOW_DEV_PANEl && (
             <FormControlLabel
               label="Dev Panel"
               sx={{ m: 0 }}

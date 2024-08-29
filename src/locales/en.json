@@ -89,5 +89,15 @@
     "LAP": "Power line",
     "settlementsPoints": "Settlements",
     "windPoints": "Windmills"
+  },
+  "nasa": {
+    "form": {
+      "title": "Title",
+      "latitude-min": "Latitude minimum",
+      "latitude-max": "Latitude maximum ",
+      "longitude-min": "Longitude minimum",
+      "longitude-max": "Longitude maximum",
+      "find": "Find"
+    }
   }
 }

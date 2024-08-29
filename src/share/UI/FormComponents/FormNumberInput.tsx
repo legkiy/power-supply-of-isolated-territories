@@ -8,7 +8,12 @@ type FormNumberInputType = TextFieldProps & {
   methods: UseFormReturn<any & FieldValues, any, undefined>; // Типизируем весь объект methods
 };
 
-const FormNumberInput: FC<FormNumberInputType> = ({ name, label, methods }) => {
+const FormNumberInput: FC<FormNumberInputType> = ({
+  name,
+  label,
+  methods,
+  ...props
+}) => {
   const {
     control,
     formState: { errors },
@@ -18,9 +23,11 @@ const FormNumberInput: FC<FormNumberInputType> = ({ name, label, methods }) => {
     <Controller
       name={name}
       control={control}
+      defaultValue=""
       render={({ field }) => (
         <TextField
           {...field}
+          {...props}
           label={label}
           variant="outlined"
           fullWidth

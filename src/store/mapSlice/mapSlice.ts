@@ -3,13 +3,13 @@ import { GeoJSONProps } from 'react-leaflet';
 import regionsData from '@/assets/mapData/regions.json';
 import lineData from '@/assets/mapData/line.json';
 import settlementsPoints from '@/assets/mapData/points.json';
-import powerPoints from '@/assets/neuralData/powerPints.json';
-import irkSettelments from '@/assets/neuralData/irkSettelments.json';
-import solarPoligons from '@/assets/neuralData/solarPoligons.json';
+// import powerPoints from '@/assets/neuralData/powerPints.json';
+// import irkSettelments from '@/assets/neuralData/irkSettelments.json';
+// import solarPoligons from '@/assets/neuralData/solarPoligons.json';
 
-import windPoints from '@/assets/mapData/pointsAir.json';
-import windMarker from '/windIcon.svg';
-import windsClasterIcon from '/windsClasterIcon.svg';
+// import windPoints from '@/assets/mapData/pointsAir.json';
+// import windMarker from '/windIcon.svg';
+// import windsClasterIcon from '/windsClasterIcon.svg';
 
 export type GeoJsonData = GeoJSONProps['data'] & { features: unknown };
 
@@ -37,24 +37,24 @@ const InitaState: IMapSlice = {
     lng: 110.98,
   },
   layers: [
-    // {
-    //   name: 'regions',
-    //   type: 'Polygon',
-    //   data: regionsData as GeoJSONProps['data'],
-    //   active: true,
-    // },
-    // {
-    //   name: 'LAP',
-    //   type: 'LineString',
-    //   data: lineData as GeoJSONProps['data'],
-    //   active: true,
-    // },
-    // {
-    //   name: 'settlementsPoints',
-    //   type: 'Point',
-    //   data: settlementsPoints as GeoJSONProps['data'],
-    //   active: true,
-    // },
+    {
+      name: 'regions',
+      type: 'Polygon',
+      data: regionsData as GeoJsonData,
+      active: true,
+    },
+    {
+      name: 'LAP',
+      type: 'LineString',
+      data: lineData as GeoJsonData,
+      active: true,
+    },
+    {
+      name: 'settlementsPoints',
+      type: 'Point',
+      data: settlementsPoints as GeoJsonData,
+      active: true,
+    },
     // {
     //   name: 'powerPoints',
     //   type: 'Point',
@@ -62,19 +62,19 @@ const InitaState: IMapSlice = {
     //   active: true,
     //   disableCluster: true,
     // },
-    {
-      name: 'irkSettelments',
-      type: 'Point',
-      data: irkSettelments as GeoJsonData,
-      active: true,
-      disableCluster: true,
-    },
-    {
-      name: 'solarPoligons',
-      type: 'Polygon',
-      data: solarPoligons as GeoJsonData,
-      active: true,
-    },
+    // {
+    //   name: 'irkSettelments',
+    //   type: 'Point',
+    //   data: irkSettelments as GeoJsonData,
+    //   active: true,
+    //   disableCluster: true,
+    // },
+    // {
+    //   name: 'solarPoligons',
+    //   type: 'Polygon',
+    //   data: solarPoligons as GeoJsonData,
+    //   active: true,
+    // },
     // {
     //   name: 'windPoints',
     //   type: 'Point',

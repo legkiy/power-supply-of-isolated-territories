@@ -1,5 +1,12 @@
-import { GeoJsonData } from '@/store/mapSlice/mapSlice';
+import axiosInstanse from '@axiosInstanse';
 import axios, { AxiosProgressEvent } from 'axios';
+import apiRoutes from './apiRoutes';
+import {
+  IFeature,
+  NasaParamsType,
+  INasaPoligon,
+  IGeometry,
+} from '@/share/types';
 
 //https://power.larc.nasa.gov/api/temporal/monthly/regional?start=2020&end=2022&latitude-min=53&latitude-max=56&longitude-min=105.26&longitude-max=108.6&community=RE&parameters=ALLSKY_SFC_SW_DWN,WS10M,WD10M&format=csv&user=DAVE
 interface INasaBaseParams {
@@ -13,19 +20,12 @@ interface INasaBaseParams {
   'wind-elevation': number;
 }
 
-interface INasaPoligon {
-  'latitude-min': number;
-  'latitude-max': number;
-  'longitude-min': number;
-  'longitude-max': number;
-}
-
 interface INasaPoint {
   latitude: number;
   longitude: number;
 }
 
-type NasaParams<T> = INasaBaseParams & T;
+type NasaParams<T> = Omit<INasaBaseParams & T, 'years'>;
 
 interface Geometry {
   type: string;
@@ -52,10 +52,10 @@ interface TransformedFeature {
   properties: object;
 }
 
-const transformGeometry = (geometry: Geometry): RectangleGeometry => {
+const transformGeometry = (geometry: IGeometry): RectangleGeometry => {
   if (geometry.type === 'Point') {
-    const [x, y] = geometry.coordinates;
-    const rectangleCoords = [
+    const [x, y] = geometry.coordinates as number[];
+    const rectangleCoords: number[][][] = [
       [
         [x - 0.25, y - 0.25],
         [x - 0.25, y + 0.25],
@@ -166,18 +166,40 @@ class NasaApi {
     }
   }
 
-  static async getRegionPoints(points: INasaPoligon, year: number[]) {
+  /**
+   *
+   * @param polygonParams
+   * @returns
+   */
+  static async getPoligonsFromBack(polygonParams: INasaPoligon) {
+    const res = await axiosInstanse.post(
+      apiRoutes.app.nasa.region,
+      polygonParams
+    );
+    return res.data;
+  }
+
+  static async getMaxPoligonsFromNasa(regionParams: INasaPoligon) {
+    const { years, ...restParams } = regionParams;
+
+    const calculateAvgInObj = (targetObj: object) => {
+      const parmetrArray = Object.entries(targetObj).map(
+        ([, value]) => value
+      ) as number[];
+
+      return parmetrArray.reduce((a, b) => a + b) / parmetrArray.length;
+    };
     try {
-      const params: NasaParams<INasaPoligon> = {
-        start: year[0],
-        end: year[1],
+      const params: NasaParamsType<INasaPoligon> = {
+        start: years[0],
+        end: years[1],
         community: 'RE',
-        parameters: 'ALLSKY_SFC_SW_DWN,WS10M,WD10M,PS',
+        parameters: 'ALLSKY_SFC_SW_DWN,WS10M', // ALLSKY_SFC_SW_DWN - солнечная радиация, WS10M - скорость на 10 метрах, WD10M - направление на 10 метрах, PS - Поверхностное давление
         format: 'json',
         'time-standard': 'LST',
         'wind-surface': 'vegtype_1',
         'wind-elevation': 10.0,
-        ...points,
+        ...restParams,
       };
 
       const res = await axios.get(
@@ -189,16 +211,14 @@ class NasaApi {
       );
 
       const outputJson = (res.data.features as []).map(
-        (feature: Feature, index) => {
-          // const propersFields = Object.entries(
-          //   feature.properties.parameter
-          // ).map(([name]) => name);
-
-          const propers = Object.entries(
+        (feature: IFeature, index) => {
+          const windSpeed = calculateAvgInObj(
+            feature.properties.parameter['WS10M']
+          );
+          const solarRadiation = calculateAvgInObj(
             feature.properties.parameter['ALLSKY_SFC_SW_DWN']
           );
-
-          const newFeature: TransformedFeature = {
+          const newFeature: IFeature = {
             ...feature,
             properties: {
               fill: '#ffff37',
@@ -207,20 +227,55 @@ class NasaApi {
               'stroke-width': '1',
               'stroke-opacity': 0.5,
               ...feature.properties,
-              display: {},
+              description: `
+              <div>
+              Wind Speed AVG: ${windSpeed}m/s <br/>
+              Solar Radiation AVG: ${solarRadiation}
+              </div>`,
+              display: {
+                windSpeed,
+                solarRadiation,
+              },
             },
             id: index,
             geometry: transformGeometry(feature.geometry),
           };
-          // console.log(feature.properties.parameter['ALLSKY_SFC_SW_DWN']);
-
-          // console.log(propers);
-
           return newFeature;
         }
       );
 
-      return outputJson as unknown as GeoJsonData;
+      // Найти максимальные значения
+      const maxWindSpeed = Math.max(
+        ...outputJson.map((f) => f.properties.display.windSpeed)
+      );
+      const maxSolarRadiation = Math.max(
+        ...outputJson.map((f) => f.properties.display.solarRadiation)
+      );
+
+      // Найти объекты с максимальными значениями
+      const result = outputJson.filter(
+        (f) =>
+          f.properties.display.windSpeed === maxWindSpeed ||
+          f.properties.display.solarRadiation === maxSolarRadiation
+      );
+
+      // Убедиться, что объекты уникальны
+      const uniqueResult = Array.from(new Set(result.map((f) => f.id))).map(
+        (id) => result.find((f) => f.id === id)
+      );
+
+      uniqueResult.forEach((f) => {
+        if (f!.properties.display.solarRadiation === maxSolarRadiation) {
+          f!.properties.fill = '#ffff37';
+          f!.properties.stroke = '#ffff37';
+        }
+        if (f!.properties.display.windSpeed === maxWindSpeed) {
+          f!.properties.fill = '#37ffff';
+          f!.properties.stroke = '#37ffff';
+        }
+      });
+
+      return uniqueResult;
     } catch (error) {
       throw new Error(error as string);
     }
@@ -228,9 +283,3 @@ class NasaApi {
 }
 
 export default NasaApi;
-
-/*
-[97.5, 51.5 ],
-[110.5, 59.0 ]
-
-*/

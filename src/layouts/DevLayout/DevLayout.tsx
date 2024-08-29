@@ -1,19 +1,10 @@
 import { Container, Paper, Stack } from '@mui/material';
 import { appBarSize, navBarSize } from '@/styles/muiTheme';
-import { LoadNasaData, LoadNasaForm } from './components';
+import { LoadNasaForm } from './components';
 import { MapBox } from '@/widgets';
-import { useEffect } from 'react';
-import axios from 'axios';
 
 const DevLayout = () => {
-  // useEffect(() => {
-  //   axiosInstanse.get('/').then(console.log);
-  // }, []);
-  useEffect(() => {
-    axios
-      .get(import.meta.env.VITE_PYTHON_API_URL + '/api/test', {})
-      .then(console.log);
-  }, []);
+  //TODO: сделать выделение области на карте
   return (
     <Container
       sx={({ breakpoints }) => ({
@@ -34,7 +25,8 @@ const DevLayout = () => {
           },
           mt: `${appBarSize.desktop}px`,
           [breakpoints.down('lg')]: {
-            mx: 2,
+            mx: 0,
+            p: 1,
           },
           ml: `${navBarSize.desktop}px`,
           p: 2,
@@ -42,7 +34,7 @@ const DevLayout = () => {
         })}
       >
         <Stack spacing={2}>
-          <LoadNasaData />
+          {/* <LoadNasaData /> */}
           <LoadNasaForm />
           <MapBox />
         </Stack>
