@@ -86,6 +86,8 @@ const theme = createTheme({
         },
       },
     },
+
+    MuiButton: {},
     MuiSlider: {
       defaultProps: {
         sx: {

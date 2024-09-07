@@ -11,11 +11,33 @@ export interface IGeometry {
   coordinates: number[][][] | number[];
 }
 
-export interface IFeature {
+export type DisplayDataType = {
+  details: boolean;
+  windSpeed: number;
+  solarRadiation: number;
+};
+
+export type NasaParametersType = {
+  ALLSKY_SFC_SW_DWN: { [key: string]: number };
+  WS10M: { [key: string]: number };
+};
+
+export type RegionPropertiesType = {
+  fill: string;
+  'fill-opacity': number;
+  stroke: string;
+  'stroke-width': string;
+  'stroke-opacity': number;
+  description: string;
+  iconCaption: string;
+  display: DisplayDataType;
+  parameter: NasaParametersType;
+};
+export interface IFeature<T> {
   id: number;
   type: string;
   geometry: IGeometry;
-  properties: any;
+  properties: T;
 }
 
 /**

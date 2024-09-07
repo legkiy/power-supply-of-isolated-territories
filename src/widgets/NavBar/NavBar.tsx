@@ -60,7 +60,6 @@ const NavBar = () => {
       itsButtons: true,
     },
   ];
-  console.log(import.meta.env);
 
   return (
     <Drawer

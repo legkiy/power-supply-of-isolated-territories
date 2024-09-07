@@ -1,10 +1,9 @@
-import { Container, Paper, Stack } from '@mui/material';
+import { Button, Container, Paper, Stack } from '@mui/material';
 import { appBarSize, navBarSize } from '@/styles/muiTheme';
 import { LoadNasaForm } from './components';
 import { MapBox } from '@/widgets';
 
 const DevLayout = () => {
-  //TODO: сделать выделение области на карте
   return (
     <Container
       sx={({ breakpoints }) => ({
@@ -34,9 +33,11 @@ const DevLayout = () => {
         })}
       >
         <Stack spacing={2}>
-          {/* <LoadNasaData /> */}
           <LoadNasaForm />
           <MapBox />
+          <Button color="success" variant="contained">
+            tes
+          </Button>
         </Stack>
       </Paper>
     </Container>

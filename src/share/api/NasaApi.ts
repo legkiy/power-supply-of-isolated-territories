@@ -6,6 +6,7 @@ import {
   NasaParamsType,
   INasaPoligon,
   IGeometry,
+  RegionPropertiesType,
 } from '@/share/types';
 
 //https://power.larc.nasa.gov/api/temporal/monthly/regional?start=2020&end=2022&latitude-min=53&latitude-max=56&longitude-min=105.26&longitude-max=108.6&community=RE&parameters=ALLSKY_SFC_SW_DWN,WS10M,WD10M&format=csv&user=DAVE
@@ -211,28 +212,29 @@ class NasaApi {
       );
 
       const outputJson = (res.data.features as []).map(
-        (feature: IFeature, index) => {
+        (feature: IFeature<RegionPropertiesType>, index) => {
           const windSpeed = calculateAvgInObj(
             feature.properties.parameter['WS10M']
           );
           const solarRadiation = calculateAvgInObj(
             feature.properties.parameter['ALLSKY_SFC_SW_DWN']
           );
-          const newFeature: IFeature = {
+          const newFeature: IFeature<RegionPropertiesType> = {
             ...feature,
             properties: {
+              ...feature.properties,
               fill: '#ffff37',
               'fill-opacity': 0.1,
               stroke: '#ffff37',
               'stroke-width': '1',
               'stroke-opacity': 0.5,
-              ...feature.properties,
               description: `
               <div>
               Wind Speed AVG: ${windSpeed}m/s <br/>
               Solar Radiation AVG: ${solarRadiation}
               </div>`,
               display: {
+                details: true,
                 windSpeed,
                 solarRadiation,
               },
@@ -248,6 +250,7 @@ class NasaApi {
       const maxWindSpeed = Math.max(
         ...outputJson.map((f) => f.properties.display.windSpeed)
       );
+
       const maxSolarRadiation = Math.max(
         ...outputJson.map((f) => f.properties.display.solarRadiation)
       );
@@ -272,6 +275,7 @@ class NasaApi {
         if (f!.properties.display.windSpeed === maxWindSpeed) {
           f!.properties.fill = '#37ffff';
           f!.properties.stroke = '#37ffff';
+          f!.properties['fill-opacity'] = 0.4;
         }
       });
 
