@@ -1,7 +1,7 @@
 import { DisplayDataType, NasaParametersType } from '@/share/types';
 import theme from '@/styles/muiTheme';
 import { DetailsChartRegion } from '@/widgets';
-import { Dialog, DialogContent, Link, ThemeProvider } from '@mui/material';
+import { Button, Dialog, DialogContent, ThemeProvider } from '@mui/material';
 import { FC, useState } from 'react';
 import { FaRegChartBar } from 'react-icons/fa';
 
@@ -18,30 +18,42 @@ const MapPopup: FC<MapPopupProps> = ({ description, data, parameters }) => {
     <ThemeProvider theme={theme}>
       <div>
         <p dangerouslySetInnerHTML={{ __html: description }} />
-        {data?.details && (
+        {!!parameters && (
           <>
-            <Link
-              component="button"
-              // endIcon={<FaRegChartBar />}
-              color="inherit"
-              variant="body1"
-              sx={{
-                display: 'flex',
-                gap: 1,
-              }}
+            <Button
+              variant="contained"
+              color="info"
+              endIcon={<FaRegChartBar size={22} />}
               onClick={() => setOpenDetails(true)}
             >
               Подробнее
-              <FaRegChartBar size={22} />
-            </Link>
+            </Button>
             <Dialog
               open={openDetails}
               onClose={() => setOpenDetails(false)}
-              aria-labelledby="alert-dialog-title"
-              aria-describedby="alert-dialog-description"
+              maxWidth="lg"
+              PaperProps={{
+                sx: {
+                  overflowY: 'clip',
+                },
+              }}
             >
-              <DialogContent>
-                <DetailsChartRegion data={data} parameters={parameters} />
+              <DialogContent
+                sx={({ breakpoints }) => ({
+                  overflowY: 'hidden',
+
+                  width: '90vw',
+                  [breakpoints.up('md')]: {
+                    width: '40vw',
+                  },
+                  [breakpoints.down('md')]: {
+                    height: '400px',
+                  },
+                  height: '500px',
+                  p: 3,
+                })}
+              >
+                <DetailsChartRegion parameters={parameters} />
               </DialogContent>
             </Dialog>
           </>

@@ -230,8 +230,8 @@ class NasaApi {
               'stroke-opacity': 0.5,
               description: `
               <div>
-              Wind Speed AVG: ${windSpeed}m/s <br/>
-              Solar Radiation AVG: ${solarRadiation}
+              Wind Speed AVG: ${windSpeed} m/s <br/>
+              Solar Radiation AVG: ${solarRadiation} kWh/m^2/day
               </div>`,
               display: {
                 details: true,
@@ -269,12 +269,12 @@ class NasaApi {
 
       uniqueResult.forEach((f) => {
         if (f!.properties.display.solarRadiation === maxSolarRadiation) {
-          f!.properties.fill = '#ffff37';
-          f!.properties.stroke = '#ffff37';
+          f!.properties.fill = '#e2db62';
+          f!.properties.stroke = '#e2db62';
         }
         if (f!.properties.display.windSpeed === maxWindSpeed) {
-          f!.properties.fill = '#37ffff';
-          f!.properties.stroke = '#37ffff';
+          f!.properties.fill = '#62b1e2';
+          f!.properties.stroke = '#62b1e2';
           f!.properties['fill-opacity'] = 0.4;
         }
       });

@@ -1,7 +1,8 @@
-import { Button, Container, Paper, Stack } from '@mui/material';
+import { Container, Paper, Stack } from '@mui/material';
 import { appBarSize, navBarSize } from '@/styles/muiTheme';
 import { LoadNasaForm } from './components';
-import { MapBox } from '@/widgets';
+import { DetailsChartRegion, MapBox } from '@/widgets';
+import MapPopup from '@/widgets/MapBox/MapPopup/MapPopup';
 
 const DevLayout = () => {
   return (
@@ -35,9 +36,6 @@ const DevLayout = () => {
         <Stack spacing={2}>
           <LoadNasaForm />
           <MapBox />
-          <Button color="success" variant="contained">
-            tes
-          </Button>
         </Stack>
       </Paper>
     </Container>
