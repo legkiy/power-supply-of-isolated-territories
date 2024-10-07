@@ -10,8 +10,8 @@ import CoordsOnMap from './CoordsOnMap';
 
 const legend = [
   { title: '500kV', color: '#ed4543' },
-  { title: '220kV', color: '#177bc9' },
-  { title: '110kV', color: '#56db40' },
+  { title: '220kV', color: '#56db40' },
+  { title: '110kV', color: '#177bc9' },
   { title: 'DFO', color: '#eecac5' },
   { title: 'SFO', color: '#c9daea' },
 ];

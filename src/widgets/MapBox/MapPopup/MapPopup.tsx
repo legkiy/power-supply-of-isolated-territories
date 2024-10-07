@@ -1,4 +1,4 @@
-import { DisplayDataType, NasaParametersType } from '@/share/types';
+import { NasaParametersType } from '@/share/types';
 import theme from '@/styles/muiTheme';
 import { DetailsChartRegion } from '@/widgets';
 import { Button, Dialog, DialogContent, ThemeProvider } from '@mui/material';
@@ -7,11 +7,10 @@ import { FaRegChartBar } from 'react-icons/fa';
 
 interface MapPopupProps {
   description: string;
-  data?: DisplayDataType;
   parameters: NasaParametersType;
 }
 
-const MapPopup: FC<MapPopupProps> = ({ description, data, parameters }) => {
+const MapPopup: FC<MapPopupProps> = ({ description, parameters }) => {
   const [openDetails, setOpenDetails] = useState(false);
 
   return (

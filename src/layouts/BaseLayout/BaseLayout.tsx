@@ -12,7 +12,7 @@ const BaseLayout = () => {
     <>
       <Header />
       <NavBar />
-      {!openDevPanel ? (
+      {openDevPanel ? (
         <Suspense fallback={<div>Loading dev page</div>}>
           <DevLayout />
         </Suspense>

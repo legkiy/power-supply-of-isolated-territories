@@ -269,13 +269,13 @@ class NasaApi {
 
       uniqueResult.forEach((f) => {
         if (f!.properties.display.solarRadiation === maxSolarRadiation) {
-          f!.properties.fill = '#e2db62';
-          f!.properties.stroke = '#e2db62';
+          f!.properties.fill = '#ffdf0d90';
+          f!.properties.stroke = '#ffdf0d';
         }
         if (f!.properties.display.windSpeed === maxWindSpeed) {
-          f!.properties.fill = '#62b1e2';
-          f!.properties.stroke = '#62b1e2';
-          f!.properties['fill-opacity'] = 0.4;
+          f!.properties.fill = '#0d66ff90';
+          f!.properties.stroke = '#0d66ff';
+          // f!.properties['fill-opacity'] = 0.4;
         }
       });
 

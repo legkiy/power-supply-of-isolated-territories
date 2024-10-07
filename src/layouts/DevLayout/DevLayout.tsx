@@ -1,8 +1,7 @@
 import { Container, Paper, Stack } from '@mui/material';
 import { appBarSize, navBarSize } from '@/styles/muiTheme';
 import { LoadNasaForm } from './components';
-import { DetailsChartRegion, MapBox } from '@/widgets';
-import MapPopup from '@/widgets/MapBox/MapPopup/MapPopup';
+import { MapBox } from '@/widgets';
 
 const DevLayout = () => {
   return (

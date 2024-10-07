@@ -31,7 +31,6 @@ const onEachFeature = (
     root.render(
       <MapPopup
         description={description}
-        data={display}
         parameters={parameter}
       />
     );
@@ -88,7 +87,7 @@ const MapLayer: FC<IMapLayer> = ({
             const properties = f?.properties;
 
             return {
-              weight: properties?.['stroke-width'],
+              weight: properties['stroke-width'],
               color: properties?.stroke,
               fillColor: properties?.fill,
               opacity: properties?.['stroke-opacity'],

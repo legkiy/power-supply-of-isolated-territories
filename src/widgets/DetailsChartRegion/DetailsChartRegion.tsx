@@ -1,5 +1,5 @@
-import { Box, Button, Container } from '@mui/material';
-import { FC, useState } from 'react';
+import { Box } from '@mui/material';
+import { FC } from 'react';
 import { NasaParametersType } from '@/share/types';
 import { Line } from 'react-chartjs-2';
 import {
@@ -143,15 +143,15 @@ const DetailsChartRegion: FC<DetailsChartRegionProps> = ({ parameters }) => {
       {
         label: 'Solar',
         data: processingData.solarData,
-        borderColor: '#e2db62',
-        backgroundColor: 'rgba(226, 220, 98, 0.4)',
+        borderColor: '#ffdf0d',
+        backgroundColor: '#ffdf0d90',
         fill: 'start',
       },
       {
         label: 'Wind',
         data: processingData.windData,
-        borderColor: '#62b1e2',
-        backgroundColor: 'rgba(98, 177, 226, 0.4)',
+        borderColor: '#0d66ff',
+        backgroundColor: '#0d66ff90',
         fill: 'start',
       },
     ],
