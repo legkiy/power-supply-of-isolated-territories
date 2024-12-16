@@ -120,19 +120,17 @@ const NavBar = () => {
           {menuItems.map((item, index) => (
             <Accordion {...item} key={index} />
           ))}
-          {import.meta.env.VITE_SHOW_DEV_PANEl && (
-            <FormControlLabel
-              label="Dev Panel"
-              sx={{ m: 0 }}
-              control={
-                <Switch
-                  checked={openDevPanel}
-                  title="Dev Panel"
-                  onChange={() => actions.toggleDevPanel()}
-                />
-              }
-            />
-          )}
+          <FormControlLabel
+            label="NASA Panel"
+            sx={{ m: 0 }}
+            control={
+              <Switch
+                checked={openDevPanel}
+                title="Dev Panel"
+                onChange={() => actions.toggleDevPanel()}
+              />
+            }
+          />
 
           <Button
             onClick={() => setOpenContact(true)}

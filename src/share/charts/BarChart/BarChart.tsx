@@ -74,8 +74,8 @@ const BarChart: FC<IBarChart> = ({ series, labels }) => {
 
       ctx.fillText(
         t('kmt'),
-        chart.width - 45,
-        chart.getDatasetMeta(0).data[4].y + 20
+        0.3 * chart.width,
+        chart.getDatasetMeta(0).data[4].y + 25
       );
     },
   };
