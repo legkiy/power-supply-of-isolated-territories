@@ -6,8 +6,10 @@ import {
   Button,
   Divider,
   Drawer,
+  FormControlLabel,
   Link,
   Stack,
+  Switch,
   Typography,
   useMediaQuery,
 } from '@mui/material';
@@ -37,7 +39,7 @@ const NavBar = () => {
 
   const matchesLG = useMediaQuery(theme.breakpoints.down('lg'));
 
-  const { navBarState } = useAppSelector((store) => store.global);
+  const { navBarState, openDevPanel } = useAppSelector((store) => store.global);
   const actions = useActions();
 
   const menuItems = [
@@ -118,6 +120,18 @@ const NavBar = () => {
           {menuItems.map((item, index) => (
             <Accordion {...item} key={index} />
           ))}
+          <FormControlLabel
+            label="NASA Panel"
+            sx={{ m: 0 }}
+            control={
+              <Switch
+                checked={openDevPanel}
+                title="Dev Panel"
+                onChange={() => actions.toggleDevPanel()}
+              />
+            }
+          />
+
           <Button
             onClick={() => setOpenContact(true)}
             sx={{

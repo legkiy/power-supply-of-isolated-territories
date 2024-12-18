@@ -57,7 +57,10 @@ const MapControlLayers: FC = () => {
         >
           {layers.map((el) => (
             <FormControlLabel
-              label={t(`map.${el.name}`)}
+              key={el.name}
+              label={t(`map.${el.name}`, {
+                defaultValue: el.name,
+              })}
               sx={{
                 fontSize: 14,
               }}

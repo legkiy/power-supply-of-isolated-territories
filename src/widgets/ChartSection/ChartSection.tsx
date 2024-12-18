@@ -71,6 +71,7 @@ const ChartSection: FC = () => {
       </Grid>
       {series.map((series, index) => (
         <Grid
+          key={index}
           item
           xs={2.4}
           sx={({ breakpoints }) => ({

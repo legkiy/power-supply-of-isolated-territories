@@ -3,14 +3,20 @@ import { GeoJSONProps } from 'react-leaflet';
 import regionsData from '@/assets/mapData/regions.json';
 import lineData from '@/assets/mapData/line.json';
 import settlementsPoints from '@/assets/mapData/points.json';
+// import powerPoints from '@/assets/neuralData/powerPints.json';
+// import irkSettelments from '@/assets/neuralData/irkSettelments.json';
+// import solarPoligons from '@/assets/neuralData/solarPoligons.json';
+
 // import windPoints from '@/assets/mapData/pointsAir.json';
 // import windMarker from '/windIcon.svg';
 // import windsClasterIcon from '/windsClasterIcon.svg';
 
+export type GeoJsonData = GeoJSONProps['data'] & { features: unknown };
+
 export interface IMapLayer {
   name: string;
   type: 'Polygon' | 'Point' | 'LineString';
-  data: GeoJSONProps['data'];
+  data: GeoJsonData;
   active: boolean;
   marker?: string;
   clusterMarker?: string;
@@ -19,32 +25,60 @@ export interface IMapLayer {
 
 interface IMapSlice {
   layers: IMapLayer[];
+  coords: {
+    lat: number;
+    lng: number;
+  };
 }
 
 const InitaState: IMapSlice = {
+  coords: {
+    lat: 66.23,
+    lng: 110.98,
+  },
   layers: [
     {
       name: 'regions',
       type: 'Polygon',
-      data: regionsData as GeoJSONProps['data'],
+      data: regionsData as GeoJsonData,
       active: true,
     },
     {
       name: 'LAP',
       type: 'LineString',
-      data: lineData as GeoJSONProps['data'],
+      data: lineData as GeoJsonData,
       active: true,
     },
     {
       name: 'settlementsPoints',
       type: 'Point',
-      data: settlementsPoints as GeoJSONProps['data'],
+      data: settlementsPoints as GeoJsonData,
       active: true,
     },
     // {
+    //   name: 'powerPoints',
+    //   type: 'Point',
+    //   data: powerPoints as unknown as GeoJsonData,
+    //   active: true,
+    //   disableCluster: true,
+    // },
+    // {
+    //   name: 'irkSettelments',
+    //   type: 'Point',
+    //   data: irkSettelments as GeoJsonData,
+    //   active: true,
+    //   disableCluster: true,
+    // },
+    // {
+    //   name: 'solarPoligons',
+    //   type: 'Polygon',
+    //   data: solarPoligons as GeoJsonData,
+    //   active: true,
+    // },
+    // {
     //   name: 'windPoints',
     //   type: 'Point',
-    //   data: windPoints as GeoJSONProps['data'],
+    //   data: windPoints as GeoJsonData,
     //   active: true,
     //   marker: windMarker,
     //   clusterMarker: windsClasterIcon,
@@ -77,6 +111,9 @@ export const mapSlice = createSlice({
       }
 
       state.layers.splice(insertIndex, 0, newLayer);
+    },
+    setCoords: (state, action: PayloadAction<{ lat: number; lng: number }>) => {
+      state.coords = action.payload;
     },
   },
 });

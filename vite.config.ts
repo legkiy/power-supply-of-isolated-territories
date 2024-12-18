@@ -9,11 +9,15 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
       '@assets': path.resolve(__dirname, './src/assets'),
       '@components': path.resolve(__dirname, './src/components'),
+      '@axiosInstanse': path.resolve(
+        __dirname,
+        './src/share/utils/axiosInstanse.ts'
+      ),
     },
   },
   plugins: [react()],
   server: {
-    port: 5000,
+    port: 5555,
   },
   build: {
     outDir: 'build',

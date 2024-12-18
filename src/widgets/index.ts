@@ -7,4 +7,4 @@ export { default as ChartSection } from './ChartSection/ChartSection';
 export { default as AboutInfo } from './AboutInfo/AboutInfo';
 export { default as EmissionsCO2 } from './EmissionsCO2/EmissionsCO2';
 export { default as Pollutants } from './Pollutants/Pollutants';
-
+export { default as DetailsChartRegion } from './DetailsChartRegion/DetailsChartRegion';

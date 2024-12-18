@@ -1,0 +1,51 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 86,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [102.5, 51.5],
+            [102.5, 52.0],
+            [103.0, 52.0],
+            [103.0, 51.5]
+          ]
+        ]
+      },
+      "properties": {
+        "description": "JAN: 1.42;\n    FEB: 2.54;\n    MAR: 4.09;\n    APR: 5.01;\n    MAY: 5.93;\n    JUN: 5.65;\n    JUL: 4.88;\n    AUG: 4.68;\n    SEP: 3.43;\n    OCT: 2.53;\n    NOV: 1.45;\n    DEC: 1.09;\n    ANN: 3.56;\n    LAT: 51.75;\n    LON: 102.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;",
+        "fill": "#ffff37",
+        "fill-opacity": 0.1,
+        "stroke": "#ffff37",
+        "stroke-width": "1",
+        "stroke-opacity": 0.5
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 86,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [103.00, 51.5],
+            [103.00, 52.00],
+            [103.5, 52.0],
+            [103.50, 51.5]
+          ]
+        ]
+      },
+      "properties": {
+        "description": "JAN: 1.42;\n    FEB: 2.54;\n    MAR: 4.09;\n    APR: 5.01;\n    MAY: 5.93;\n    JUN: 5.65;\n    JUL: 4.88;\n    AUG: 4.68;\n    SEP: 3.43;\n    OCT: 2.53;\n    NOV: 1.45;\n    DEC: 1.09;\n    ANN: 3.56;\n    LAT: 51.75;\n    LON: 102.75;\n    PARAMETER: ALLSKY_SFC_SW_DWN;\n    YEAR: 2022;",
+        "fill": "#ffff37",
+        "fill-opacity": 0.1,
+        "stroke": "#ffff37",
+        "stroke-width": "1",
+        "stroke-opacity": 0.5
+      }
+    }
+  ]
+}

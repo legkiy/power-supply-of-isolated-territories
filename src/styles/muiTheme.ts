@@ -33,6 +33,9 @@ const theme = createTheme({
     primary: {
       main: '#365c74',
     },
+    success: {
+      main: '#36e223',
+    },
     gold: {
       main: '#d6a11c',
     },
@@ -51,6 +54,13 @@ const theme = createTheme({
     borderRadius: 10,
   },
   components: {
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          color: '#fff',
+        },
+      },
+    },
     MuiLink: {
       styleOverrides: {
         root: {
@@ -58,6 +68,52 @@ const theme = createTheme({
           display: 'flex',
           alignItems: 'center',
           cursor: 'pointer',
+        },
+      },
+    },
+    MuiTypography: {
+      defaultProps: {
+        textTransform: 'none',
+      },
+    },
+    MuiSwitch: {
+      defaultProps: {
+        color: 'success',
+        sx: {
+          '.MuiSwitch-thumb': {
+            backgroundColor: '#fff',
+          },
+        },
+      },
+    },
+
+    MuiButton: {},
+    MuiSlider: {
+      defaultProps: {
+        sx: {
+          '& .MuiSlider-valueLabel': {
+            top: -2,
+            borderRadius: '6px',
+            backgroundColor: '#fff',
+            p: 0,
+            color: '#000',
+            '&::before': {
+              display: 'none',
+            },
+          },
+          '& .MuiSlider-thumb': {
+            height: 20,
+            width: 20,
+            backgroundColor: '#fff',
+            boxShadow: '0 0 2px 0px rgba(0, 0, 0, 0.1)',
+            '&:focus, &:hover, &.Mui-active': {
+              boxShadow: '0px 0px 4px 2px rgba(0, 0, 0, 0.1)',
+            },
+            '&:before': {
+              boxShadow:
+                '0px 0px 1px 0px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.14), 0px 0px 1px 0px rgba(0,0,0,0.12)',
+            },
+          },
         },
       },
     },
@@ -71,6 +127,9 @@ const theme = createTheme({
       textAlign: 'justify',
       lineHeight: 1.2,
       letterSpacing: 0,
+    },
+    button: {
+      textTransform: 'none',
     },
   },
 });

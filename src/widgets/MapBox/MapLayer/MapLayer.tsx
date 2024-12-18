@@ -7,18 +7,46 @@ import { FC } from 'react';
 import styles from './mapLayer.module.scss';
 import markerPng from '/marker.png';
 import { IMapLayer } from '@/store/mapSlice/mapSlice';
+import { useActions } from '@/store';
+import { RegionPropertiesType } from '@/share/types';
+import L from 'leaflet';
+import MapPopup from '../MapPopup/MapPopup';
+import { createRoot } from 'react-dom/client';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const onEachFeature = (feature: Feature<Geometry, any>, layer: L.Layer) => {
-  const { description, iconCaption, tooltipPermament } = feature.properties;
+const onEachFeature = (
+  feature: Feature<Geometry, RegionPropertiesType>,
+  layer: L.Layer
+) => {
+  const { display, description, iconCaption, parameter } = feature.properties;
+
   // layer.options.fillColor = feature.properties?.fill;
-  if (description) {
-    layer.bindPopup(description); // Popup
+
+  if (description || display?.details) {
+    const popupNode = document.createElement('div');
+    const popup = L.popup().setContent(popupNode);
+    layer.bindPopup(popup);
+    const root = createRoot(popupNode);
+
+    root.render(
+      <MapPopup
+        description={description}
+        parameters={parameter}
+      />
+    );
   }
+  // else if (description) {
+  //   const popupContent = ReactDOMServer.renderToString(
+  //     <div>
+  //       <p dangerouslySetInnerHTML={{ __html: description }} />
+  //     </div>
+  //   );
+  //   layer.bindPopup(popupContent); // Popup
+  // }
 
   if (iconCaption) {
     layer.bindTooltip(iconCaption, {
-      permanent: tooltipPermament,
+      // permanent: tooltipPermament,
     });
   }
 };
@@ -29,8 +57,19 @@ const MapLayer: FC<IMapLayer> = ({
   clusterMarker,
   disableCluster = false,
 }) => {
+  const actions = useActions();
+
   return (
-    <FeatureGroup>
+    <FeatureGroup
+      eventHandlers={{
+        click: (e) => {
+          actions.setCoords({
+            lat: e.latlng.lat,
+            lng: e.latlng.lng,
+          });
+        },
+      }}
+    >
       <MarkerClusterGroup
         iconCreateFunction={customClusterIcon({
           icon: clusterMarker,
@@ -48,10 +87,11 @@ const MapLayer: FC<IMapLayer> = ({
             const properties = f?.properties;
 
             return {
-              weight: properties?.['stroke-width'],
+              weight: properties['stroke-width'],
               color: properties?.stroke,
               fillColor: properties?.fill,
               opacity: properties?.['stroke-opacity'],
+              fillOpacity: properties?.['fill-opacity'],
             };
           }}
         />

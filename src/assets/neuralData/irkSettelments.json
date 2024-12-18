@@ -1,0 +1,95 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 0,
+      "geometry": { "coordinates": [107.60078, 55.142576], "type": "Point" },
+      "properties": {
+        "description": "Иркутская область, Казачинско-Ленский район, село Карам",
+        "iconCaption": "село Карам",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": { "coordinates": [98.215568, 53.638411], "type": "Point" },
+      "properties": {
+        "description": "Иркутская область, Нижнеудинский район, Тофаларское муниципальное образование, село Алыгджер",
+        "iconCaption": "село Алыгджер",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": { "coordinates": [105.478411, 55.356636], "type": "Point" },
+      "properties": {
+        "description": "Иркутская область, межселенные территории Жигаловского муниципального района, село Коношаново",
+        "iconCaption": "село Коношаново",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "geometry": { "coordinates": [106.20778, 54.43546], "type": "Point" },
+      "properties": {
+        "description": "Иркутская область, Качугский район, Вершино-Тутурское муниципальное образование, село Вершина Тутуры",
+        "iconCaption": "село Вершина Тутуры",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "geometry": { "coordinates": [107.893478, 57.558327], "type": "Point" },
+      "properties": {
+        "description": "Иркутская область, Киренский район, Макаровское муниципальное образование, посёлок Пашня",
+        "iconCaption": "посёлок Пашня",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "geometry": { "coordinates": [107.97102, 57.412802], "type": "Point" },
+      "properties": {
+        "description": "Иркутская область, Киренский район, Макаровское муниципальное образование, село Усть-Киренга",
+        "iconCaption": "село Усть-Киренга",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "geometry": { "coordinates": [110.148635, 58.597261], "type": "Point" },
+      "properties": {
+        "description": "Иркутская область, Киренский район, Коршуновское муниципальное образование, село Коршуново",
+        "iconCaption": "село Коршуново",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "geometry": { "coordinates": [102.435548, 51.91156], "type": "Point" },
+      "properties": {
+        "description": "Республика Бурятия, Тункинский район, посёлок Аршан",
+        "iconCaption": "Аршан",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "geometry": { "coordinates": [107.492209, 56.197584], "type": "Point" },
+      "properties": {
+        "description": "Иркутская область, Казачинско-Ленский район, Ключевское муниципальное образование, деревня Ключи",
+        "iconCaption": "д. Ключи",
+        "marker-color": "#1e98ff"
+      }
+    }
+  ]
+}

@@ -1,17 +1,17 @@
 import { MapContainer, TileLayer } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
 import styles from './mapBox.module.scss';
 import { FC } from 'react';
 import ZoomController from './ZoomController';
 import { useTranslation } from 'react-i18next';
-import MapLayer from './MapLayer';
+import MapLayer from './MapLayer/MapLayer';
 import { useAppSelector } from '@/store';
 import MapControlLayers from './MapControlLayers';
+import CoordsOnMap from './CoordsOnMap';
 
 const legend = [
   { title: '500kV', color: '#ed4543' },
-  { title: '220kV', color: '#177bc9' },
-  { title: '110kV', color: '#56db40' },
+  { title: '220kV', color: '#56db40' },
+  { title: '110kV', color: '#177bc9' },
   { title: 'DFO', color: '#eecac5' },
   { title: 'SFO', color: '#c9daea' },
 ];
@@ -19,6 +19,7 @@ const legend = [
 const MapBox: FC = () => {
   const { t, i18n } = useTranslation();
   const layers = useAppSelector((store) => store.map.layers);
+
   return (
     <div className={styles['map-box']}>
       <MapContainer
@@ -40,6 +41,8 @@ const MapBox: FC = () => {
         />
         <MapControlLayers />
         <ZoomController />
+        <CoordsOnMap />
+
         {layers.map((el) => el.active && <MapLayer key={el.name} {...el} />)}
       </MapContainer>
       <div className={styles.legends}>

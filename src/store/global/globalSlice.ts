@@ -2,10 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface IGlobalState {
   navBarState: boolean;
+  openDevPanel: boolean;
 }
 
 const InitState: IGlobalState = {
   navBarState: false,
+  openDevPanel: false,
 };
 
 export const globalSclice = createSlice({
@@ -14,6 +16,9 @@ export const globalSclice = createSlice({
   reducers: {
     toggleNavBar: (state) => {
       state.navBarState = !state.navBarState;
+    },
+    toggleDevPanel: (state) => {
+      state.openDevPanel = !state.openDevPanel;
     },
   },
 });
